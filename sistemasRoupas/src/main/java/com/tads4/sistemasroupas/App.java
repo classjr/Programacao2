@@ -1,5 +1,7 @@
 package com.tads4.sistemasroupas;
 
+import com.tads4.sistemasroupas.views.Main;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Main mySystem = new Main();
+        mySystem.setVisible(true);
     }
 }
