@@ -6,12 +6,10 @@
 package com.tads4.sistemasroupas.model;
 
 import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-  import javax.persistence.Column;
-  import javax.persistence.Entity;
-  import javax.persistence.Id;
-  import javax.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 /**
