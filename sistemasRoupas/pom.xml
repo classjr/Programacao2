@@ -77,8 +77,12 @@
         <artifactId>jboss-logging</artifactId>
         <version>3.3.0.Final</version>
     </dependency>
-
-    <!-- Fim -->
+    <dependency>
+        <groupId>javax.persistence</groupId>
+        <artifactId>persistence-api</artifactId>
+        <version>1.0.2</version>
+    
+    </dependency>
 
   </dependencies>
 </project>
