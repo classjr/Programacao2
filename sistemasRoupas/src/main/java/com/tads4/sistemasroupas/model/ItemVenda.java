@@ -5,6 +5,7 @@
  */
 package com.tads4.sistemasroupas.model;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 import javax.annotation.Generated;
@@ -22,7 +23,7 @@ import javax.persistence.TemporalType;
  */
 @Entity
 @Table(name="ItemVenda")
-public class ItemVenda {
+public class ItemVenda implements Serializable {
     @Id
     @GeneratedValue
     @Column(name="codigoItem")
