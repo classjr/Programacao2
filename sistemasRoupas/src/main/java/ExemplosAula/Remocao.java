@@ -32,5 +32,6 @@ public class Remocao {
         ps.execute();
         ps.close();
         this.connection.close();
+        System.out.println("Ok");
     }
 }
