@@ -1,17 +1,30 @@
 package com.tads4.sistemasroupas.model;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Pessoa {
+@Entity
+@Table (name= "PESSOAS")
+public class Pessoa implements Serializable{
 
+    @Id @GeneratedValue
+    @Column (name= "ID", unique = true, nullable = false)
     private Integer id;
+    @Column (name = "NOME")
     private String nome;
+    @Column (name = "RG")
     private String rg;
+    @Column (name = "CPF", unique= true)
     private String cpf;
+    @Column (name = "SEXO")
     private char sexo;
+    @Column (name = "NASCIMENTO")
     private String dataDeNascimento;
+    @OneToMany(mappedBy = "PESSOAS")
     private List<Email> emails;
+    @OneToMany(mappedBy = "PESSOAS")
     private List<Endereco> enderecos;
+    @OneToMany(mappedBy = "PESSOAS")
     private List<Telefone> telefones;
 
     public Pessoa() {
