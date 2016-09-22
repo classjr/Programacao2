@@ -11,13 +11,8 @@ public class App
 {
     public static void main( String[] args )
     {
-       /* Main mySystem = new Main();
-        mySystem.setVisible(true); */
-        try{
-            Remocao rm = new Remocao();
-            rm.running();
-        }catch(Exception ex){
-            System.out.println("Problemas ao remover linha de banco de dados.: "+ex.getMessage());
-        }
+        Main mySystem = new Main();
+        mySystem.setVisible(true); 
+       
     }
 }

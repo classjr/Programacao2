@@ -1,5 +1,7 @@
 package com.tads4.sistemasroupas.model;
 
+import javax.persistence.Column;
+
 public class Funcionario {
 
     @Column(name = "SENHA")

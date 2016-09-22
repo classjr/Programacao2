@@ -4,6 +4,8 @@
  */
 package com.tads4.sistemasroupas.views;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jr
@@ -58,9 +60,9 @@ public class Main extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(21, 21, 21))
         );
 
         pack();
