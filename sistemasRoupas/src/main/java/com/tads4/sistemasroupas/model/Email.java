@@ -9,9 +9,16 @@ package com.tads4.sistemasroupas.model;
  *
  * @author Lucas
  */
+@Entity
+@Table(name = "EMAILS")
+
 public class Email {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", unique = true, nullable = false)
     private Integer id;
+    @Column(name = "EMAIL")
     private String email;
 
     public Email() {

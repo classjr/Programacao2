@@ -1,10 +1,14 @@
 package com.tads4.sistemasroupas.model;
 
 public class Funcionario {
-    
+
+    @Column(name = "SENHA")
     private String senha;
+    @Column(name = "USUARIO")
     private String usuario;
+    @Column(name = "SALARIO")
     private Double salario;
+    @Column(name = "FUNCAO")
     private String funcao;
 
     public Funcionario() {

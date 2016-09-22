@@ -1,10 +1,19 @@
 package com.tads4.sistemasroupas.model;
 
-public class Telefone {
+@Entity
+@Table (name= "TELEFONES")
 
+public class Telefone {
+    
+    @Id 
+    @GeneratedValue
+    @Column (name= "ID", unique = true, nullable = false)
     private Integer id;
+    @Column(name = "NUMERO")
     private String numero;
+    @Column (name = "DDD")
     private String ddd;
+    @Column (name = "OPERADORA")
     private String operadora;
 
     public Telefone() {

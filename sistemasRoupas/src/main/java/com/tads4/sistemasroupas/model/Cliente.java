@@ -2,7 +2,9 @@ package com.tads4.sistemasroupas.model;
 
 public class Cliente extends Pessoa {
 
+    @Column(name = "RENDA")
     private Double renda;
+    @Column(name = "DATADECADASTRO")
     private String dataDeCadastro;
 
     public Cliente() {

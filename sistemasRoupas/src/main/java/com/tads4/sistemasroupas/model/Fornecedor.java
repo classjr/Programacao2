@@ -6,22 +6,32 @@ import java.util.List;
  *
  * @author Lucas
  */
+@Entity
+@Table(name = "FORNECEDOR")
 public class Fornecedor {
 
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", unique = true, nullable = false)
     private Integer id;
+    @Column(name = "NOME")
     private String nome;
+    @Column(name = "CNPJ")
     private String cnpj;
-    private List<Telefone> telefone;
-    private List<Endereco> endereco;
-    private List<Email> email;
+    @OneToMany(mappedBy = "PESSOAS")
+    private List<Email> emails;
+    @OneToMany(mappedBy = "PESSOAS")
+    private List<Endereco> enderecos;
+    @OneToMany(mappedBy = "PESSOAS")
+    private List<Telefone> telefones;
 
-    public Fornecedor(String nome, String cnpj, List<Telefone> telefone, List<Endereco> endereco, List<Email> email) {
+    public Fornecedor(String nome, String cnpj, List<Telefone> telefones, List<Endereco> enderecos, List<Email> emails) {
 
         this.nome = nome;
         this.cnpj = cnpj;
-        this.telefone = telefone;
-        this.endereco = endereco;
-        this.email = email;
+        this.telefones = telefones;
+        this.enderecos = enderecos;
+        this.emails = emails;
     }
 
     public Fornecedor() {
@@ -51,28 +61,28 @@ public class Fornecedor {
         this.cnpj = cnpj;
     }
 
-    public List<Telefone> getTelefone() {
-        return telefone;
+    public List<Telefone> getTelefones() {
+        return telefones;
     }
 
-    public void setTelefone(List<Telefone> telefone) {
-        this.telefone = telefone;
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
-    public List<Endereco> getEndereco() {
-        return endereco;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(List<Endereco> endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 
-    public List<Email> getEmail() {
-        return email;
+    public List<Email> getEmails() {
+        return emails;
     }
 
-    public void setEmail(List<Email> email) {
-        this.email = email;
+    public void setEmails(List<Email> emails) {
+        this.emails = emails;
     }
 
     @Override
@@ -80,9 +90,9 @@ public class Fornecedor {
         int hash = 7;
         hash = 13 * hash + (this.nome != null ? this.nome.hashCode() : 0);
         hash = 13 * hash + (this.cnpj != null ? this.cnpj.hashCode() : 0);
-        hash = 13 * hash + (this.telefone != null ? this.telefone.hashCode() : 0);
-        hash = 13 * hash + (this.endereco != null ? this.endereco.hashCode() : 0);
-        hash = 13 * hash + (this.email != null ? this.email.hashCode() : 0);
+        hash = 13 * hash + (this.telefones != null ? this.telefones.hashCode() : 0);
+        hash = 13 * hash + (this.enderecos != null ? this.enderecos.hashCode() : 0);
+        hash = 13 * hash + (this.emails != null ? this.emails.hashCode() : 0);
         return hash;
     }
 
@@ -104,13 +114,13 @@ public class Fornecedor {
         if ((this.cnpj == null) ? (other.cnpj != null) : !this.cnpj.equals(other.cnpj)) {
             return false;
         }
-        if (this.telefone != other.telefone && (this.telefone == null || !this.telefone.equals(other.telefone))) {
+        if (this.telefones != other.telefones && (this.telefones == null || !this.telefones.equals(other.telefones))) {
             return false;
         }
-        if (this.endereco != other.endereco && (this.endereco == null || !this.endereco.equals(other.endereco))) {
+        if (this.enderecos != other.enderecos && (this.enderecos == null || !this.enderecos.equals(other.enderecos))) {
             return false;
         }
-        if (this.email != other.email && (this.email == null || !this.email.equals(other.email))) {
+        if (this.emails != other.emails && (this.emails == null || !this.emails.equals(other.emails))) {
             return false;
         }
         return true;

@@ -9,16 +9,30 @@ package com.tads4.sistemasroupas.model;
  *
  * @author Lucas
  */
-public class Endereco {
+@Entity
+@Table (name= "ENDERECOS")
 
+public class Endereco {
+    
+    @Id 
+    @GeneratedValue
+    @Column (name= "ID", unique = true, nullable = false)
     private Integer id;
+    @Column(name = "PAIS")
     private String pais;
+    @Column (name = "ESTADO")
     private String estado;
+    @Column (name = "CIDADE")
     private String cidade;
+    @Column (name = "BAIRRO")
     private String bairro;
+    @Column (name = "CEP")
     private String cep;
+    @Column (name = "RUA")
     private String rua;
+    @Column (name = "COMPLEMENTO")
     private String complemento;
+    @Column (name = "NUMERO")
     private String numero;
 
     public Endereco(String pais, String estado, String cidade, String bairro, String cep, String rua, String complemento, String numero) {

@@ -5,21 +5,22 @@ import java.util.List;
 import javax.persistence.*;
 
 @Entity
-@Table (name= "PESSOAS")
-public class Pessoa implements Serializable{
+@Table(name = "PESSOAS")
+public class Pessoa implements Serializable {
 
-    @Id @GeneratedValue
-    @Column (name= "ID", unique = true, nullable = false)
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", unique = true, nullable = false)
     private Integer id;
-    @Column (name = "NOME")
+    @Column(name = "NOME")
     private String nome;
-    @Column (name = "RG")
+    @Column(name = "RG")
     private String rg;
-    @Column (name = "CPF", unique= true)
+    @Column(name = "CPF", unique = true)
     private String cpf;
-    @Column (name = "SEXO")
+    @Column(name = "SEXO")
     private char sexo;
-    @Column (name = "NASCIMENTO")
+    @Column(name = "NASCIMENTO")
     private String dataDeNascimento;
     @OneToMany(mappedBy = "PESSOAS")
     private List<Email> emails;
