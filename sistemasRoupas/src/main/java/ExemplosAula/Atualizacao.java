@@ -26,7 +26,7 @@ public class Atualizacao {
         }
     }
     public void running() throws SQLException{
-        String sql = "update pessoa ";
+        String sql = "update pessoa set nome = ? where pessoa.id = 1";
         PreparedStatement ps = this.connection.prepareStatement(sql);
         ps.setString(1, "Juliana");
         ps.execute();
