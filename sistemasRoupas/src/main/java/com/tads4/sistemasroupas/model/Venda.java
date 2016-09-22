@@ -7,6 +7,7 @@ package com.tads4.sistemasroupas.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -32,6 +33,7 @@ public class Venda implements Serializable{
     @Temporal(TemporalType.TIMESTAMP )
     @Column(name="dataVenda")
     private Calendar dataVenda;
+    private List <Cliente> cliente;
 
     public Venda() {
     }

@@ -2,6 +2,7 @@ package com.tads4.sistemasroupas.model;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.*;
 
 @Entity
 @Table (name= "PESSOAS")
