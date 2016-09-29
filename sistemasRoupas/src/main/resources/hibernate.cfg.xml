@@ -13,6 +13,11 @@
     <!-- Mapeamento de tabelas -->
     <mapping class="ExemplosAula.hibernate.Person" />
     <mapping class="ExemplosAula.hibernate.Teacher" />
+    <mapping class="ExemplosAula.hibernate.Products" />
+    <mapping class="ExemplosAula.hibernate.Products" />
+    <mapping class="ExemplosAula.hibernate.Loan" />
+    <mapping class="ExemplosAula.hibernate.Provider" />
+    <mapping class="ExemplosAula.hibernate.Institute" />
     
   </session-factory>
 </hibernate-configuration>

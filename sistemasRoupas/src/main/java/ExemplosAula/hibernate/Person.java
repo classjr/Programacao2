@@ -42,6 +42,8 @@ public class Person implements java.io.Serializable{
    @Column(name="dateBirth",nullable=false)
    @Temporal(TemporalType.DATE)
    private Date dateBirth;
+   
+   
 
     public String getName() {
         return name;
