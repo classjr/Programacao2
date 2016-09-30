@@ -1,8 +1,15 @@
 package com.tads4.sistemasroupas.model;
 
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
-public class Funcionario {
+@Entity
+public class Funcionario extends Pessoa {
 
     @Column(name = "SENHA")
     private String senha;
@@ -12,15 +19,28 @@ public class Funcionario {
     private Double salario;
     @Column(name = "FUNCAO")
     private String funcao;
-
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="funcionario_has_email",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_email")})
+    private List<Email> emails;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="funcionario_has_enderecos",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_endereco")})
+    private List<Endereco> enderecos;
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="funcionario_has_telefones",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_telefone")})
+    private List<Telefone> telefones;
+    
     public Funcionario() {
     }
 
-    public Funcionario(String senha, String usuario, Double salario, String funcao) {
+    public Funcionario(String senha, String usuario, Double salario, String funcao, List<Email> emails, List<Endereco> enderecos, List<Telefone> telefones, String nome, String rg, String cpf, char sexo, String dataDeNascimento) {
+        super(nome, rg, cpf, sexo, dataDeNascimento);
         this.senha = senha;
         this.usuario = usuario;
         this.salario = salario;
         this.funcao = funcao;
+        this.emails = emails;
+        this.enderecos = enderecos;
+        this.telefones = telefones;
     }
 
     public String getSenha() {
@@ -87,6 +107,21 @@ public class Funcionario {
             return false;
         }
         if (this.salario != other.salario && (this.salario == null || !this.salario.equals(other.salario))) {
+            return false;
+        }
+        if (this.getSexo() != other.getSexo()) {
+            return false;
+        }
+        if ((this.getNome() == null) ? (other.getNome() != null) : !this.getNome().equals(other.getNome())) {
+            return false;
+        }
+        if ((this.getRg() == null) ? (other.getRg() != null) : !this.getRg().equals(other.getRg())) {
+            return false;
+        }
+        if ((this.getCpf() == null) ? (other.getCpf() != null) : !this.getCpf().equals(other.getCpf())) {
+            return false;
+        }
+        if ((this.getDataDeNascimento() == null) ? (other.getDataDeNascimento() != null) : !this.getDataDeNascimento().equals(other.getDataDeNascimento())) {
             return false;
         }
         return true;

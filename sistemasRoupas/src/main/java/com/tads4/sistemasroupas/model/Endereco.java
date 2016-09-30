@@ -5,10 +5,12 @@
  */
 package com.tads4.sistemasroupas.model;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -16,30 +18,36 @@ import javax.persistence.Table;
  * @author Lucas
  */
 @Entity
-@Table (name= "ENDERECOS")
+@Table(name = "ENDERECOS")
 
 public class Endereco {
-    
-    @Id 
+
+    @Id
     @GeneratedValue
-    @Column (name= "ID", unique = true, nullable = false)
+    @Column(name = "ID", unique = true, nullable = false)
     private Integer id;
     @Column(name = "PAIS")
     private String pais;
-    @Column (name = "ESTADO")
+    @Column(name = "ESTADO")
     private String estado;
-    @Column (name = "CIDADE")
+    @Column(name = "CIDADE")
     private String cidade;
-    @Column (name = "BAIRRO")
+    @Column(name = "BAIRRO")
     private String bairro;
-    @Column (name = "CEP")
+    @Column(name = "CEP")
     private String cep;
-    @Column (name = "RUA")
+    @Column(name = "RUA")
     private String rua;
-    @Column (name = "COMPLEMENTO")
+    @Column(name = "COMPLEMENTO")
     private String complemento;
-    @Column (name = "NUMERO")
+    @Column(name = "NUMERO")
     private String numero;
+    @ManyToMany(mappedBy = "enderecos")
+    private List<Funcionario> funcionarios;
+    @ManyToMany(mappedBy = "enderecos")
+    private List<Cliente> clientes;
+    @ManyToMany(mappedBy = "enderecos")
+    private List<Fornecedor> fornecedores;
 
     public Endereco(String pais, String estado, String cidade, String bairro, String cep, String rua, String complemento, String numero) {
         this.pais = pais;
@@ -127,6 +135,30 @@ public class Endereco {
         this.numero = numero;
     }
 
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
+    }
+
+    public List<Fornecedor> getFornecedores() {
+        return fornecedores;
+    }
+
+    public void setFornecedores(List<Fornecedor> fornecedores) {
+        this.fornecedores = fornecedores;
+    }
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -179,6 +211,4 @@ public class Endereco {
         }
         return true;
     }
-    
-
 }

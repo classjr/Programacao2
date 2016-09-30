@@ -1,11 +1,11 @@
 package com.tads4.sistemasroupas.model;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
-@Table(name = "PESSOAS")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Pessoa implements Serializable {
 
     @Id
@@ -16,31 +16,22 @@ public class Pessoa implements Serializable {
     private String nome;
     @Column(name = "RG")
     private String rg;
-    @Column(name = "CPF", unique = true)
+    @Column(name = "CPF")
     private String cpf;
     @Column(name = "SEXO")
     private char sexo;
     @Column(name = "NASCIMENTO")
     private String dataDeNascimento;
-    @OneToMany(mappedBy = "PESSOAS")
-    private List<Email> emails;
-    @OneToMany(mappedBy = "PESSOAS")
-    private List<Endereco> enderecos;
-    @OneToMany(mappedBy = "PESSOAS")
-    private List<Telefone> telefones;
 
     public Pessoa() {
     }
 
-    public Pessoa(String nome, String rg, String cpf, char sexo, String dataDeNascimento, List<Email> emails, List<Endereco> enderecos, List<Telefone> telefones) {
+    public Pessoa(String nome, String rg, String cpf, char sexo, String dataDeNascimento) {
         this.nome = nome;
         this.rg = rg;
         this.cpf = cpf;
         this.sexo = sexo;
         this.dataDeNascimento = dataDeNascimento;
-        this.emails = emails;
-        this.enderecos = enderecos;
-        this.telefones = telefones;
     }
 
     public Integer getId() {
@@ -91,30 +82,6 @@ public class Pessoa implements Serializable {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public List<Email> getEmails() {
-        return emails;
-    }
-
-    public void setEmails(List<Email> emails) {
-        this.emails = emails;
-    }
-
-    public List<Endereco> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
-    }
-
-    public List<Telefone> getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(List<Telefone> telefones) {
-        this.telefones = telefones;
-    }
-
     @Override
     public int hashCode() {
         int hash = 7;
@@ -123,9 +90,6 @@ public class Pessoa implements Serializable {
         hash = 67 * hash + (this.cpf != null ? this.cpf.hashCode() : 0);
         hash = 67 * hash + this.sexo;
         hash = 67 * hash + (this.dataDeNascimento != null ? this.dataDeNascimento.hashCode() : 0);
-        hash = 67 * hash + (this.emails != null ? this.emails.hashCode() : 0);
-        hash = 67 * hash + (this.enderecos != null ? this.enderecos.hashCode() : 0);
-        hash = 67 * hash + (this.telefones != null ? this.telefones.hashCode() : 0);
         return hash;
     }
 
@@ -154,15 +118,6 @@ public class Pessoa implements Serializable {
             return false;
         }
         if ((this.dataDeNascimento == null) ? (other.dataDeNascimento != null) : !this.dataDeNascimento.equals(other.dataDeNascimento)) {
-            return false;
-        }
-        if (this.emails != other.emails && (this.emails == null || !this.emails.equals(other.emails))) {
-            return false;
-        }
-        if (this.enderecos != other.enderecos && (this.enderecos == null || !this.enderecos.equals(other.enderecos))) {
-            return false;
-        }
-        if (this.telefones != other.telefones && (this.telefones == null || !this.telefones.equals(other.telefones))) {
             return false;
         }
         return true;

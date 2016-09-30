@@ -19,5 +19,17 @@
     <mapping class="ExemplosAula.hibernate.Provider" />
     <mapping class="ExemplosAula.hibernate.Institute" />
     
+    <!-- Mapeamento do projeto -->
+    <mapping class="com.tads4.sistemasroupas.model.Cliente" />
+    <mapping class="com.tads4.sistemasroupas.model.Email" />
+    <mapping class="com.tads4.sistemasroupas.model.Endereco" />
+    <!--<mapping class="com.tads4.sistemasroupas.model.Fornecedor" />-->
+    <!--<mapping class="com.tads4.sistemasroupas.model.Funcionario" />-->
+    <!--<mapping class="com.tads4.sistemasroupas.model.ItemVenda" />-->
+    <mapping class="com.tads4.sistemasroupas.model.Pessoa" />
+    <!--<mapping class="com.tads4.sistemasroupas.model.Produto" />-->
+    <mapping class="com.tads4.sistemasroupas.model.Telefone" />
+    <!--<mapping class="com.tads4.sistemasroupas.model.Venda" />-->
+    
   </session-factory>
 </hibernate-configuration>

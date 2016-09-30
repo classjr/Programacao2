@@ -1,11 +1,15 @@
 package com.tads4.sistemasroupas.model;
 
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -13,6 +17,7 @@ import javax.persistence.Table;
  * @author Lucas
  */
 @Entity
+@PrimaryKeyJoinColumn(name="idPessoa")
 @Table(name = "FORNECEDOR")
 public class Fornecedor {
 
@@ -24,15 +29,17 @@ public class Fornecedor {
     private String nome;
     @Column(name = "CNPJ")
     private String cnpj;
-    @OneToMany(mappedBy = "PESSOAS")
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="fornecedor_has_email",  joinColumns = {@JoinColumn(name="id_fornecedor")},inverseJoinColumns = {@JoinColumn(name="id_email")})
     private List<Email> emails;
-    @OneToMany(mappedBy = "PESSOAS")
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="fornecedor_has_enderecos",  joinColumns = {@JoinColumn(name="id_fornecedor")},inverseJoinColumns = {@JoinColumn(name="id_endereco")})
     private List<Endereco> enderecos;
-    @OneToMany(mappedBy = "PESSOAS")
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(name="fornecedor_has_telefones",  joinColumns = {@JoinColumn(name="id_fornecedor")},inverseJoinColumns = {@JoinColumn(name="id_telefone")})
     private List<Telefone> telefones;
 
     public Fornecedor(String nome, String cnpj, List<Telefone> telefones, List<Endereco> enderecos, List<Email> emails) {
-
         this.nome = nome;
         this.cnpj = cnpj;
         this.telefones = telefones;

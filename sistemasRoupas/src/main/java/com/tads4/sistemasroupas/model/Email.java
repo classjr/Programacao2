@@ -5,10 +5,12 @@
  */
 package com.tads4.sistemasroupas.model;
 
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -25,6 +27,12 @@ public class Email {
     private Integer id;
     @Column(name = "EMAIL")
     private String email;
+    @ManyToMany(mappedBy = "emails")
+    private List<Funcionario> funcionarios;
+    @ManyToMany(mappedBy = "emails")
+    private List<Cliente> clientes;
+    @ManyToMany(mappedBy = "emails")
+    private List<Fornecedor> fornecedores;
 
     public Email() {
     }
@@ -47,6 +55,22 @@ public class Email {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
+    }
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<Cliente> clientes) {
+        this.clientes = clientes;
     }
 
     @Override
@@ -73,5 +97,4 @@ public class Email {
         }
         return true;
     }
-
 }
