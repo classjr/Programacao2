@@ -1,6 +1,7 @@
 package com.tads4.sistemasroupas.model;
 
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 /**
@@ -17,7 +17,6 @@ import javax.persistence.Table;
  * @author Lucas
  */
 @Entity
-@PrimaryKeyJoinColumn(name="idPessoa")
 @Table(name = "FORNECEDOR")
 public class Fornecedor {
 
@@ -31,15 +30,15 @@ public class Fornecedor {
     private String cnpj;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="fornecedor_has_email",  joinColumns = {@JoinColumn(name="id_fornecedor")},inverseJoinColumns = {@JoinColumn(name="id_email")})
-    private List<Email> emails;
+    private Set<Email> emails;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="fornecedor_has_enderecos",  joinColumns = {@JoinColumn(name="id_fornecedor")},inverseJoinColumns = {@JoinColumn(name="id_endereco")})
-    private List<Endereco> enderecos;
+    private Set<Endereco> enderecos;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="fornecedor_has_telefones",  joinColumns = {@JoinColumn(name="id_fornecedor")},inverseJoinColumns = {@JoinColumn(name="id_telefone")})
-    private List<Telefone> telefones;
+    private Set<Telefone> telefones;
 
-    public Fornecedor(String nome, String cnpj, List<Telefone> telefones, List<Endereco> enderecos, List<Email> emails) {
+    public Fornecedor(String nome, String cnpj, Set<Telefone> telefones, Set<Endereco> enderecos, Set<Email> emails) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.telefones = telefones;
@@ -74,28 +73,28 @@ public class Fornecedor {
         this.cnpj = cnpj;
     }
 
-    public List<Telefone> getTelefones() {
-        return telefones;
-    }
-
-    public void setTelefones(List<Telefone> telefones) {
-        this.telefones = telefones;
-    }
-
-    public List<Endereco> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
-    }
-
-    public List<Email> getEmails() {
+    public Set<Email> getEmails() {
         return emails;
     }
 
-    public void setEmails(List<Email> emails) {
+    public void setEmails(Set<Email> emails) {
         this.emails = emails;
+    }
+
+    public Set<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(Set<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    public Set<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(Set<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
     @Override
@@ -138,5 +137,4 @@ public class Fornecedor {
         }
         return true;
     }
-
 }

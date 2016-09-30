@@ -1,6 +1,6 @@
 package com.tads4.sistemasroupas.model;
 
-import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -20,19 +20,19 @@ public class Funcionario extends Pessoa {
     @Column(name = "FUNCAO")
     private String funcao;
     @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="funcionario_has_email",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_email")})
-    private List<Email> emails;
+    @JoinTable(name="funcionario_has_emails",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_email")})
+    private Set<Email> emails;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="funcionario_has_enderecos",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_endereco")})
-    private List<Endereco> enderecos;
+    private Set<Endereco> enderecos;
     @ManyToMany(cascade = {CascadeType.ALL})
     @JoinTable(name="funcionario_has_telefones",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_telefone")})
-    private List<Telefone> telefones;
+    private Set<Telefone> telefones;
     
     public Funcionario() {
     }
 
-    public Funcionario(String senha, String usuario, Double salario, String funcao, List<Email> emails, List<Endereco> enderecos, List<Telefone> telefones, String nome, String rg, String cpf, char sexo, String dataDeNascimento) {
+    public Funcionario(String senha, String usuario, Double salario, String funcao, Set<Email> emails, Set<Endereco> enderecos, Set<Telefone> telefones, String nome, String rg, String cpf, char sexo, String dataDeNascimento) {
         super(nome, rg, cpf, sexo, dataDeNascimento);
         this.senha = senha;
         this.usuario = usuario;
@@ -75,9 +75,33 @@ public class Funcionario extends Pessoa {
         this.funcao = funcao;
     }
 
+    public Set<Email> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(Set<Email> emails) {
+        this.emails = emails;
+    }
+
+    public Set<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(Set<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    public Set<Telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(Set<Telefone> telefones) {
+        this.telefones = telefones;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = super.hashCode();
         hash = 37 * hash + (this.senha != null ? this.senha.hashCode() : 0);
         hash = 37 * hash + (this.usuario != null ? this.usuario.hashCode() : 0);
         hash = 37 * hash + (this.salario != null ? this.salario.hashCode() : 0);

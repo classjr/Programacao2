@@ -5,12 +5,10 @@
  */
 package com.tads4.sistemasroupas.model;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -20,19 +18,19 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "EMAILS")
 public class Email {
-
+    /*mesmo que o email de um funcionario seja igual ao de um cliente, 
+    na tabela EMAILS deve existir uma tupla para cada. Caso exista somente uma tupla, ao remover o email do funcionario
+    removeria também o email de todos que usam aquele email. Ou seja, teremos tuplas com email repetido, porém com ID diferente.*/
+    /*as tabelas '%%%%_HAS_EMAIL' são as responsáveis pelo relacionamento N:N
+    /*no final das contas, a tabela EMAILS armazena todos os emails da aplicação, porém, existirão tuplas repetidas*/
+    
     @Id
     @GeneratedValue
     @Column(name = "ID", unique = true, nullable = false)
     private Integer id;
-    @Column(name = "EMAIL")
+    @Column(name = "EMAIL") 
     private String email;
-    @ManyToMany(mappedBy = "emails")
-    private List<Funcionario> funcionarios;
-    @ManyToMany(mappedBy = "emails")
-    private List<Cliente> clientes;
-    @ManyToMany(mappedBy = "emails")
-    private List<Fornecedor> fornecedores;
+    
 
     public Email() {
     }
@@ -57,21 +55,7 @@ public class Email {
         this.email = email;
     }
 
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
-    }
-
-    public void setFuncionarios(List<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
-    }
-
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
-    }
+    
 
     @Override
     public int hashCode() {

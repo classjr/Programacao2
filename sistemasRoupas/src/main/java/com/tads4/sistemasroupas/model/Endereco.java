@@ -5,12 +5,10 @@
  */
 package com.tads4.sistemasroupas.model;
 
-import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 /**
@@ -42,12 +40,7 @@ public class Endereco {
     private String complemento;
     @Column(name = "NUMERO")
     private String numero;
-    @ManyToMany(mappedBy = "enderecos")
-    private List<Funcionario> funcionarios;
-    @ManyToMany(mappedBy = "enderecos")
-    private List<Cliente> clientes;
-    @ManyToMany(mappedBy = "enderecos")
-    private List<Fornecedor> fornecedores;
+
 
     public Endereco(String pais, String estado, String cidade, String bairro, String cep, String rua, String complemento, String numero) {
         this.pais = pais;
@@ -133,30 +126,6 @@ public class Endereco {
 
     public void setNumero(String numero) {
         this.numero = numero;
-    }
-
-    public List<Funcionario> getFuncionarios() {
-        return funcionarios;
-    }
-
-    public void setFuncionarios(List<Funcionario> funcionarios) {
-        this.funcionarios = funcionarios;
-    }
-
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public void setClientes(List<Cliente> clientes) {
-        this.clientes = clientes;
-    }
-
-    public List<Fornecedor> getFornecedores() {
-        return fornecedores;
-    }
-
-    public void setFornecedores(List<Fornecedor> fornecedores) {
-        this.fornecedores = fornecedores;
     }
 
     @Override
