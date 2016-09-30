@@ -24,7 +24,7 @@ import org.hibernate.annotations.CascadeType;
  * @author junior
  */
 @Entity
-@Table(name="teacher", schema="aula")
+@Table(name="teacher")
 public class Teacher implements java.io.Serializable{
    
     @Id
@@ -38,7 +38,7 @@ public class Teacher implements java.io.Serializable{
     @Cascade(org.hibernate.annotations.CascadeType.ALL)
     private Collection<Loan> loans; 
 
-    @OneToOne(mappedBy = "Institute")
+    @OneToOne(mappedBy = "teacher")
     @Cascade(CascadeType.ALL)
     private Institute institute;
 

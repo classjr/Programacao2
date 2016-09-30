@@ -130,7 +130,8 @@ public class App
         teacher.setLoans(null);
         
         //Salvar institute
-        institute.setName("Ciencia da Computcao");
+        institute.setName("Ciencia da Computacao");
+        institute.setTeacher(teacher);
         teacher.setInstitute(institute);
         
         database.save(teacher);
