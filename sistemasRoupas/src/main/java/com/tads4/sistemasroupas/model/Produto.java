@@ -21,7 +21,7 @@ public class Produto {
     private String cor;
     private Integer codigoBarra;
     private String marca;
-    private List<Produto>Produtos;
+   
     
     //Contrutor
         public Produto(){
