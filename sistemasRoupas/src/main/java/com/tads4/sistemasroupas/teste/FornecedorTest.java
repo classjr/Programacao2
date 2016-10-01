@@ -5,18 +5,10 @@ import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Fornecedor;
 import com.tads4.sistemasroupas.model.Telefone;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 /**
@@ -24,36 +16,45 @@ import org.hibernate.cfg.Configuration;
  * @author Lucas
  */
 public class FornecedorTest {
-
-    public static void main(String[] args) {
+    
+    public void addFornecedor(Integer i) {
         Set<Telefone> telefone = new HashSet<Telefone>();
         Set<Endereco> endereco = new HashSet<Endereco>();
         Set<Email> email = new HashSet<Email>();
-
-        Telefone tel1 = new Telefone("99617-2234", "67", "Vivo");
-        Telefone tel2 = new Telefone("99217-2235", "67", "Claro");
+        
+        Telefone tel1 = new Telefone("00000-0000" + i, "67", "Vivo");
         telefone.add(tel1);
-        telefone.add(tel2);
-
-        Endereco end1 = new Endereco("Brasil", "Mato Grosso do Sul", "Nova Andradina", "São Vicente", "79750-000", "Avenida Ivinhema", "Esquina", "2003");
-        Endereco end2 = new Endereco("Nigéria", "Niger", "Negrolândia", "Niggas", "66666-000", "Avenida João Negrão", "Senzala", "666");
+        
+        Endereco end1 = new Endereco("pais" + i, "estado" + i, "cidade" + i, "bairro" + i, "cep" + i, "rua" + i, "complemento" + i, "numero" + i);
         endereco.add(end1);
-        endereco.add(end2);
-
-        Email ema1 = new Email("lucas@bol.com.br");
-        Email ema2 = new Email("nike@niggas.com.br");
+        
+        Email ema1 = new Email("email@email.com" + i);
         email.add(ema1);
-        email.add(ema2);
-
-        Fornecedor for1 = new Fornecedor("Lucas", "000.000.000.0", telefone, endereco, email);
-
+        
+        Fornecedor for1 = new Fornecedor("Fulano" + i, "000.000.000.0" + i, telefone, endereco, email);
+        
         SessionFactory factory;
-
+        
         try {
             factory = new Configuration().configure().buildSessionFactory();
         } catch (Throwable error) {
             throw new ExceptionInInitializerError();
         }
-
+        
+        try {
+            Session session = factory.openSession();
+            Transaction banco = session.beginTransaction();
+            session.save(for1);
+            banco.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Erro ao conectar com banco!: " + ex.getMessage());
+        }
+        
+    }
+    
+    public static void main(String[] args) {
+        FornecedorTest a = new FornecedorTest();
+        a.criaFornecedor(5);
     }
 }

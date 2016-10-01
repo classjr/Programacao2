@@ -4,6 +4,10 @@ import com.tads4.sistemasroupas.model.*;
 import com.tads4.sistemasroupas.model.Produto;
 import java.util.HashSet;
 import java.util.Set;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 
 /**
  *
@@ -31,6 +35,33 @@ public class Teste {
         Cliente cliente = new Cliente(10d, "00/00/000" + i, "Nome" + i, "00" + i, cpf, 'M', "00/00/000" + i, emails, enderecos, telefones);
 
         return cliente;
+    }
+
+    /**
+     *
+     * @param i Número qualquer, para ser concatenado com conteúdo default do
+     * método.
+     * @return Retorna um objeto do tipo Fornecedor com conteúdo default do
+     * método concatenado com o Integer do parâmetro.
+     */
+    public static Fornecedor addFornecedor(Integer i) {
+        Set<Telefone> telefone = new HashSet<Telefone>();
+        Set<Endereco> endereco = new HashSet<Endereco>();
+        Set<Email> email = new HashSet<Email>();
+
+        Telefone tel1 = new Telefone("00000-0000" + i, "67", "Vivo");
+        telefone.add(tel1);
+
+        Endereco end1 = new Endereco("pais" + i, "estado" + i, "cidade" + i, "bairro" + i, "cep" + i, "rua" + i, "complemento" + i, "numero" + i);
+        endereco.add(end1);
+
+        Email ema1 = new Email("email@email.com" + i);
+        email.add(ema1);
+
+        Fornecedor for1 = new Fornecedor("Fulano" + i, "000.000.000.0" + i, telefone, endereco, email);
+
+        return for1;
+
     }
 
     public static Produto addProduto(String tipo, Double valor, String tamanho, String cor, String codigoBarra, String marca) {
