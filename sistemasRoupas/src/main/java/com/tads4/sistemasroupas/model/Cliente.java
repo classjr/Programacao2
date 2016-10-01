@@ -208,23 +208,23 @@ public class Cliente extends Pessoa {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }*/
         
-        Venda venda = new Venda(Calendar.getInstance(), clienta);
+       // Venda venda = new Venda(Calendar.getInstance(), clienta);
         
         Set<ItemVenda> itens = new HashSet<ItemVenda>();
-        ItemVenda item1 = new ItemVenda(1, 15d, Calendar.getInstance(), pro1, venda);
+       // ItemVenda item1 = new ItemVenda(1, 15d, Calendar.getInstance(), pro1, venda);
         /*ItemVenda item2 = new ItemVenda(2, 16d, Calendar.getInstance(), pro2);
         ItemVenda item3 = new ItemVenda(3, 17d, Calendar.getInstance(), pro3);
         itens.add(item3);
         itens.add(item2);*/
-        itens.add(item1);
+     //   itens.add(item1);
         
-        venda.setItemVenda(itens);
+     //   venda.setItemVenda(itens);
         
         Long id3 = null;
         try {
             Session session = factory.openSession();
             Transaction tx = session.beginTransaction();
-            id3 = (Long) session.save(venda);
+//            id3 = (Long) session.save(venda);
             tx.commit();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());

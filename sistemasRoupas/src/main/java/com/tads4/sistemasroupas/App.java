@@ -1,6 +1,5 @@
 package com.tads4.sistemasroupas;
 
-import ExemplosAula.Insercao;
 import ExemplosAula.hibernate.HibernateUtils;
 import ExemplosAula.hibernate.Institute;
 import ExemplosAula.hibernate.Loan;
