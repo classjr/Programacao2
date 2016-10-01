@@ -5,27 +5,65 @@
  */
 package com.tads4.sistemasroupas.model;
 
+import ExemplosAula.hibernate.Loan;
+import java.io.Serializable;
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
+import org.hibernate.annotations.Fetch;
 
 /**
  *
  * @author alison
  */
 //Atributos
-public class Produto {
+@Entity
+@Table(name = "produto")
+public class Produto implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
+    @Column(name = "tipo", nullable = false, length = 50)
     private String tipo;
+    @Column(name = "valor", nullable = false)
     private Double valor;
+    @Column(name = "tamanho", nullable = false, length = 5)
     private String tamanho;
+    @Column(name = "cor", nullable = false, length = 30)
     private String cor;
-    private Integer codigoBarra;
+    @Column(name = "codigoBarra", nullable = false, length = 50)
+    private String codigoBarra;
+    @Column(name = "marca", nullable = false, length = 50)
     private String marca;
-   
-    
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_itemVenda", insertable = true, updatable = true)
+    @Fetch(org.hibernate.annotations.FetchMode.JOIN)
+    @Cascade(CascadeType.SAVE_UPDATE)
+    private ItemVenda itemVenda;
+
     //Contrutor
-        public Produto(){
-        
+    public Produto() {
+
+    }
+
+    public ItemVenda getItemVenda() {
+        return itemVenda;
+    }
+
+    public void setItemVenda(ItemVenda itemVenda) {
+        this.itemVenda = itemVenda;
     }
 
     public Integer getId() {
@@ -35,7 +73,7 @@ public class Produto {
     public void setId(Integer id) {
         this.id = id;
     }
-    
+
     public String getTipo() {
         return tipo;
     }
@@ -68,11 +106,11 @@ public class Produto {
         this.cor = cor;
     }
 
-    public Integer getCodigoBarra() {
+    public String getCodigoBarra() {
         return codigoBarra;
     }
 
-    public void setCodigoBarra(Integer codigoBarra) {
+    public void setCodigoBarra(String codigoBarra) {
         this.codigoBarra = codigoBarra;
     }
 
@@ -83,7 +121,7 @@ public class Produto {
     public void setMarca(String marca) {
         this.marca = marca;
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;
@@ -93,7 +131,7 @@ public class Produto {
         hash = 17 * hash + Objects.hashCode(this.cor);
         hash = 17 * hash + Objects.hashCode(this.codigoBarra);
         hash = 17 * hash + Objects.hashCode(this.marca);
-        
+
         return hash;
     }
 
@@ -126,7 +164,5 @@ public class Produto {
         }
         return true;
     }
-    
-    
-    
+
 }
