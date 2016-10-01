@@ -1,4 +1,4 @@
-package com.tads4.sistemaroupas.teste;
+package com.tads4.sistemasroupas.teste;
 
 import com.tads4.sistemasroupas.model.Email;
 import com.tads4.sistemasroupas.model.Endereco;
@@ -23,7 +23,7 @@ import org.hibernate.cfg.Configuration;
  *
  * @author Lucas
  */
-public class Testes {
+public class FornecedorTest {
 
     public static void main(String[] args) {
         Set<Telefone> telefone = new HashSet<Telefone>();
