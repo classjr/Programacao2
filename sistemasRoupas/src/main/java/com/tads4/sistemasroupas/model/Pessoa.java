@@ -6,7 +6,7 @@ import javax.persistence.Entity;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public class Pessoa implements Serializable {
+public abstract class Pessoa implements Serializable {
 
     @Id
     @GeneratedValue
@@ -16,7 +16,7 @@ public class Pessoa implements Serializable {
     private String nome;
     @Column(name = "RG")
     private String rg;
-    @Column(name = "CPF")
+    @Column(name = "CPF", unique = true)
     private String cpf;
     @Column(name = "SEXO")
     private char sexo;

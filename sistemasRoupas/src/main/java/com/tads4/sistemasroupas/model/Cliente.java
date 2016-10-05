@@ -8,8 +8,10 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "CLIENTES")
 public class Cliente extends Pessoa {
 
     @Column(name = "RENDA")
