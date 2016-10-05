@@ -2,7 +2,7 @@ package com.tads4.sistemasroupas.teste;
 
 import com.tads4.sistemasroupas.model.*;
 import com.tads4.sistemasroupas.model.Produto;
-import com.tads4.sistemasroupas.persistence.Crud;
+import com.tads4.sistemasroupas.model.persistence.Crud;
 import java.util.HashSet;
 import java.util.Set;
 

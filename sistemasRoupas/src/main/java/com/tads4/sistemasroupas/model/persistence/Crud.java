@@ -1,4 +1,4 @@
-package com.tads4.sistemasroupas.persistence;
+package com.tads4.sistemasroupas.model.persistence;
 
 import java.util.List;
 import org.hibernate.Query;
