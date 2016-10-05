@@ -4,6 +4,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -27,17 +28,17 @@ public class Fornecedor {
     private String nome;
     @Column(name = "CNPJ")
     private String cnpj;
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinTable(name = "fornecedor_has_email", joinColumns = {
         @JoinColumn(name = "id_fornecedor")}, inverseJoinColumns = {
         @JoinColumn(name = "id_email")})
     private Set<Email> emails;
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinTable(name = "fornecedor_has_enderecos", joinColumns = {
         @JoinColumn(name = "id_fornecedor")}, inverseJoinColumns = {
         @JoinColumn(name = "id_endereco")})
     private Set<Endereco> enderecos;
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinTable(name = "fornecedor_has_telefones", joinColumns = {
         @JoinColumn(name = "id_fornecedor")}, inverseJoinColumns = {
         @JoinColumn(name = "id_telefone")})

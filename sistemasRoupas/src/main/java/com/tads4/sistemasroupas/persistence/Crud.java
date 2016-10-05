@@ -30,6 +30,7 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             id = (Integer) session.save(object);
             tx.commit();
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
@@ -43,6 +44,7 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             session.delete(object);
             tx.commit();
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
@@ -54,6 +56,7 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             session.merge(object);
             tx.commit();
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
@@ -65,6 +68,7 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             session.update(object);
             tx.commit();
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
@@ -77,6 +81,7 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             result = session.get(nameClass, id);
             tx.commit();
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
@@ -96,6 +101,7 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             object = session.createQuery(sql).list();
             tx.commit();
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
@@ -110,7 +116,7 @@ public class Crud {
             Query namedQuery = session.getNamedQuery(method).setString(type, value);
             tx.commit();
             object = namedQuery.list();
-
+            session.close();
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }

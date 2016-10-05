@@ -4,10 +4,10 @@ import javax.persistence.Column;
 import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-
 
 @Entity
 public class Cliente extends Pessoa {
@@ -16,16 +16,22 @@ public class Cliente extends Pessoa {
     private Double renda;
     @Column(name = "DATADECADASTRO")
     private String dataDeCadastro;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="cliente_has_emails",  joinColumns = {@JoinColumn(name="id_cliente")},inverseJoinColumns = {@JoinColumn(name="id_email")})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "cliente_has_emails", joinColumns = {
+        @JoinColumn(name = "id_cliente")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_email")})
     private Set<Email> emails;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="cliente_has_enderecos",  joinColumns = {@JoinColumn(name="id_cliente")},inverseJoinColumns = {@JoinColumn(name="id_endereco")})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "cliente_has_enderecos", joinColumns = {
+        @JoinColumn(name = "id_cliente")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_endereco")})
     private Set<Endereco> enderecos;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="cliente_has_telefones",  joinColumns = {@JoinColumn(name="id_cliente")},inverseJoinColumns = {@JoinColumn(name="id_telefone")})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "cliente_has_telefones", joinColumns = {
+        @JoinColumn(name = "id_cliente")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_telefone")})
     private Set<Telefone> telefones;
-    
+
     public Cliente() {
     }
 

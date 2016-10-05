@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.FetchType;
 
 @Entity
 public class Funcionario extends Pessoa {
@@ -19,16 +20,22 @@ public class Funcionario extends Pessoa {
     private Double salario;
     @Column(name = "FUNCAO")
     private String funcao;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="funcionario_has_emails",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_email")})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "funcionario_has_emails", joinColumns = {
+        @JoinColumn(name = "id_funcionario")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_email")})
     private Set<Email> emails;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="funcionario_has_enderecos",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_endereco")})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "funcionario_has_enderecos", joinColumns = {
+        @JoinColumn(name = "id_funcionario")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_endereco")})
     private Set<Endereco> enderecos;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="funcionario_has_telefones",  joinColumns = {@JoinColumn(name="id_funcionario")},inverseJoinColumns = {@JoinColumn(name="id_telefone")})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @JoinTable(name = "funcionario_has_telefones", joinColumns = {
+        @JoinColumn(name = "id_funcionario")}, inverseJoinColumns = {
+        @JoinColumn(name = "id_telefone")})
     private Set<Telefone> telefones;
-    
+
     public Funcionario() {
     }
 
