@@ -6,6 +6,7 @@ import ExemplosAula.hibernate.Loan;
 import ExemplosAula.hibernate.Products;
 import ExemplosAula.hibernate.Provider;
 import ExemplosAula.hibernate.Teacher;
+import com.tads4.sistemasroupas.teste.Teste;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -23,7 +24,12 @@ public class App
         
         //onetomay();
         //manytomany();
-        onetoone();
+        Teste teste = new Teste();
+        //teste.addCliente(0, cpf);
+        //teste.addFornecedor(Integer.SIZE);
+        //teste.addFuncionario(0, cpf);
+        teste.addProduto("Calca", 50.00, "PP", "Azul", "000.000.120", "rangler");
+        //onetoone();
         System.out.println("Salvando no Banco !!!");
         
     }

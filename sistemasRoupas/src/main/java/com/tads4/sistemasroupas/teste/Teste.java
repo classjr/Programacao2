@@ -67,7 +67,7 @@ public class Teste {
      * @return Retorna um objeto do tipo Fornecedor com conteúdo default do
      * método concatenado com o Integer do parâmetro.
      */
-    public static Fornecedor addFornecedor(Integer i) {
+    public Fornecedor addFornecedor(Integer i) {
         Set<Telefone> telefone = new HashSet<Telefone>();
         Set<Endereco> endereco = new HashSet<Endereco>();
         Set<Email> email = new HashSet<Email>();
@@ -92,22 +92,23 @@ public class Teste {
      * @param tipo para gravar o tipo do produto ex: calça jeans, blusa, e etc;
      * @param valor para preço do produto;
      * @param tamanho para gravar as medidas do produto ex: P/M/G...;
-     * @param cor do produto;
+     * @param cor do produto ex: Azul, preto, cinza...;
      * @param codigoBarra codigo de barra do produto;
      * @param marca para gravar marca ex: Nike, Adidas, Hering...
      * @return objeto do tipo Produto.
      */
     
-    public static Produto addProduto(String tipo, Double valor, String tamanho, String cor, String codigoBarra, String marca) {
+    public  void addProduto(String tipo, Double valor, String tamanho, String cor, String codigoBarra, String marca) {
         Produto produto = new Produto();
-
+        Crud crud = new Crud();
         produto.setTipo(tipo);
         produto.setValor(valor);
         produto.setTamanho(tamanho);
         produto.setCor(cor);
         produto.setCodigoBarra(codigoBarra);
         produto.setMarca(marca);
-
-        return produto;
+        
+        crud.insert(produto);
+        
     }
 }
