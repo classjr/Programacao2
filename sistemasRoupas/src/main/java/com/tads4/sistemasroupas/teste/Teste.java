@@ -86,7 +86,18 @@ public class Teste {
         return for1;
 
     }
-
+    
+    /***
+     * 
+     * @param tipo para gravar o tipo do produto ex: calça jeans, blusa, e etc;
+     * @param valor para preço do produto;
+     * @param tamanho para gravar as medidas do produto ex: P/M/G...;
+     * @param cor do produto;
+     * @param codigoBarra codigo de barra do produto;
+     * @param marca para gravar marca ex: Nike, Adidas, Hering...
+     * @return objeto do tipo Produto.
+     */
+    
     public static Produto addProduto(String tipo, Double valor, String tamanho, String cor, String codigoBarra, String marca) {
         Produto produto = new Produto();
 
