@@ -6,6 +6,8 @@ import ExemplosAula.hibernate.Loan;
 import ExemplosAula.hibernate.Products;
 import ExemplosAula.hibernate.Provider;
 import ExemplosAula.hibernate.Teacher;
+import ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClAluno;
+import ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClProfessor;
 import com.tads4.sistemasroupas.model.Cliente;
 import com.tads4.sistemasroupas.teste.Teste;
 import java.util.Collection;
@@ -44,8 +46,9 @@ public class App {
         //teste.atualizarCliente(cliente);
         //teste.atualizarFuncionario(funcionario);
 
-        teste.addProduto("Calca", 50.00, "PP", "Azul", "000.000.120", "rangler");
+        //teste.addProduto("Calca", 50.00, "PP", "Azul", "000.000.120", "rangler");
         //onetoone();
+        inheritancePerClass();
         System.out.println("Salvando no Banco !!!");
 
     }
@@ -156,5 +159,28 @@ public class App {
         database.save(teacher);
         database.close();
 
+    }
+    
+    public static void inheritancePerClass(){
+        
+        HibernateUtils database = new HibernateUtils();
+        ClAluno aluno = new ClAluno();
+        ClProfessor professor = new ClProfessor();
+        
+        //Salvando  um aluno
+        aluno.setNome("Mariana Carla");
+        aluno.setCpf("000.000.000-00");
+        aluno.setRegistroAcademico("000001");
+        database.save(aluno);
+        
+        //Salvanco um professor
+        professor.setNome("Juliana Alcantara");
+        professor.setCpf("111.111.111-11");
+        professor.setDepartamento("Ciencia da Computacao");
+        database.save(professor);
+        
+        database.close();
+        
+        
     }
 }
