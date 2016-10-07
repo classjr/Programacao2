@@ -3,24 +3,31 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ExemplosAula.hibernate.herancao.tabelaclasseconcreta;
+package ExemplosAula.hibernate.herancao.tabelaporhierarquia;
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorType;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Table;
 
 /**
  *
  * @author junior
  */
-
-@MappedSuperclass
-public class ClPessoa implements java.io.Serializable{
-    
-    @Id
+@Entity
+@Table(name="clpessoaperhierarquia")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="tipo_Pessoa", discriminatorType = DiscriminatorType.CHAR)
+@DiscriminatorValue("P")
+public class ClPessoah implements java.io.Serializable{
+     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     
@@ -49,9 +56,9 @@ public class ClPessoa implements java.io.Serializable{
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + (this.id != null ? this.id.hashCode() : 0);
-        hash = 67 * hash + (this.nome != null ? this.nome.hashCode() : 0);
-        hash = 67 * hash + (this.cpf != null ? this.cpf.hashCode() : 0);
+        hash = 73 * hash + (this.id != null ? this.id.hashCode() : 0);
+        hash = 73 * hash + (this.nome != null ? this.nome.hashCode() : 0);
+        hash = 73 * hash + (this.cpf != null ? this.cpf.hashCode() : 0);
         return hash;
     }
 
@@ -66,7 +73,7 @@ public class ClPessoa implements java.io.Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ClPessoa other = (ClPessoa) obj;
+        final ClPessoah other = (ClPessoah) obj;
         if ((this.nome == null) ? (other.nome != null) : !this.nome.equals(other.nome)) {
             return false;
         }
@@ -78,7 +85,6 @@ public class ClPessoa implements java.io.Serializable{
         }
         return true;
     }
-    
     
     
 }

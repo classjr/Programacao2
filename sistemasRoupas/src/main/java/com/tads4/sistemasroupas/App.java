@@ -8,6 +8,7 @@ import ExemplosAula.hibernate.Provider;
 import ExemplosAula.hibernate.Teacher;
 import ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClAluno;
 import ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClProfessor;
+import ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClAlunoh;
 import com.tads4.sistemasroupas.model.Cliente;
 import com.tads4.sistemasroupas.teste.Teste;
 import java.util.Collection;
@@ -48,7 +49,8 @@ public class App {
 
         //teste.addProduto("Calca", 50.00, "PP", "Azul", "000.000.120", "rangler");
         //onetoone();
-        inheritancePerClass();
+        //inheritancePerClass();
+        //inheritancePerUniqueTable();
         System.out.println("Salvando no Banco !!!");
 
     }
@@ -171,16 +173,27 @@ public class App {
         aluno.setNome("Mariana Carla");
         aluno.setCpf("000.000.000-00");
         aluno.setRegistroAcademico("000001");
+        
         database.save(aluno);
         
         //Salvanco um professor
         professor.setNome("Juliana Alcantara");
         professor.setCpf("111.111.111-11");
         professor.setDepartamento("Ciencia da Computacao");
-        database.save(professor);
-        
+        database.save(professor); 
         database.close();
+    }
+    
+    public static void inheritancePerUniqueTable(){
+        HibernateUtils database = new HibernateUtils();
+        ClAlunoh aluno = new ClAlunoh();
         
+        aluno.setNome("Dayana Marques");
+        aluno.setCpf("222.222.222-22");
+        aluno.setRegistroAcademico("1111.11");
+        
+        database.save(aluno);
+        database.close();
         
     }
 }
