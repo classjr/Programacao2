@@ -28,7 +28,7 @@ public class ItemVenda implements Serializable {
     @Column(name ="DATA_ALTERACAO")
     private Calendar dataItemVenda;
     @OneToMany(mappedBy = "Produtos")
-    private Set<Produto> produto
+    private Set<Produto> produto;
 
     public ItemVenda() {
     }
