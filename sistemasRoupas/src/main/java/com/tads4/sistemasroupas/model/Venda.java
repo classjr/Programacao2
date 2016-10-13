@@ -41,8 +41,8 @@ public class Venda implements Serializable{
     private Calendar dataVenda;
     @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
     @JoinTable(name = "CLIENTES", joinColumns = {
-        @JoinColumn(name = "ID_CLIENTE")}, inverseJoinColumns = {
-        @JoinColumn(name = "ID")})
+    @JoinColumn(name = "ID_CLIENTE")}, inverseJoinColumns = {
+    @JoinColumn(name = "ID")})
     private Set<Cliente> Cliente;
 
     public Venda() {
