@@ -43,9 +43,10 @@ public class Venda implements Serializable{
     public Venda() {
     }
 
-    public Venda(Calendar dataVenda, Set<Cliente> Cliente) {        
+    public Venda(Calendar dataVenda, Cliente cliente, Funcionario funcionario) {
         this.dataVenda = dataVenda;
-        this.Cliente = Cliente;
+        this.cliente = cliente;
+        this.funcionario = funcionario;
     }
 
     public long getId() {
@@ -64,20 +65,29 @@ public class Venda implements Serializable{
         this.dataVenda = dataVenda;
     }
 
-    public Set<Cliente> getCliente() {
-        return Cliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setCliente(Set<Cliente> Cliente) {
-        this.Cliente = Cliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Funcionario getFuncionario() {
+        return funcionario;
+    }
+
+    public void setFuncionario(Funcionario funcionario) {
+        this.funcionario = funcionario;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 53 * hash + (int) (this.id ^ (this.id >>> 32));
-        hash = 53 * hash + (this.dataVenda != null ? this.dataVenda.hashCode() : 0);
-        hash = 53 * hash + (this.Cliente != null ? this.Cliente.hashCode() : 0);
+        int hash = 7;
+        hash = 59 * hash + (int) (this.id ^ (this.id >>> 32));
+        hash = 59 * hash + (this.dataVenda != null ? this.dataVenda.hashCode() : 0);
+        hash = 59 * hash + (this.cliente != null ? this.cliente.hashCode() : 0);
+        hash = 59 * hash + (this.funcionario != null ? this.funcionario.hashCode() : 0);
         return hash;
     }
 
@@ -99,7 +109,10 @@ public class Venda implements Serializable{
         if (this.dataVenda != other.dataVenda && (this.dataVenda == null || !this.dataVenda.equals(other.dataVenda))) {
             return false;
         }
-        if (this.Cliente != other.Cliente && (this.Cliente == null || !this.Cliente.equals(other.Cliente))) {
+        if (this.cliente != other.cliente && (this.cliente == null || !this.cliente.equals(other.cliente))) {
+            return false;
+        }
+        if (this.funcionario != other.funcionario && (this.funcionario == null || !this.funcionario.equals(other.funcionario))) {
             return false;
         }
         return true;
@@ -107,9 +120,9 @@ public class Venda implements Serializable{
 
     @Override
     public String toString() {
-        return "Venda{" + "id=" + id + ", dataVenda=" + dataVenda + ", Cliente=" + Cliente + '}';
+        return "Venda{" + "dataVenda=" + dataVenda + ", cliente=" + cliente + ", funcionario=" + funcionario + '}';
     }
-
-  
     
-}
+    
+
+    }
