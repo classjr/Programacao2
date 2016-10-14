@@ -6,21 +6,9 @@
 package com.tads4.sistemasroupas.model;
 
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.List;
-import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
+import java.util.*;
 import javax.persistence.*;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+
 
 
 
@@ -39,11 +27,18 @@ public class Venda implements Serializable{
     @Temporal(TemporalType.TIMESTAMP )
     @Column(name="DATA_VENDA")
     private Calendar dataVenda;
-    @ManyToOne(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinTable(name = "CLIENTES", joinColumns = {
         @JoinColumn(name = "ID_CLIENTE")}, inverseJoinColumns = {
         @JoinColumn(name = "ID")})
-    private Set<Cliente> Cliente;
+    private Cliente cliente;
+    
+    @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    @JoinTable(name = "FUNCIONARIOS", joinColumns = {
+        @JoinColumn(name = "ID_FUNCIONARIO")}, inverseJoinColumns = {
+        @JoinColumn(name = "ID")})
+    private Funcionario funcionario;
 
     public Venda() {
     }
