@@ -18,7 +18,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "FORNECEDORES")
-public class Fornecedor {
+public class Fornecedor implements java.io.Serializable {
 
     @Id
     @GeneratedValue
