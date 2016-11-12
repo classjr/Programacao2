@@ -6,7 +6,7 @@
     <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
     <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/aula</property>
     <property name="hibernate.connection.username">root</property>
-    <property name="hibernate.connection.password"></property>
+    <property name="hibernate.connection.password">tads2016</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
     
@@ -17,13 +17,13 @@
     <mapping class="ExemplosAula.hibernate.Products" />
     <mapping class="ExemplosAula.hibernate.Loan" />
     <mapping class="ExemplosAula.hibernate.Provider" />
-    <mapping class="ExemplosAula.hibernate.Institute" /> -->
+    <mapping class="ExemplosAula.hibernate.Institute" /> 
     <mapping class="ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClProfessor" />
     <mapping class="ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClAluno" />
     <mapping class="ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClPessoa" /> 
     <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClAlunoh" />
     <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClPessoah" />
-    <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClProfessorh" />
+    <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClProfessorh" />-->
     
     <!-- Mapeamento do projeto -->
     <mapping class="com.tads4.sistemasroupas.model.Cliente" />
@@ -31,11 +31,12 @@
     <mapping class="com.tads4.sistemasroupas.model.Endereco" />
     <mapping class="com.tads4.sistemasroupas.model.Fornecedor" />
     <mapping class="com.tads4.sistemasroupas.model.Funcionario" />
-   <!-- <mapping class="com.tads4.sistemasroupas.model.ItemVenda" /> -->
+    <mapping class="com.tads4.sistemasroupas.model.ItemVenda" /> 
     <mapping class="com.tads4.sistemasroupas.model.Pessoa" />
-    <!--<mapping class="com.tads4.sistemasroupas.model.Produto" /> -->
+    <mapping class="com.tads4.sistemasroupas.model.Produto" /> 
     <mapping class="com.tads4.sistemasroupas.model.Telefone" />
-    <!--<mapping class="com.tads4.sistemasroupas.model.Venda" />-->
+    <mapping class="com.tads4.sistemasroupas.model.Venda" />
+    <!--<mapping class="com.tads4.sistemasroupas.model.CTeste"/>-->
     
   </session-factory>
 </hibernate-configuration>

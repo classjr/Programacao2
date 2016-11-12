@@ -7,9 +7,8 @@ package com.tads4.sistemasroupas.model;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.List;
+import java.util.Date;
 import java.util.Set;
-import javax.annotation.Generated;
 import javax.persistence.*;
 /**
  *
@@ -21,14 +20,13 @@ public class ItemVenda implements Serializable {
     @Id
     @GeneratedValue
     @Column(name="ID")
-    private int codigoItemVenda;
+    private Integer codigoItemVenda;
     @Column(name="QUANTIDADE")
-    private int quantidade;
+    private Integer quantidade;
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name ="DATA_ALTERACAO")
     private Calendar dataItemVenda;
-    @OneToMany(mappedBy = "Produtos")
-    
+    @OneToMany(mappedBy = "Produtos")   
     private Set<Produto> produto;
 
     public ItemVenda() {
