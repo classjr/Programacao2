@@ -17,8 +17,8 @@ import javax.persistence.Table;
  * @author Lucas
  */
 @Entity
-@Table(name = "FORNECEDOR")
-public class Fornecedor {
+@Table(name = "FORNECEDORES")
+public class Fornecedor implements java.io.Serializable {
 
     @Id
     @GeneratedValue
@@ -29,19 +29,19 @@ public class Fornecedor {
     @Column(name = "CNPJ")
     private String cnpj;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinTable(name = "fornecedor_has_email", joinColumns = {
-        @JoinColumn(name = "id_fornecedor")}, inverseJoinColumns = {
-        @JoinColumn(name = "id_email")})
+    @JoinTable(name = "FORNECEDORES_HAS_EMAILS", joinColumns = {
+        @JoinColumn(name = "ID_FORNECEDORES")}, inverseJoinColumns = {
+        @JoinColumn(name = "ID_EMAIL")})
     private Set<Email> emails;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinTable(name = "fornecedor_has_enderecos", joinColumns = {
-        @JoinColumn(name = "id_fornecedor")}, inverseJoinColumns = {
-        @JoinColumn(name = "id_endereco")})
+    @JoinTable(name = "FORNECEDORES_HAS_ENDERECOS", joinColumns = {
+        @JoinColumn(name = "ID_FORNECEDORES")}, inverseJoinColumns = {
+        @JoinColumn(name = "ID_ENDERECO")})
     private Set<Endereco> enderecos;
     @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
-    @JoinTable(name = "fornecedor_has_telefones", joinColumns = {
-        @JoinColumn(name = "id_fornecedor")}, inverseJoinColumns = {
-        @JoinColumn(name = "id_telefone")})
+    @JoinTable(name = "FORNECEDORES_HAS_TELEFONES", joinColumns = {
+        @JoinColumn(name = "ID_FORNECEDORES")}, inverseJoinColumns = {
+        @JoinColumn(name = "ID_TELEFONE")})
     private Set<Telefone> telefones;
 
     public Fornecedor(String nome, String cnpj, Set<Telefone> telefones, Set<Endereco> enderecos, Set<Email> emails) {

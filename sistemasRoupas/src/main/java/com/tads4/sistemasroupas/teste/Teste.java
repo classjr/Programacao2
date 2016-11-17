@@ -166,7 +166,7 @@ public class Teste {
      * @return
      */
     public Set<Telefone> removeTelefone(String numero, Set<Telefone> telefones) {
-       ArrayList<Telefone> telefone_remove = new ArrayList<Telefone>();
+        ArrayList<Telefone> telefone_remove = new ArrayList<Telefone>();
 
         for (Telefone telefone : telefones) {
             if (telefone.getNumero().equals(numero)) {
@@ -188,11 +188,12 @@ public class Teste {
      * @return
      */
     public Set<Endereco> removeEndereco(String numero, Set<Endereco> enderecos) {
-       ArrayList<Endereco> endereco_remove = new ArrayList<Endereco>();
+        ArrayList<Endereco> endereco_remove = new ArrayList<Endereco>();
 
         for (Endereco endereco : enderecos) {
             if (endereco.getNumero().equals(numero)) {
-                endereco_remove.add(endereco);            }
+                endereco_remove.add(endereco);
+            }
         }
         for (Endereco endereco : endereco_remove) {
             enderecos.remove(endereco);
@@ -243,29 +244,61 @@ public class Teste {
 
     /**
      *
-     * @param i Número qualquer, para ser concatenado com conteúdo default do
-     * método.
+     * @param i Recebe um inteiro como parametro para criação de um fornecedor
+     * no banco, não deve-se repetir esse numero;
      * @return Retorna um objeto do tipo Fornecedor com conteúdo default do
      * método concatenado com o Integer do parâmetro.
      */
-    public Fornecedor addFornecedor(Integer i) {
+    public void addFornecedor(Integer i) {
         Set<Telefone> telefone = new HashSet<Telefone>();
         Set<Endereco> endereco = new HashSet<Endereco>();
         Set<Email> email = new HashSet<Email>();
 
-        Telefone tel1 = new Telefone("00000-0000" + i, "67", "Vivo");
+        Telefone tel1 = new Telefone("00000-0000" + i, "67", "Fornecedor");
         telefone.add(tel1);
 
-        Endereco end1 = new Endereco("pais" + i, "estado" + i, "cidade" + i, "bairro" + i, "cep" + i, "rua" + i, "complemento" + i, "numero" + i);
+        Endereco end1 = new Endereco("Fornecedor pais" + i, "Fornecedor estado" + i, "Fornecedor cidade" + i, "Fornecedor bairro" + i, "Fornecedor cep" + i, "Fornecedor rua" + i, "Fornecedor complemento" + i, "Fornecedor numero" + i);
         endereco.add(end1);
 
-        Email ema1 = new Email("email@email.com" + i);
+        Email ema1 = new Email("Fornecedor@Fornecedor.com" + i);
         email.add(ema1);
 
-        Fornecedor for1 = new Fornecedor("Fulano" + i, "000.000.000.0" + i, telefone, endereco, email);
+        Fornecedor for1 = new Fornecedor("Fornecedor" + i, "000.000.000.0" + i, telefone, endereco, email);
 
-        return for1;
+        Crud crud = new Crud();
+        crud.insert(for1);
 
+    }
+
+    /**
+     *
+     * @param fornecedor Recebe um objeto do tipo fornecedor como parametro,
+     * objeto esse com as devidas alterações feitas para update no banco.
+     */
+    public void atualizarFornecedor(Fornecedor fornecedor) {
+        Crud crud = new Crud();
+        crud.update(fornecedor);
+    }
+
+    /**
+     *
+     * @param id Recebe o id do fornecedor como parametro para busca;
+     * @return Retorna um objeto do tipo fornecedor com o conteúdo encontrado no
+     * banco caso não encontre, retorno NULL;
+     */
+    public Fornecedor buscaFornecedor(int id) {
+        Crud crud = new Crud();
+        return (Fornecedor) crud.searchId(id, Fornecedor.class);
+    }
+
+    /**
+     *
+     * @param id Recebe o id do fornecedor como parametro para remoção;
+     */
+    public void removeFornecedor(int id) {
+        Crud crud = new Crud();
+        Fornecedor f = buscaFornecedor(id);
+        crud.remove(f);
     }
 
     /**
