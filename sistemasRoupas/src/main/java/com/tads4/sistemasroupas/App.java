@@ -11,6 +11,7 @@ import ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClAluno;
 import ExemplosAula.hibernate.herancao.tabelaclasseconcreta.ClProfessor;
 import ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClAlunoh;
 import com.tads4.sistemasroupas.model.Cliente;
+import com.tads4.sistemasroupas.model.Fornecedor;
 import com.tads4.sistemasroupas.teste.Teste;
 import java.util.Collection;
 import java.util.Date;
@@ -29,8 +30,15 @@ public class App {
         //onetomay();
         //manytomany();
         //Teste teste = new Teste();
+        Teste teste = new Teste();
+
+        //teste.addFornecedor(23);
+        //Fornecedor a;
+        //a = teste.buscaFornecedor(1);
+        //teste.atualizarFornecedor(a);
+        //teste.removeFornecedor(1);
+        //teste.atualizarFornecedor(a);
         //Cliente cliente = teste.addCliente(5, "000.000.000.01");
-        //teste.addFornecedor(Integer.SIZE);
         //teste.addFuncionario(0, cpf);
         //teste.addCliente(0, cpf);
         //teste.addEmails(0);
@@ -47,7 +55,6 @@ public class App {
         //teste.removeTelefone("numero: 1", cliente.getTelefones());
         //teste.atualizarCliente(cliente);
         //teste.atualizarFuncionario(funcionario);
-
         //teste.addProduto("Calca", 50.00, "PP", "Azul", "000.000.120", "rangler");
         //onetoone();
         //inheritancePerClass();
@@ -165,38 +172,38 @@ public class App {
         database.close();
 
     }
-    
-    public static void inheritancePerClass(){
-        
+
+    public static void inheritancePerClass() {
+
         HibernateUtils database = new HibernateUtils();
         ClAluno aluno = new ClAluno();
         ClProfessor professor = new ClProfessor();
-        
+
         //Salvando  um aluno
         aluno.setNome("Mariana Carla");
         aluno.setCpf("000.000.000-00");
         aluno.setRegistroAcademico("000001");
-        
+
         database.save(aluno);
-        
+
         //Salvanco um professor
         professor.setNome("Juliana Alcantara");
         professor.setCpf("111.111.111-11");
         professor.setDepartamento("Ciencia da Computacao");
-        database.save(professor); 
+        database.save(professor);
         database.close();
     }
-    
-    public static void inheritancePerUniqueTable(){
+
+    public static void inheritancePerUniqueTable() {
         HibernateUtils database = new HibernateUtils();
         ClAlunoh aluno = new ClAlunoh();
-        
+
         aluno.setNome("Dayana Marques");
         aluno.setCpf("222.222.222-22");
         aluno.setRegistroAcademico("1111.11");
-        
+
         database.save(aluno);
         database.close();
-        
+
     }
 }

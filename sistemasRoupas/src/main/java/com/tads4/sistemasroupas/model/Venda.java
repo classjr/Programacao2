@@ -18,7 +18,7 @@ import javax.persistence.*;
  * @author Robson
  */
 @Entity
-@Table(name = "Venda")
+@Table(name = "VENDAS")
 public class Venda implements Serializable{
     @Id
     @GeneratedValue
