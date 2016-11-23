@@ -1,5 +1,6 @@
 package com.tads4.sistemasroupas;
 
+import ExemplosAula.Aula;
 import ExemplosAula.hibernate.HibernateUtils;
 import ExemplosAula.hibernate.Institute;
 import ExemplosAula.hibernate.Loan;
@@ -27,7 +28,7 @@ public class App {
 
         //onetomay();
         //manytomany();
-        Teste teste = new Teste();
+        //Teste teste = new Teste();
         //Cliente cliente = teste.addCliente(5, "000.000.000.01");
         //teste.addFornecedor(Integer.SIZE);
         //teste.addFuncionario(0, cpf);
@@ -51,6 +52,8 @@ public class App {
         //onetoone();
         //inheritancePerClass();
         //inheritancePerUniqueTable();
+        Aula aula = new Aula();
+        aula.setVisible(true);
         System.out.println("Salvando no Banco !!!");
 
     }
