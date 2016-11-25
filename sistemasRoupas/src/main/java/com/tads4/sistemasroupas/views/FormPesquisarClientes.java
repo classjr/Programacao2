@@ -36,6 +36,7 @@ public class FormPesquisarClientes extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Pesquisar Clientes");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Pesquisar Clientes"));
 

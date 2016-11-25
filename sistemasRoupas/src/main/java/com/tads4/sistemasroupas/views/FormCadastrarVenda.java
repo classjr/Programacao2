@@ -5,6 +5,8 @@
  */
 package com.tads4.sistemasroupas.views;
 
+import com.tads4.sistemasroupas.control.VendaController;
+
 /**
  *
  * @author Robson
@@ -163,6 +165,7 @@ public class FormCadastrarVenda extends javax.swing.JFrame {
 
         jTextField6.setText("jTextField6");
 
+        jTable1.setAutoCreateRowSorter(true);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -297,7 +300,9 @@ public class FormCadastrarVenda extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        VendaController venda = new VendaController();
+        venda.getVenda()
+        
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
