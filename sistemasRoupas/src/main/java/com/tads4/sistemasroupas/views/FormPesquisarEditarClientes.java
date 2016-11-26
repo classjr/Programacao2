@@ -245,6 +245,12 @@ public class FormPesquisarEditarClientes extends javax.swing.JFrame {
         jTableTelefones.setRowSelectionAllowed(false);
         jTableTelefones.getTableHeader().setReorderingAllowed(false);
         jScrollPaneTelefones.setViewportView(jTableTelefones);
+        if (jTableTelefones.getColumnModel().getColumnCount() > 0) {
+            jTableTelefones.getColumnModel().getColumn(0).setResizable(false);
+            jTableTelefones.getColumnModel().getColumn(0).setPreferredWidth(360);
+            jTableTelefones.getColumnModel().getColumn(1).setResizable(false);
+            jTableTelefones.getColumnModel().getColumn(1).setPreferredWidth(3);
+        }
 
         jButtonTelefone.setText("Adicionar Telefone");
         jButtonTelefone.addActionListener(new java.awt.event.ActionListener() {
@@ -304,6 +310,12 @@ public class FormPesquisarEditarClientes extends javax.swing.JFrame {
         jTableEmails.setPreferredSize(new java.awt.Dimension(162, 192));
         jTableEmails.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTableEmails);
+        if (jTableEmails.getColumnModel().getColumnCount() > 0) {
+            jTableEmails.getColumnModel().getColumn(0).setResizable(false);
+            jTableEmails.getColumnModel().getColumn(0).setPreferredWidth(370);
+            jTableEmails.getColumnModel().getColumn(1).setResizable(false);
+            jTableEmails.getColumnModel().getColumn(1).setPreferredWidth(3);
+        }
 
         jButtonEmail.setLabel("Adicionar Email");
         jButtonEmail.setPreferredSize(new java.awt.Dimension(121, 23));
@@ -361,6 +373,26 @@ public class FormPesquisarEditarClientes extends javax.swing.JFrame {
         jTableEnderecos.setPreferredSize(new java.awt.Dimension(162, 192));
         jTableEnderecos.getTableHeader().setReorderingAllowed(false);
         jScrollPanelEnderecos.setViewportView(jTableEnderecos);
+        if (jTableEnderecos.getColumnModel().getColumnCount() > 0) {
+            jTableEnderecos.getColumnModel().getColumn(0).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(0).setPreferredWidth(40);
+            jTableEnderecos.getColumnModel().getColumn(1).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(1).setPreferredWidth(40);
+            jTableEnderecos.getColumnModel().getColumn(2).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(2).setPreferredWidth(119);
+            jTableEnderecos.getColumnModel().getColumn(3).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(3).setPreferredWidth(198);
+            jTableEnderecos.getColumnModel().getColumn(4).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(4).setPreferredWidth(79);
+            jTableEnderecos.getColumnModel().getColumn(5).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(5).setPreferredWidth(237);
+            jTableEnderecos.getColumnModel().getColumn(6).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(6).setPreferredWidth(129);
+            jTableEnderecos.getColumnModel().getColumn(7).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(7).setPreferredWidth(50);
+            jTableEnderecos.getColumnModel().getColumn(8).setResizable(false);
+            jTableEnderecos.getColumnModel().getColumn(8).setPreferredWidth(45);
+        }
 
         jButtonEndereco.setText("Adicionar Endereço");
 
