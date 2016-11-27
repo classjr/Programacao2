@@ -13,6 +13,7 @@ import ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClAlunoh;
 import com.tads4.sistemasroupas.model.Cliente;
 import com.tads4.sistemasroupas.model.Fornecedor;
 import com.tads4.sistemasroupas.teste.Teste;
+import com.tads4.sistemasroupas.views.FormPesquisarEditarExcluirClientes;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
@@ -30,8 +31,7 @@ public class App {
         //onetomay();
         //manytomany();
         //Teste teste = new Teste();
-        Teste teste = new Teste();
-
+        
         //teste.addFornecedor(23);
         //Fornecedor a;
         //a = teste.buscaFornecedor(1);
@@ -59,9 +59,10 @@ public class App {
         //onetoone();
         //inheritancePerClass();
         //inheritancePerUniqueTable();
-        Aula aula = new Aula();
+        /*Aula aula = new Aula();
         aula.setVisible(true);
-        System.out.println("Salvando no Banco !!!");
+        System.out.println("Salvando no Banco !!!");*/
+        FormPesquisarEditarExcluirClientes.main();
 
     }
 

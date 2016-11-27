@@ -5,20 +5,16 @@
  */
 package com.tads4.sistemasroupas.views;
 
-import com.tads4.sistemasroupas.control.ClienteController;
-import javax.swing.UIManager;
-
 /**
  *
  * @author robson
  */
-public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
+public class FormPesquisarEditarExcluirFuncionarios extends javax.swing.JFrame {
 
-    private ClienteController controller = new ClienteController();
     /**
      * Creates new form FormPesquisarClientes
      */
-    public FormPesquisarEditarExcluirClientes() {
+    public FormPesquisarEditarExcluirFuncionarios() {
         initComponents();
     }
 
@@ -31,26 +27,15 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialogTelefone = new javax.swing.JDialog();
-        jLabelTelefone = new javax.swing.JLabel();
-        jTextFieldTelefoneDDD = new javax.swing.JTextField();
-        jButtonSalvarTelefone = new javax.swing.JButton();
-        jButtonCancelarTelefone = new javax.swing.JButton();
-        jTextFieldTelefoneNumero = new javax.swing.JTextField();
-        jTextFieldTelefoneOperadora = new javax.swing.JTextField();
-        jLabelOperadora = new javax.swing.JLabel();
-        jDialogClienteNaoEncontrado = new javax.swing.JDialog();
-        jLabelClienteNaoEncontrado = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jPanelPesquisar = new javax.swing.JPanel();
         jLabelNome = new javax.swing.JLabel();
         jButtonPesquisar = new javax.swing.JButton();
         jTextFieldNome = new javax.swing.JTextField();
         jLabelId = new javax.swing.JLabel();
         jTextFieldId = new javax.swing.JTextField();
-        jPanelCliente = new javax.swing.JPanel();
-        jLabelNomeCliente = new javax.swing.JLabel();
-        jTextFieldNomeCliente = new javax.swing.JTextField();
+        jPanelCadastrar = new javax.swing.JPanel();
+        jLabelNome1 = new javax.swing.JLabel();
+        jTextFieldNome1 = new javax.swing.JTextField();
         jLabelRg = new javax.swing.JLabel();
         jFormattedTextFieldRg = new javax.swing.JFormattedTextField();
         jLabelCpf = new javax.swing.JLabel();
@@ -60,10 +45,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         jRadioButtonFeminino = new javax.swing.JRadioButton();
         jLabelDataNascimento = new javax.swing.JLabel();
         jFormattedTextFieldDataNascimento = new javax.swing.JFormattedTextField();
-        jLabelRenda = new javax.swing.JLabel();
-        jFormattedTextFieldRenda = new javax.swing.JFormattedTextField();
-        jLabelDataCadastro = new javax.swing.JLabel();
-        jFormattedTextFieldDataCadastro = new javax.swing.JFormattedTextField();
         jPanelTelefones = new javax.swing.JPanel();
         jScrollPaneTelefones = new javax.swing.JScrollPane();
         jTableTelefones = new javax.swing.JTable();
@@ -80,125 +61,14 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         jButtonSalvar = new javax.swing.JButton();
         jButtonExcluir = new javax.swing.JButton();
 
-        jDialogTelefone.setTitle("Adicionar Telefone");
-        jDialogTelefone.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogTelefone.setPreferredSize(new java.awt.Dimension(290, 122));
-        jDialogTelefone.setResizable(false);
-
-        jLabelTelefone.setText("Telefone:");
-
-        jButtonSalvarTelefone.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonSalvarTelefone.setForeground(new java.awt.Color(0, 153, 0));
-        jButtonSalvarTelefone.setText("Salvar");
-        jButtonSalvarTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonSalvarTelefoneMouseClicked(evt);
-            }
-        });
-        jButtonSalvarTelefone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSalvarTelefoneActionPerformed(evt);
-            }
-        });
-
-        jButtonCancelarTelefone.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButtonCancelarTelefone.setForeground(new java.awt.Color(255, 0, 0));
-        jButtonCancelarTelefone.setText("Cancelar");
-
-        jLabelOperadora.setText("Operadora:");
-
-        javax.swing.GroupLayout jDialogTelefoneLayout = new javax.swing.GroupLayout(jDialogTelefone.getContentPane());
-        jDialogTelefone.getContentPane().setLayout(jDialogTelefoneLayout);
-        jDialogTelefoneLayout.setHorizontalGroup(
-            jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogTelefoneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialogTelefoneLayout.createSequentialGroup()
-                        .addComponent(jButtonCancelarTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonSalvarTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDialogTelefoneLayout.createSequentialGroup()
-                        .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelOperadora)
-                            .addComponent(jLabelTelefone))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jDialogTelefoneLayout.createSequentialGroup()
-                                .addComponent(jTextFieldTelefoneDDD, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextFieldTelefoneNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextFieldTelefoneOperadora))))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-        jDialogTelefoneLayout.setVerticalGroup(
-            jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogTelefoneLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTelefone)
-                    .addComponent(jTextFieldTelefoneDDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextFieldTelefoneNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldTelefoneOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelOperadora))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonSalvarTelefone)
-                    .addComponent(jButtonCancelarTelefone)))
-        );
-
-        jDialogClienteNaoEncontrado.setTitle("Adicionar Telefone");
-        jDialogClienteNaoEncontrado.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogClienteNaoEncontrado.setPreferredSize(new java.awt.Dimension(290, 122));
-        jDialogClienteNaoEncontrado.setResizable(false);
-
-        jLabelClienteNaoEncontrado.setForeground(new java.awt.Color(255, 0, 0));
-        jLabelClienteNaoEncontrado.setText("CLIENTE NÃO ENCONTRADO");
-
-        jButton1.setText("OK");
-
-        javax.swing.GroupLayout jDialogClienteNaoEncontradoLayout = new javax.swing.GroupLayout(jDialogClienteNaoEncontrado.getContentPane());
-        jDialogClienteNaoEncontrado.getContentPane().setLayout(jDialogClienteNaoEncontradoLayout);
-        jDialogClienteNaoEncontradoLayout.setHorizontalGroup(
-            jDialogClienteNaoEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogClienteNaoEncontradoLayout.createSequentialGroup()
-                .addGap(76, 76, 76)
-                .addGroup(jDialogClienteNaoEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelClienteNaoEncontrado)
-                    .addGroup(jDialogClienteNaoEncontradoLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(75, Short.MAX_VALUE))
-        );
-        jDialogClienteNaoEncontradoLayout.setVerticalGroup(
-            jDialogClienteNaoEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialogClienteNaoEncontradoLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jLabelClienteNaoEncontrado)
-                .addGap(28, 28, 28)
-                .addComponent(jButton1)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Pesquisar Clientes");
-        setLocation(new java.awt.Point(0, 0));
-        setMinimumSize(new java.awt.Dimension(982, 567));
-        setResizable(false);
-        setSize(new java.awt.Dimension(982, 567));
 
         jPanelPesquisar.setBorder(javax.swing.BorderFactory.createTitledBorder("Pesquisar Clientes"));
 
         jLabelNome.setText("Nome:");
 
         jButtonPesquisar.setText("Pesquisar");
-        jButtonPesquisar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonPesquisarMouseClicked(evt);
-            }
-        });
         jButtonPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonPesquisarActionPerformed(evt);
@@ -240,18 +110,12 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addComponent(jButtonPesquisar))
         );
 
-        jPanelCliente.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
-        jPanelCliente.setPreferredSize(new java.awt.Dimension(960, 104));
+        jPanelCadastrar.setBorder(javax.swing.BorderFactory.createTitledBorder("Cliente"));
+        jPanelCadastrar.setPreferredSize(new java.awt.Dimension(960, 104));
 
-        jLabelNomeCliente.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabelNomeCliente.setText("Nome:");
-        jLabelNomeCliente.setToolTipText("");
-
-        jTextFieldNomeCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextFieldNomeClienteActionPerformed(evt);
-            }
-        });
+        jLabelNome1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelNome1.setText("Nome:");
+        jLabelNome1.setToolTipText("");
 
         jLabelRg.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabelRg.setText("RG:");
@@ -297,33 +161,15 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
             }
         });
 
-        jLabelRenda.setText("Renda:");
-
-        jFormattedTextFieldRenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#,##0.00"))));
-
-        jLabelDataCadastro.setText("Data de Cadastro:");
-
-        jFormattedTextFieldDataCadastro.setEditable(false);
-        try {
-            jFormattedTextFieldDataCadastro.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jFormattedTextFieldDataCadastro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextFieldDataCadastroActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanelClienteLayout = new javax.swing.GroupLayout(jPanelCliente);
-        jPanelCliente.setLayout(jPanelClienteLayout);
-        jPanelClienteLayout.setHorizontalGroup(
-            jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelClienteLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelCadastrarLayout = new javax.swing.GroupLayout(jPanelCadastrar);
+        jPanelCadastrar.setLayout(jPanelCadastrarLayout);
+        jPanelCadastrarLayout.setHorizontalGroup(
+            jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCadastrarLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addComponent(jLabelNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldNome1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelRg)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -339,27 +185,19 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
                 .addComponent(jRadioButtonFeminino)
                 .addGap(15, 15, 15))
-            .addGroup(jPanelClienteLayout.createSequentialGroup()
+            .addGroup(jPanelCadastrarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jFormattedTextFieldDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelRenda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextFieldRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelDataCadastro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jFormattedTextFieldDataCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanelClienteLayout.setVerticalGroup(
-            jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelClienteLayout.createSequentialGroup()
-                .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNomeCliente)
-                    .addComponent(jTextFieldNomeCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanelCadastrarLayout.setVerticalGroup(
+            jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCadastrarLayout.createSequentialGroup()
+                .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelNome1)
+                    .addComponent(jTextFieldNome1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelRg)
                     .addComponent(jLabelCpf)
                     .addComponent(jFormattedTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -368,14 +206,9 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                     .addComponent(jRadioButtonMasculino)
                     .addComponent(jRadioButtonFeminino))
                 .addGap(18, 18, 18)
-                .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabelDataNascimento)
-                    .addGroup(jPanelClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jFormattedTextFieldDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabelRenda)
-                        .addComponent(jFormattedTextFieldRenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabelDataCadastro)
-                        .addComponent(jFormattedTextFieldDataCadastro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jFormattedTextFieldDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -421,11 +254,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         }
 
         jButtonTelefone.setText("Adicionar Telefone");
-        jButtonTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonTelefoneMouseClicked(evt);
-            }
-        });
         jButtonTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonTelefoneActionPerformed(evt);
@@ -628,14 +456,14 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jPanelCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
+            .addComponent(jPanelCadastrar, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanelPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelEmails, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
@@ -682,60 +510,10 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonExcluirActionPerformed
 
-    private void jButtonSalvarTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarTelefoneActionPerformed
-        
-    }//GEN-LAST:event_jButtonSalvarTelefoneActionPerformed
-
-    private void jButtonTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTelefoneMouseClicked
-        this.jDialogTelefone.setVisible(rootPaneCheckingEnabled);
-    }//GEN-LAST:event_jButtonTelefoneMouseClicked
-
-    private void jButtonSalvarTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalvarTelefoneMouseClicked
-        this.controller.addTelefone(this.jTextFieldTelefoneNumero.getText(), this.jTextFieldTelefoneDDD.getText(), this.jTextFieldTelefoneOperadora.getText());
-    }//GEN-LAST:event_jButtonSalvarTelefoneMouseClicked
-
-    private void jButtonPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPesquisarMouseClicked
-        if (!this.jTextFieldId.getText().equals("")) {                
-            this.controller.buscaClienteId(this.jTextFieldId.getText());
-        }
-        else {
-            if (!this.jTextFieldNome.getText().equals("")) {
-                this.controller.buscaClienteNome(this.jTextFieldNome.getText());
-            }
-        }
-        if (!this.controller.clienteExiste()) {
-            this.jDialogClienteNaoEncontrado.setVisible(rootPaneCheckingEnabled);
-        }
-        else {
-            this.jTextFieldNomeCliente.setText(this.controller.getCliente().getNome());
-            this.jFormattedTextFieldRg.setText(this.controller.getCliente().getRg());
-            this.jFormattedTextFieldCpf.setText(this.controller.getCliente().getCpf());
-            this.jFormattedTextFieldDataNascimento.setText(this.controller.getCliente().getDataDeNascimento());
-            this.jFormattedTextFieldDataCadastro.setText(this.controller.getCliente().getDataDeCadastro());
-            this.jFormattedTextFieldRenda.setText(this.controller.getCliente().getRenda().toString());
-            if (this.controller.getCliente().getSexo() == ('M') || this.controller.getCliente().getSexo() == ('m')) {
-                this.jRadioButtonFeminino.setSelected(false);
-                this.jRadioButtonMasculino.setSelected(true);
-            }
-            else {
-                this.jRadioButtonMasculino.setSelected(false);
-                this.jRadioButtonFeminino.setSelected(true);
-            }
-        }
-    }//GEN-LAST:event_jButtonPesquisarMouseClicked
-
-    private void jTextFieldNomeClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeClienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeClienteActionPerformed
-
-    private void jFormattedTextFieldDataCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldDataCadastroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextFieldDataCadastroActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main() {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -743,20 +521,24 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows Classic".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirClientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormPesquisarEditarExcluirFuncionarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -765,42 +547,30 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormPesquisarEditarExcluirClientes().setVisible(true);
+                new FormPesquisarEditarExcluirFuncionarios().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonCancelarTelefone;
     private javax.swing.JButton jButtonEmail;
     private javax.swing.JButton jButtonEndereco;
     private javax.swing.JButton jButtonExcluir;
     private javax.swing.JButton jButtonPesquisar;
     private javax.swing.JButton jButtonSalvar;
-    private javax.swing.JButton jButtonSalvarTelefone;
     private javax.swing.JButton jButtonTelefone;
-    private javax.swing.JDialog jDialogClienteNaoEncontrado;
-    private javax.swing.JDialog jDialogTelefone;
     private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
-    private javax.swing.JFormattedTextField jFormattedTextFieldDataCadastro;
     private javax.swing.JFormattedTextField jFormattedTextFieldDataNascimento;
-    private javax.swing.JFormattedTextField jFormattedTextFieldRenda;
     private javax.swing.JFormattedTextField jFormattedTextFieldRg;
-    private javax.swing.JLabel jLabelClienteNaoEncontrado;
     private javax.swing.JLabel jLabelCpf;
-    private javax.swing.JLabel jLabelDataCadastro;
     private javax.swing.JLabel jLabelDataNascimento;
     private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JLabel jLabelNomeCliente;
-    private javax.swing.JLabel jLabelOperadora;
-    private javax.swing.JLabel jLabelRenda;
+    private javax.swing.JLabel jLabelNome1;
     private javax.swing.JLabel jLabelRg;
     private javax.swing.JLabel jLabelSexo;
-    private javax.swing.JLabel jLabelTelefone;
-    private javax.swing.JPanel jPanelCliente;
+    private javax.swing.JPanel jPanelCadastrar;
     private javax.swing.JPanel jPanelEmails;
     private javax.swing.JPanel jPanelEnderecos;
     private javax.swing.JPanel jPanelPesquisar;
@@ -815,9 +585,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     private javax.swing.JTable jTableTelefones;
     private javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldNome;
-    private javax.swing.JTextField jTextFieldNomeCliente;
-    private javax.swing.JTextField jTextFieldTelefoneDDD;
-    private javax.swing.JTextField jTextFieldTelefoneNumero;
-    private javax.swing.JTextField jTextFieldTelefoneOperadora;
+    private javax.swing.JTextField jTextFieldNome1;
     // End of variables declaration//GEN-END:variables
 }
