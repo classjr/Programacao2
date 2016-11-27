@@ -1,8 +1,11 @@
 package com.tads4.sistemasroupas.control;
 
 import com.tads4.sistemasroupas.model.Cliente;
+import com.tads4.sistemasroupas.model.Email;
+import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Telefone;
 import com.tads4.sistemasroupas.model.persistence.Crud;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -31,10 +34,35 @@ public class ClienteController {
     public void addTelefone(String numero, String ddd, String operadora) {
         if (cliente != null) {
             if (cliente.getTelefones() != null) {
-                Set telefones = cliente.getTelefones();
-                Telefone telefone = new Telefone(numero, ddd, operadora);
-                telefones.add(telefone);
+                cliente.getTelefones().add(new Telefone(numero, ddd, operadora));
+            } else {
+                Set<Telefone> telefones = new HashSet<Telefone>();
+                telefones.add(new Telefone(numero, ddd, operadora));
                 cliente.setTelefones(telefones);
+            }
+        }
+    }
+
+    public void addEmail(String email) {
+        if (cliente != null) {
+            if (cliente.getEmails() != null) {
+                cliente.getEmails().add(new Email(email));
+            } else {
+                Set<Email> emails = new HashSet<Email>();
+                emails.add(new Email(email));
+                cliente.setEmails(emails);
+            }
+        }
+    }
+
+    public void addEndereco(String pais, String estado, String cidade, String bairro, String cep, String rua, String complemento, String numero) {
+        if (cliente != null) {
+            if (cliente.getEnderecos() != null) {
+                cliente.getEnderecos().add(new Endereco(pais, estado, cidade, bairro, cep, rua, complemento, numero));
+            } else {
+                Set<Endereco> enderecos = new HashSet<Endereco>();
+                enderecos.add(new Endereco(pais, estado, cidade, bairro, cep, rua, complemento, numero));
+                cliente.setEnderecos(enderecos);
             }
         }
     }
@@ -54,13 +82,22 @@ public class ClienteController {
             this.setCliente(cliente);
         }
     }
-    
+
     public boolean clienteExiste() {
-         if (cliente != null) {
-             return true;
-         }
-         else {
-             return false;
-         }
+        if (cliente != null) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void salvarCliente() {
+        Crud crud = new Crud();
+        crud.update(this.cliente);
+    }
+
+    public void excluirCliente() {
+        Crud crud = new Crud();
+        crud.remove(this.cliente);
     }
 }

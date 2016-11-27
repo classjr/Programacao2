@@ -9,9 +9,8 @@
     <property name="hibernate.connection.password">tads2016</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <property name="hibernate.show_sql">true</property>
-    
     <!-- Mapeamento de tabelas -->
-   <!-- <mapping class="ExemplosAula.hibernate.Person" />
+    <!-- <mapping class="ExemplosAula.hibernate.Person" />
     <mapping class="ExemplosAula.hibernate.Teacher" />
     <mapping class="ExemplosAula.hibernate.Products" />
     <mapping class="ExemplosAula.hibernate.Products" />
@@ -24,19 +23,17 @@
     <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClAlunoh" />
     <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClPessoah" />
     <mapping class="ExemplosAula.hibernate.herancao.tabelaporhierarquia.ClProfessorh" />-->
-    
     <!-- Mapeamento do projeto -->
-    <mapping class="com.tads4.sistemasroupas.model.Cliente" />
-    <mapping class="com.tads4.sistemasroupas.model.Email" />
-    <mapping class="com.tads4.sistemasroupas.model.Endereco" />
-    <mapping class="com.tads4.sistemasroupas.model.Fornecedor" />
-    <mapping class="com.tads4.sistemasroupas.model.Funcionario" />
-    <!--<mapping class="com.tads4.sistemasroupas.model.ItemVenda" />--> 
-    <mapping class="com.tads4.sistemasroupas.model.Pessoa" />
+    <mapping class="com.tads4.sistemasroupas.model.Cliente"/>
+    <mapping class="com.tads4.sistemasroupas.model.Email"/>
+    <mapping class="com.tads4.sistemasroupas.model.Endereco"/>
+    <mapping class="com.tads4.sistemasroupas.model.Fornecedor"/>
+    <mapping class="com.tads4.sistemasroupas.model.Funcionario"/>
+    <!--<mapping class="com.tads4.sistemasroupas.model.ItemVenda" />-->
+    <mapping class="com.tads4.sistemasroupas.model.Pessoa"/>
     <!--<mapping class="com.tads4.sistemasroupas.model.Produto" />-->
-    <mapping class="com.tads4.sistemasroupas.model.Telefone" />
-    <mapping class="com.tads4.sistemasroupas.model.Venda" />
+    <mapping class="com.tads4.sistemasroupas.model.Telefone"/>
+    <mapping class="com.tads4.sistemasroupas.model.Venda"/>
     <!--<mapping class="com.tads4.sistemasroupas.model.CTeste"/>-->
-    
   </session-factory>
 </hibernate-configuration>

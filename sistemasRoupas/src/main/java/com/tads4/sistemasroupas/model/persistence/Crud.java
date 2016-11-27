@@ -111,11 +111,11 @@ public class Crud {
         } catch (Exception ex) {
             System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
         }
-        if (objects != null) {
+        if (!objects.isEmpty()) {
             return objects.get(0);
         }
         else {
-            return objects;
+            return null;
         }
     }
 
