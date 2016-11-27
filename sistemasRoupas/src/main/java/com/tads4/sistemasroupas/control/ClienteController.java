@@ -91,13 +91,18 @@ public class ClienteController {
         }
     }
 
+    public void excluirCliente() {
+        Crud crud = new Crud();
+        crud.remove(this.cliente);
+    }
+
     public void salvarCliente() {
         Crud crud = new Crud();
         crud.update(this.cliente);
     }
 
-    public void excluirCliente() {
-        Crud crud = new Crud();
-        crud.remove(this.cliente);
+    public void excluirTelefone(String numero, String ddd, String operadora) {
+        Telefone telefone = new Telefone(numero, ddd, operadora);
+        cliente.getTelefones().remove(telefone);
     }
 }

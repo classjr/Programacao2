@@ -9,8 +9,17 @@ import com.tads4.sistemasroupas.control.ClienteController;
 import com.tads4.sistemasroupas.model.Email;
 import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Telefone;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
+import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -82,6 +91,16 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         jDialogSalvo = new javax.swing.JDialog();
         jButtonSalvo = new javax.swing.JButton();
         jLabelSalvo = new javax.swing.JLabel();
+        jDialogExcluirTelefone = new javax.swing.JDialog();
+        jButtonEcluirTelefoneExcluir = new javax.swing.JButton();
+        jLabelExcluirTelefone = new javax.swing.JLabel();
+        jLabelExcluirDDD = new javax.swing.JLabel();
+        jLabelExcluirNumero = new javax.swing.JLabel();
+        jLabelExcluirOperadora = new javax.swing.JLabel();
+        jButtonEcluirTelefoneCancelar = new javax.swing.JButton();
+        jTextFieldExcluirDDD = new javax.swing.JTextField();
+        jTextFieldExcluirNumero = new javax.swing.JTextField();
+        jTextFieldExcluirOperadora = new javax.swing.JTextField();
         jPanelPesquisar = new javax.swing.JPanel();
         jLabelNome = new javax.swing.JLabel();
         jButtonPesquisar = new javax.swing.JButton();
@@ -122,7 +141,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogClienteNaoEncontrado.setTitle("Adicionar Telefone");
         jDialogClienteNaoEncontrado.setMinimumSize(new java.awt.Dimension(290, 150));
-        jDialogClienteNaoEncontrado.setPreferredSize(new java.awt.Dimension(290, 150));
         jDialogClienteNaoEncontrado.setResizable(false);
 
         jLabelClienteNaoEncontrado.setForeground(new java.awt.Color(255, 0, 0));
@@ -160,7 +178,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogExcluir.setTitle("Adicionar Telefone");
         jDialogExcluir.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogExcluir.setPreferredSize(new java.awt.Dimension(290, 122));
         jDialogExcluir.setResizable(false);
 
         jButtonConfirmaExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -216,7 +233,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogTelefone.setTitle("Adicionar Telefone");
         jDialogTelefone.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogTelefone.setPreferredSize(new java.awt.Dimension(290, 122));
         jDialogTelefone.setResizable(false);
 
         jLabelTelefone.setText("Telefone:");
@@ -290,7 +306,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogEmail.setTitle("Adicionar Telefone");
         jDialogEmail.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogEmail.setPreferredSize(new java.awt.Dimension(290, 122));
         jDialogEmail.setResizable(false);
 
         jLabelEmail.setText("Email:");
@@ -351,7 +366,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogEndereco.setTitle("Adicionar Telefone");
         jDialogEndereco.setMinimumSize(new java.awt.Dimension(660, 122));
-        jDialogEndereco.setPreferredSize(new java.awt.Dimension(660, 122));
         jDialogEndereco.setResizable(false);
 
         jButtonSalvarEndereco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -491,7 +505,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogClienteExcluido.setTitle("Adicionar Telefone");
         jDialogClienteExcluido.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogClienteExcluido.setPreferredSize(new java.awt.Dimension(290, 122));
         jDialogClienteExcluido.setResizable(false);
 
         jButtonClienteExcluido.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -569,6 +582,103 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addComponent(jLabelSalvo)
                 .addGap(36, 36, 36)
                 .addComponent(jButtonSalvo))
+        );
+
+        jDialogExcluirTelefone.setTitle("Adicionar Telefone");
+        jDialogExcluirTelefone.setMinimumSize(new java.awt.Dimension(300, 180));
+        jDialogExcluirTelefone.setPreferredSize(new java.awt.Dimension(300, 180));
+        jDialogExcluirTelefone.setResizable(false);
+
+        jButtonEcluirTelefoneExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonEcluirTelefoneExcluir.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonEcluirTelefoneExcluir.setText("Excluir");
+        jButtonEcluirTelefoneExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEcluirTelefoneExcluirMouseClicked(evt);
+            }
+        });
+        jButtonEcluirTelefoneExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcluirTelefoneExcluirActionPerformed(evt);
+            }
+        });
+
+        jLabelExcluirTelefone.setText("Tem certeza que deseja excluir este Telefone?");
+
+        jLabelExcluirDDD.setText("DDD:");
+
+        jLabelExcluirNumero.setText("Número:");
+
+        jLabelExcluirOperadora.setText("Operadora:");
+
+        jButtonEcluirTelefoneCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonEcluirTelefoneCancelar.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonEcluirTelefoneCancelar.setText("Cancelar");
+        jButtonEcluirTelefoneCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEcluirTelefoneCancelarMouseClicked(evt);
+            }
+        });
+        jButtonEcluirTelefoneCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcluirTelefoneCancelarActionPerformed(evt);
+            }
+        });
+
+        jTextFieldExcluirDDD.setEditable(false);
+
+        jTextFieldExcluirNumero.setEditable(false);
+
+        jTextFieldExcluirOperadora.setEditable(false);
+
+        javax.swing.GroupLayout jDialogExcluirTelefoneLayout = new javax.swing.GroupLayout(jDialogExcluirTelefone.getContentPane());
+        jDialogExcluirTelefone.getContentPane().setLayout(jDialogExcluirTelefoneLayout);
+        jDialogExcluirTelefoneLayout.setHorizontalGroup(
+            jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabelExcluirTelefone)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogExcluirTelefoneLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                        .addComponent(jButtonEcluirTelefoneCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonEcluirTelefoneExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                        .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelExcluirNumero)
+                            .addComponent(jLabelExcluirOperadora)
+                            .addComponent(jLabelExcluirDDD))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldExcluirOperadora, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jTextFieldExcluirNumero)
+                            .addComponent(jTextFieldExcluirDDD))))
+                .addContainerGap())
+        );
+        jDialogExcluirTelefoneLayout.setVerticalGroup(
+            jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabelExcluirTelefone)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldExcluirDDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirDDD))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirNumero)
+                    .addComponent(jTextFieldExcluirNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirOperadora)
+                    .addComponent(jTextFieldExcluirOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonEcluirTelefoneExcluir)
+                    .addComponent(jButtonEcluirTelefoneCancelar)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -796,16 +906,21 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
             }
         });
         jTableTelefones.getTableHeader().setReorderingAllowed(false);
+        jTableTelefones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableTelefonesMouseClicked(evt);
+            }
+        });
         jScrollPaneTelefones.setViewportView(jTableTelefones);
         if (jTableTelefones.getColumnModel().getColumnCount() > 0) {
             jTableTelefones.getColumnModel().getColumn(0).setResizable(false);
             jTableTelefones.getColumnModel().getColumn(0).setPreferredWidth(60);
             jTableTelefones.getColumnModel().getColumn(1).setResizable(false);
-            jTableTelefones.getColumnModel().getColumn(1).setPreferredWidth(261);
+            jTableTelefones.getColumnModel().getColumn(1).setPreferredWidth(241);
             jTableTelefones.getColumnModel().getColumn(2).setResizable(false);
             jTableTelefones.getColumnModel().getColumn(2).setPreferredWidth(100);
             jTableTelefones.getColumnModel().getColumn(3).setResizable(false);
-            jTableTelefones.getColumnModel().getColumn(3).setPreferredWidth(60);
+            jTableTelefones.getColumnModel().getColumn(3).setPreferredWidth(80);
         }
 
         jButtonTelefone.setText("Adicionar Telefone");
@@ -1042,9 +1157,9 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addComponent(jButtonExcluir))
             .addGroup(layout.createSequentialGroup()
                 .addGap(544, 544, 544)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonCancelar)
-                    .addComponent(jButtonSalvar)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSalvar)
+                    .addComponent(jButtonCancelar)))
         );
 
         pack();
@@ -1198,14 +1313,14 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         DefaultTableModel model = new javax.swing.table.DefaultTableModel(
                 new Object[][]{},
                 new String[]{
-                    "DDD", "Número", "Operadora", "Deletar"
+                    "DDD", "Número", "Operadora", ""
                 }
         ) {
             Class[] types = new Class[]{
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean[]{
-                false, false, false, false
+                false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1222,7 +1337,7 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
             row[0] = telefone.getDdd();
             row[1] = telefone.getNumero();
             row[2] = telefone.getOperadora();
-            row[3] = "";
+            row[3] = "Excluir";
 
             model.addRow(row);
         }
@@ -1232,11 +1347,11 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
             jTableTelefones.getColumnModel().getColumn(0).setResizable(false);
             jTableTelefones.getColumnModel().getColumn(0).setPreferredWidth(60);
             jTableTelefones.getColumnModel().getColumn(1).setResizable(false);
-            jTableTelefones.getColumnModel().getColumn(1).setPreferredWidth(261);
+            jTableTelefones.getColumnModel().getColumn(1).setPreferredWidth(241);
             jTableTelefones.getColumnModel().getColumn(2).setResizable(false);
             jTableTelefones.getColumnModel().getColumn(2).setPreferredWidth(100);
             jTableTelefones.getColumnModel().getColumn(3).setResizable(false);
-            jTableTelefones.getColumnModel().getColumn(3).setPreferredWidth(60);
+            jTableTelefones.getColumnModel().getColumn(3).setPreferredWidth(80);
         }
     }
 
@@ -1373,7 +1488,7 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
             }
             this.controller.getCliente().setDataDeNascimento(this.jFormattedTextFieldDataNascimento.getText());
             this.controller.getCliente().setRenda(Double.valueOf(this.jFormattedTextFieldRenda.getText()));
-            
+
             this.controller.salvarCliente();
             this.jDialogSalvo.setVisible(true);
         }
@@ -1386,6 +1501,37 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     private void jButtonSalvoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalvoActionPerformed
+
+    private void jTableTelefonesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTelefonesMouseClicked
+        //pega a coluna e a linha de onde a tabela foi clicada.
+        int row = this.jTableTelefones.rowAtPoint(evt.getPoint());
+        int column = this.jTableTelefones.columnAtPoint(evt.getPoint());
+
+        if (row >= 0 && column == 3) {
+            this.jTextFieldExcluirDDD.setText(this.jTableTelefones.getModel().getValueAt(row, 0).toString());
+            this.jTextFieldExcluirNumero.setText(this.jTableTelefones.getModel().getValueAt(row, 1).toString());
+            this.jTextFieldExcluirOperadora.setText(this.jTableTelefones.getModel().getValueAt(row, 2).toString());
+            this.jDialogExcluirTelefone.setVisible(true);
+        }
+    }//GEN-LAST:event_jTableTelefonesMouseClicked
+
+    private void jButtonEcluirTelefoneExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneExcluirMouseClicked
+        this.controller.excluirTelefone(this.jTextFieldExcluirNumero.getText(), this.jTextFieldExcluirDDD.getText(), this.jTextFieldExcluirOperadora.getText());
+        this.atualizaTelefones();
+        this.jDialogExcluirTelefone.dispose();
+    }//GEN-LAST:event_jButtonEcluirTelefoneExcluirMouseClicked
+
+    private void jButtonEcluirTelefoneExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEcluirTelefoneExcluirActionPerformed
+
+    private void jButtonEcluirTelefoneCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneCancelarMouseClicked
+        this.jDialogExcluirTelefone.dispose();
+    }//GEN-LAST:event_jButtonEcluirTelefoneCancelarMouseClicked
+
+    private void jButtonEcluirTelefoneCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEcluirTelefoneCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1435,6 +1581,8 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     private javax.swing.JButton jButtonClienteExcluido;
     private javax.swing.JButton jButtonClienteNaoEncontradoOk;
     private javax.swing.JButton jButtonConfirmaExcluir;
+    private javax.swing.JButton jButtonEcluirTelefoneCancelar;
+    private javax.swing.JButton jButtonEcluirTelefoneExcluir;
     private javax.swing.JButton jButtonEmail;
     private javax.swing.JButton jButtonEndereco;
     private javax.swing.JButton jButtonExcluir;
@@ -1450,6 +1598,7 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     private javax.swing.JDialog jDialogEmail;
     private javax.swing.JDialog jDialogEndereco;
     private javax.swing.JDialog jDialogExcluir;
+    private javax.swing.JDialog jDialogExcluirTelefone;
     private javax.swing.JDialog jDialogSalvo;
     private javax.swing.JDialog jDialogTelefone;
     private javax.swing.JFormattedTextField jFormattedTextFieldCEP;
@@ -1469,6 +1618,10 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelDataCadastro;
     private javax.swing.JLabel jLabelDataNascimento;
     private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelExcluirDDD;
+    private javax.swing.JLabel jLabelExcluirNumero;
+    private javax.swing.JLabel jLabelExcluirOperadora;
+    private javax.swing.JLabel jLabelExcluirTelefone;
     private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelNomeCliente;
@@ -1499,6 +1652,9 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldCidade;
     private javax.swing.JTextField jTextFieldComplemento;
     private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldExcluirDDD;
+    private javax.swing.JTextField jTextFieldExcluirNumero;
+    private javax.swing.JTextField jTextFieldExcluirOperadora;
     private javax.swing.JTextField jTextFieldId;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNomeCliente;
