@@ -96,13 +96,24 @@ public class ClienteController {
         crud.remove(this.cliente);
     }
 
-    public void salvarCliente() {
-        Crud crud = new Crud();
-        crud.update(this.cliente);
+    public void excluirEmail(String endereco) {
+        Email email = new Email(endereco);
+        cliente.getEmails().remove(email);
+    }
+
+    public void excluirEndereco(String pais, String estado, String cidade, String bairro, String cep, String rua, String complemento, String numero) {
+        Endereco endereco = new Endereco(pais, estado, cidade, bairro, cep, rua, complemento, numero);
+        cliente.getEnderecos().remove(endereco);
     }
 
     public void excluirTelefone(String numero, String ddd, String operadora) {
         Telefone telefone = new Telefone(numero, ddd, operadora);
         cliente.getTelefones().remove(telefone);
     }
+
+    public void salvarCliente() {
+        Crud crud = new Crud();
+        crud.update(this.cliente);
+    }
+
 }
