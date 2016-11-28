@@ -27,7 +27,7 @@ public class Venda implements Serializable{
     @Temporal(TemporalType.TIMESTAMP )
     @Column(name="DATA_VENDA")
     private Calendar dataVenda;
-    
+    /*
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
     @JoinTable(name = "CLIENTES", joinColumns = {
         @JoinColumn(name = "ID_CLIENTE")}, inverseJoinColumns = {
@@ -39,10 +39,10 @@ public class Venda implements Serializable{
         @JoinColumn(name = "ID_FUNCIONARIO")}, inverseJoinColumns = {
         @JoinColumn(name = "ID")})
     private Funcionario funcionario;
-
+*/
     public Venda() {
     }
-
+/*
     public Venda(Calendar dataVenda, Cliente cliente, Funcionario funcionario) {
         this.dataVenda = dataVenda;
         this.cliente = cliente;
@@ -122,7 +122,7 @@ public class Venda implements Serializable{
     public String toString() {
         return "Venda{" + "dataVenda=" + dataVenda + ", cliente=" + cliente + ", funcionario=" + funcionario + '}';
     }
-    
+    */
     
 
     }

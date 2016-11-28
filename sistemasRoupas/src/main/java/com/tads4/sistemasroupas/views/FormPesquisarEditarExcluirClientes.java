@@ -9,17 +9,7 @@ import com.tads4.sistemasroupas.control.ClienteController;
 import com.tads4.sistemasroupas.model.Email;
 import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Telefone;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.JButton;
-import javax.swing.JTable;
-import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -202,8 +192,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addContainerGap(41, Short.MAX_VALUE))
         );
 
-        jDialogClienteNaoEncontrado.getAccessibleContext().setAccessibleName("Cliente Não Encontrado");
-
         jDialogExcluir.setTitle("Excluir Cliente");
         jDialogExcluir.setMinimumSize(new java.awt.Dimension(290, 122));
         jDialogExcluir.setResizable(false);
@@ -258,8 +246,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                     .addComponent(jButtonConfirmaExcluir)
                     .addComponent(jButtonCancelaExcluir)))
         );
-
-        jDialogExcluir.getAccessibleContext().setAccessibleName("Excluir Cliente");
 
         jDialogTelefone.setTitle("Adicionar Telefone");
         jDialogTelefone.setMinimumSize(new java.awt.Dimension(290, 122));
@@ -393,8 +379,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                     .addComponent(jButtonSalvarEmail)
                     .addComponent(jButtonCancelarEmail)))
         );
-
-        jDialogEmail.getAccessibleContext().setAccessibleName("Adicionar Email");
 
         jDialogEndereco.setTitle("Adicionar Endereço");
         jDialogEndereco.setMinimumSize(new java.awt.Dimension(660, 122));
@@ -536,8 +520,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                     .addComponent(jButtonSalvarEndereco)))
         );
 
-        jDialogEndereco.getAccessibleContext().setAccessibleName("Adicionar Endereço");
-
         jDialogClienteExcluido.setTitle("Cliente Excluído");
         jDialogClienteExcluido.setMinimumSize(new java.awt.Dimension(290, 122));
         jDialogClienteExcluido.setPreferredSize(new java.awt.Dimension(290, 122));
@@ -579,8 +561,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addComponent(jButtonClienteExcluido))
         );
 
-        jDialogClienteExcluido.getAccessibleContext().setAccessibleName("Cliente Excluído");
-
         jDialogSalvo.setTitle("Cliente Salvo");
         jDialogSalvo.setMinimumSize(new java.awt.Dimension(290, 122));
         jDialogSalvo.setPreferredSize(new java.awt.Dimension(290, 122));
@@ -621,8 +601,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addComponent(jButtonSalvo))
         );
-
-        jDialogSalvo.getAccessibleContext().setAccessibleName("Cliente Salvo");
 
         jDialogExcluirTelefone.setTitle("Excluir Telefone");
         jDialogExcluirTelefone.setMinimumSize(new java.awt.Dimension(300, 180));
@@ -721,8 +699,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                     .addComponent(jButtonEcluirTelefoneCancelar)))
         );
 
-        jDialogExcluirTelefone.getAccessibleContext().setAccessibleName("Excluir Telefone");
-
         jDialogExcluirEmail.setTitle("Excluir Email");
         jDialogExcluirEmail.setMinimumSize(new java.awt.Dimension(306, 160));
         jDialogExcluirEmail.setPreferredSize(new java.awt.Dimension(306, 160));
@@ -796,8 +772,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
                     .addComponent(jButtonEcluirEmailCancelar)
                     .addComponent(jButtonEcluirEmailExcluir)))
         );
-
-        jDialogExcluirEmail.getAccessibleContext().setAccessibleName("Excluir Email");
 
         jDialogExcluirEndereco.setTitle("Excluir Endereço");
         jDialogExcluirEndereco.setMinimumSize(new java.awt.Dimension(680, 180));

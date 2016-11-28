@@ -1,3 +1,4 @@
+package com.tads4.sistemasroupas.teste;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +16,7 @@ import com.tads4.sistemasroupas.model.Venda;
 public class Run {
 
     public static void main(String[] args) {
-        try {
+       /* try {
 
             Venda venda = new Venda();
             Email mail = new Email("robson.silva@gmail.com");
@@ -26,7 +27,7 @@ public class Run {
            
         } catch (Exception e) {
             System.out.println("Erro" + e.getMessage());
-        }
+        }*/
     }
 
 }
