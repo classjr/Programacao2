@@ -1031,6 +1031,9 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
             }
         });
         jScrollPaneEnderecos.setViewportView(jTableEnderecos);
+        if (jTableEnderecos.getColumnModel().getColumnCount() > 0) {
+            jTableEnderecos.getColumnModel().getColumn(8).setPreferredWidth(80);
+        }
 
         javax.swing.GroupLayout jPanelEnderecosLayout = new javax.swing.GroupLayout(jPanelEnderecos);
         jPanelEnderecos.setLayout(jPanelEnderecosLayout);
