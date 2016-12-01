@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tads4.sistemasroupas.views;
-
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -29,33 +22,700 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel4 = new javax.swing.JPanel();
+        jDialogExcluirEndereco = new javax.swing.JDialog();
+        jButtonExcluirEnderecoExcluir = new javax.swing.JButton();
+        jButtonExcluirEnderecoCancelar = new javax.swing.JButton();
+        jLabelExcluirPais = new javax.swing.JLabel();
+        jTextFieldExcluirPais = new javax.swing.JTextField();
+        jLabelExcluirUF = new javax.swing.JLabel();
+        jTextFieldExcluirUF = new javax.swing.JTextField();
+        jLabelExcluirCidade = new javax.swing.JLabel();
+        jTextFieldExcluirCidade = new javax.swing.JTextField();
+        jLabelExcluirBairro = new javax.swing.JLabel();
+        jTextFieldExcluirBairro = new javax.swing.JTextField();
+        jLabelExcluirCEP = new javax.swing.JLabel();
+        jFormattedTextFieldExcluirCEP = new javax.swing.JFormattedTextField();
+        jLabelExcluirRua = new javax.swing.JLabel();
+        jTextFieldExcluirRua = new javax.swing.JTextField();
+        jLabelExcluirComplemento = new javax.swing.JLabel();
+        jTextFieldExcluirComplemento = new javax.swing.JTextField();
+        jLabelExcluirNumeroEndereco = new javax.swing.JLabel();
+        jTextFieldExcluirNumeroEndereco = new javax.swing.JTextField();
+        jLabelExcluirEndereco = new javax.swing.JLabel();
+        jDialogExcluirEmail = new javax.swing.JDialog();
+        jTextFieldExcluirEnderecoEmail = new javax.swing.JTextField();
+        jLabelExcluirEnderecoEmail = new javax.swing.JLabel();
+        jLabelExcluirEmail = new javax.swing.JLabel();
+        jButtonEcluirEmailCancelar = new javax.swing.JButton();
+        jButtonEcluirEmailExcluir = new javax.swing.JButton();
+        jDialogExcluirTelefone = new javax.swing.JDialog();
+        jButtonEcluirTelefoneExcluir = new javax.swing.JButton();
+        jLabelExcluirTelefone = new javax.swing.JLabel();
+        jLabelExcluirDDD = new javax.swing.JLabel();
+        jLabelExcluirNumeroTelefone = new javax.swing.JLabel();
+        jLabelExcluirOperadora = new javax.swing.JLabel();
+        jButtonEcluirTelefoneCancelar = new javax.swing.JButton();
+        jTextFieldExcluirDDD = new javax.swing.JTextField();
+        jTextFieldExcluirNumeroTelefone = new javax.swing.JTextField();
+        jTextFieldExcluirOperadora = new javax.swing.JTextField();
+        jDialogEndereco = new javax.swing.JDialog();
+        jButtonSalvarEndereco = new javax.swing.JButton();
+        jButtonCancelarEndereco = new javax.swing.JButton();
+        jLabelPais = new javax.swing.JLabel();
+        jTextFieldPais = new javax.swing.JTextField();
+        jLabelUF = new javax.swing.JLabel();
+        jTextFieldUF = new javax.swing.JTextField();
+        jLabelCidade = new javax.swing.JLabel();
+        jTextFieldCidade = new javax.swing.JTextField();
+        jLabelBairro = new javax.swing.JLabel();
+        jTextFieldBairro = new javax.swing.JTextField();
+        jLabelCEP = new javax.swing.JLabel();
+        jFormattedTextFieldCEP = new javax.swing.JFormattedTextField();
+        jLabelRua = new javax.swing.JLabel();
+        jTextFieldRua = new javax.swing.JTextField();
+        jLabelComplemento = new javax.swing.JLabel();
+        jTextFieldComplemento = new javax.swing.JTextField();
+        jLabelNumero = new javax.swing.JLabel();
+        jTextFieldNumero = new javax.swing.JTextField();
+        jDialogEmail = new javax.swing.JDialog();
+        jLabelEmail = new javax.swing.JLabel();
+        jButtonSalvarEmail = new javax.swing.JButton();
+        jButtonCancelarEmail = new javax.swing.JButton();
+        jTextFieldEmail = new javax.swing.JTextField();
+        jDialogTelefone = new javax.swing.JDialog();
+        jLabelTelefone = new javax.swing.JLabel();
+        jTextFieldTelefoneDDD = new javax.swing.JTextField();
+        jButtonSalvarTelefone = new javax.swing.JButton();
+        jButtonCancelarTelefone = new javax.swing.JButton();
+        jTextFieldTelefoneNumero = new javax.swing.JTextField();
+        jTextFieldTelefoneOperadora = new javax.swing.JTextField();
+        jLabelOperadora = new javax.swing.JLabel();
+        jPanelCadastrarFonercedor = new javax.swing.JPanel();
         jLabelNome = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
         jLabelCnpj = new javax.swing.JLabel();
         jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelCadastrarCancelar = new javax.swing.JPanel();
         jButtonCancelar = new javax.swing.JButton();
         jButtonCadastrar = new javax.swing.JButton();
         jPanelTelefones = new javax.swing.JPanel();
         jScrollPaneTelefones = new javax.swing.JScrollPane();
         jTableTelefones = new javax.swing.JTable();
         jButtonTelefone = new javax.swing.JButton();
-        jPanelEmails = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTableEmails = new javax.swing.JTable();
-        jButtonEmail = new javax.swing.JButton();
-        jPanelEnderecos = new javax.swing.JPanel();
-        jScrollPanelEnderecos = new javax.swing.JScrollPane();
-        jTableEnderecos = new javax.swing.JTable();
-        jButtonEndereco = new javax.swing.JButton();
+        jPanelEmails1 = new javax.swing.JPanel();
+        jButtonEmail1 = new javax.swing.JButton();
+        jScrollPaneEmails1 = new javax.swing.JScrollPane();
+        jTableEmails1 = new javax.swing.JTable();
+        jPanelEnderecos4 = new javax.swing.JPanel();
+        jButtonEndereco4 = new javax.swing.JButton();
+        jScrollPaneEnderecos4 = new javax.swing.JScrollPane();
+        jTableEnderecos4 = new javax.swing.JTable();
+
+        jDialogExcluirEndereco.setTitle("Excluir Endereço");
+        jDialogExcluirEndereco.setMinimumSize(new java.awt.Dimension(680, 180));
+        jDialogExcluirEndereco.setResizable(false);
+
+        jButtonExcluirEnderecoExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonExcluirEnderecoExcluir.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonExcluirEnderecoExcluir.setText("Excluir");
+        jButtonExcluirEnderecoExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonExcluirEnderecoExcluirMouseClicked(evt);
+            }
+        });
+        jButtonExcluirEnderecoExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirEnderecoExcluirActionPerformed(evt);
+            }
+        });
+
+        jButtonExcluirEnderecoCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonExcluirEnderecoCancelar.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonExcluirEnderecoCancelar.setText("Cancelar");
+        jButtonExcluirEnderecoCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonExcluirEnderecoCancelarMouseClicked(evt);
+            }
+        });
+        jButtonExcluirEnderecoCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonExcluirEnderecoCancelarActionPerformed(evt);
+            }
+        });
+
+        jLabelExcluirPais.setText("País:");
+
+        jTextFieldExcluirPais.setEditable(false);
+
+        jLabelExcluirUF.setText("UF:");
+
+        jTextFieldExcluirUF.setEditable(false);
+        jTextFieldExcluirUF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldExcluirUFActionPerformed(evt);
+            }
+        });
+
+        jLabelExcluirCidade.setText("Cidade:");
+
+        jTextFieldExcluirCidade.setEditable(false);
+
+        jLabelExcluirBairro.setText("Bairro:");
+
+        jTextFieldExcluirBairro.setEditable(false);
+
+        jLabelExcluirCEP.setText("CEP:");
+
+        jFormattedTextFieldExcluirCEP.setEditable(false);
+        try {
+            jFormattedTextFieldExcluirCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabelExcluirRua.setText("Rua:");
+
+        jTextFieldExcluirRua.setEditable(false);
+
+        jLabelExcluirComplemento.setText("Complemento:");
+
+        jTextFieldExcluirComplemento.setEditable(false);
+
+        jLabelExcluirNumeroEndereco.setText("Número:");
+
+        jTextFieldExcluirNumeroEndereco.setEditable(false);
+
+        jLabelExcluirEndereco.setText("Realmente deseja excluir este Endereço?");
+
+        javax.swing.GroupLayout jDialogExcluirEnderecoLayout = new javax.swing.GroupLayout(jDialogExcluirEndereco.getContentPane());
+        jDialogExcluirEndereco.getContentPane().setLayout(jDialogExcluirEnderecoLayout);
+        jDialogExcluirEnderecoLayout.setHorizontalGroup(
+            jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirEnderecoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialogExcluirEnderecoLayout.createSequentialGroup()
+                        .addComponent(jLabelExcluirRua)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirRua)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelExcluirComplemento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldExcluirComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialogExcluirEnderecoLayout.createSequentialGroup()
+                        .addComponent(jLabelExcluirPais)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirPais, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelExcluirUF)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirUF, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelExcluirCidade)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelExcluirBairro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jDialogExcluirEnderecoLayout.createSequentialGroup()
+                        .addComponent(jLabelExcluirCEP)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldExcluirCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialogExcluirEnderecoLayout.createSequentialGroup()
+                        .addComponent(jLabelExcluirNumeroEndereco)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirNumeroEndereco)))
+                .addContainerGap(16, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogExcluirEnderecoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelExcluirEndereco)
+                .addGap(218, 218, 218))
+            .addGroup(jDialogExcluirEnderecoLayout.createSequentialGroup()
+                .addComponent(jButtonExcluirEnderecoCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonExcluirEnderecoExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jDialogExcluirEnderecoLayout.setVerticalGroup(
+            jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirEnderecoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelExcluirEndereco)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGroup(jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirPais)
+                    .addComponent(jTextFieldExcluirPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirUF)
+                    .addComponent(jTextFieldExcluirUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirCidade)
+                    .addComponent(jTextFieldExcluirCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirBairro)
+                    .addComponent(jTextFieldExcluirBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirCEP)
+                    .addComponent(jFormattedTextFieldExcluirCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirRua)
+                    .addComponent(jTextFieldExcluirRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirComplemento)
+                    .addComponent(jTextFieldExcluirComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirNumeroEndereco)
+                    .addComponent(jTextFieldExcluirNumeroEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialogExcluirEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonExcluirEnderecoCancelar)
+                    .addComponent(jButtonExcluirEnderecoExcluir)))
+        );
+
+        jDialogExcluirEmail.setTitle("Excluir Email");
+        jDialogExcluirEmail.setMinimumSize(new java.awt.Dimension(306, 160));
+        jDialogExcluirEmail.setResizable(false);
+
+        jTextFieldExcluirEnderecoEmail.setEditable(false);
+
+        jLabelExcluirEnderecoEmail.setText("Endereço:");
+
+        jLabelExcluirEmail.setText("Tem certeza que deseja excluir este Email");
+
+        jButtonEcluirEmailCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonEcluirEmailCancelar.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonEcluirEmailCancelar.setText("Cancelar");
+        jButtonEcluirEmailCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEcluirEmailCancelarMouseClicked(evt);
+            }
+        });
+        jButtonEcluirEmailCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcluirEmailCancelarActionPerformed(evt);
+            }
+        });
+
+        jButtonEcluirEmailExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonEcluirEmailExcluir.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonEcluirEmailExcluir.setText("Excluir");
+        jButtonEcluirEmailExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEcluirEmailExcluirMouseClicked(evt);
+            }
+        });
+        jButtonEcluirEmailExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcluirEmailExcluirActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialogExcluirEmailLayout = new javax.swing.GroupLayout(jDialogExcluirEmail.getContentPane());
+        jDialogExcluirEmail.getContentPane().setLayout(jDialogExcluirEmailLayout);
+        jDialogExcluirEmailLayout.setHorizontalGroup(
+            jDialogExcluirEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirEmailLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDialogExcluirEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogExcluirEmailLayout.createSequentialGroup()
+                        .addComponent(jLabelExcluirEmail)
+                        .addGap(33, 33, 33))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogExcluirEmailLayout.createSequentialGroup()
+                        .addComponent(jLabelExcluirEnderecoEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldExcluirEnderecoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogExcluirEmailLayout.createSequentialGroup()
+                .addComponent(jButtonEcluirEmailCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonEcluirEmailExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jDialogExcluirEmailLayout.setVerticalGroup(
+            jDialogExcluirEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirEmailLayout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(jLabelExcluirEmail)
+                .addGap(18, 18, 18)
+                .addGroup(jDialogExcluirEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirEnderecoEmail)
+                    .addComponent(jTextFieldExcluirEnderecoEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jDialogExcluirEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonEcluirEmailCancelar)
+                    .addComponent(jButtonEcluirEmailExcluir)))
+        );
+
+        jDialogExcluirTelefone.setTitle("Excluir Telefone");
+        jDialogExcluirTelefone.setMinimumSize(new java.awt.Dimension(300, 180));
+        jDialogExcluirTelefone.setResizable(false);
+
+        jButtonEcluirTelefoneExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonEcluirTelefoneExcluir.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonEcluirTelefoneExcluir.setText("Excluir");
+        jButtonEcluirTelefoneExcluir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEcluirTelefoneExcluirMouseClicked(evt);
+            }
+        });
+        jButtonEcluirTelefoneExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcluirTelefoneExcluirActionPerformed(evt);
+            }
+        });
+
+        jLabelExcluirTelefone.setText("Tem certeza que deseja excluir este Telefone?");
+
+        jLabelExcluirDDD.setText("DDD:");
+
+        jLabelExcluirNumeroTelefone.setText("Número:");
+
+        jLabelExcluirOperadora.setText("Operadora:");
+
+        jButtonEcluirTelefoneCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonEcluirTelefoneCancelar.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonEcluirTelefoneCancelar.setText("Cancelar");
+        jButtonEcluirTelefoneCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEcluirTelefoneCancelarMouseClicked(evt);
+            }
+        });
+        jButtonEcluirTelefoneCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEcluirTelefoneCancelarActionPerformed(evt);
+            }
+        });
+
+        jTextFieldExcluirDDD.setEditable(false);
+
+        jTextFieldExcluirNumeroTelefone.setEditable(false);
+
+        jTextFieldExcluirOperadora.setEditable(false);
+
+        javax.swing.GroupLayout jDialogExcluirTelefoneLayout = new javax.swing.GroupLayout(jDialogExcluirTelefone.getContentPane());
+        jDialogExcluirTelefone.getContentPane().setLayout(jDialogExcluirTelefoneLayout);
+        jDialogExcluirTelefoneLayout.setHorizontalGroup(
+            jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jLabelExcluirTelefone)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogExcluirTelefoneLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                        .addComponent(jButtonEcluirTelefoneCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonEcluirTelefoneExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                        .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelExcluirNumeroTelefone)
+                            .addComponent(jLabelExcluirOperadora)
+                            .addComponent(jLabelExcluirDDD))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextFieldExcluirOperadora, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jTextFieldExcluirNumeroTelefone)
+                            .addComponent(jTextFieldExcluirDDD))))
+                .addContainerGap())
+        );
+        jDialogExcluirTelefoneLayout.setVerticalGroup(
+            jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogExcluirTelefoneLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabelExcluirTelefone)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldExcluirDDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelExcluirDDD))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirNumeroTelefone)
+                    .addComponent(jTextFieldExcluirNumeroTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelExcluirOperadora)
+                    .addComponent(jTextFieldExcluirOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(jDialogExcluirTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonEcluirTelefoneExcluir)
+                    .addComponent(jButtonEcluirTelefoneCancelar)))
+        );
+
+        jDialogEndereco.setTitle("Adicionar Endereço");
+        jDialogEndereco.setMinimumSize(new java.awt.Dimension(660, 122));
+        jDialogEndereco.setResizable(false);
+
+        jButtonSalvarEndereco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonSalvarEndereco.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonSalvarEndereco.setText("Salvar");
+        jButtonSalvarEndereco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSalvarEnderecoMouseClicked(evt);
+            }
+        });
+        jButtonSalvarEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarEnderecoActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelarEndereco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonCancelarEndereco.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonCancelarEndereco.setText("Cancelar");
+        jButtonCancelarEndereco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCancelarEnderecoMouseClicked(evt);
+            }
+        });
+        jButtonCancelarEndereco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarEnderecoActionPerformed(evt);
+            }
+        });
+
+        jLabelPais.setText("País:");
+
+        jLabelUF.setText("UF:");
+
+        jTextFieldUF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldUFActionPerformed(evt);
+            }
+        });
+
+        jLabelCidade.setText("Cidade:");
+
+        jLabelBairro.setText("Bairro:");
+
+        jLabelCEP.setText("CEP:");
+
+        try {
+            jFormattedTextFieldCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
+        jLabelRua.setText("Rua:");
+
+        jLabelComplemento.setText("Complemento:");
+
+        jLabelNumero.setText("Número:");
+
+        javax.swing.GroupLayout jDialogEnderecoLayout = new javax.swing.GroupLayout(jDialogEndereco.getContentPane());
+        jDialogEndereco.getContentPane().setLayout(jDialogEnderecoLayout);
+        jDialogEnderecoLayout.setHorizontalGroup(
+            jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogEnderecoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogEnderecoLayout.createSequentialGroup()
+                        .addGroup(jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialogEnderecoLayout.createSequentialGroup()
+                                .addComponent(jLabelRua)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldRua)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelComplemento)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jDialogEnderecoLayout.createSequentialGroup()
+                                .addComponent(jLabelPais)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldPais, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelUF)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldUF, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelCidade)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelBairro)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jDialogEnderecoLayout.createSequentialGroup()
+                                .addComponent(jLabelCEP)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jFormattedTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jDialogEnderecoLayout.createSequentialGroup()
+                                .addComponent(jLabelNumero)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldNumero)))
+                        .addContainerGap(16, Short.MAX_VALUE))
+                    .addGroup(jDialogEnderecoLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButtonCancelarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSalvarEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+        );
+        jDialogEnderecoLayout.setVerticalGroup(
+            jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogEnderecoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPais)
+                    .addComponent(jTextFieldPais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelUF)
+                    .addComponent(jTextFieldUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCidade)
+                    .addComponent(jTextFieldCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelBairro)
+                    .addComponent(jTextFieldBairro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelCEP)
+                    .addComponent(jFormattedTextFieldCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelRua)
+                    .addComponent(jTextFieldRua, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelComplemento)
+                    .addComponent(jTextFieldComplemento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNumero)
+                    .addComponent(jTextFieldNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addGroup(jDialogEnderecoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonCancelarEndereco)
+                    .addComponent(jButtonSalvarEndereco)))
+        );
+
+        jDialogEmail.setTitle("Adicionar Email");
+        jDialogEmail.setMinimumSize(new java.awt.Dimension(290, 122));
+        jDialogEmail.setResizable(false);
+
+        jLabelEmail.setText("Email:");
+
+        jButtonSalvarEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonSalvarEmail.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonSalvarEmail.setText("Salvar");
+        jButtonSalvarEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSalvarEmailMouseClicked(evt);
+            }
+        });
+        jButtonSalvarEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarEmailActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelarEmail.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonCancelarEmail.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonCancelarEmail.setText("Cancelar");
+        jButtonCancelarEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCancelarEmailMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jDialogEmailLayout = new javax.swing.GroupLayout(jDialogEmail.getContentPane());
+        jDialogEmail.getContentPane().setLayout(jDialogEmailLayout);
+        jDialogEmailLayout.setHorizontalGroup(
+            jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogEmailLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jDialogEmailLayout.createSequentialGroup()
+                        .addComponent(jButtonCancelarEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSalvarEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialogEmailLayout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabelEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldEmail)))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jDialogEmailLayout.setVerticalGroup(
+            jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogEmailLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEmail)
+                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addGroup(jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSalvarEmail)
+                    .addComponent(jButtonCancelarEmail)))
+        );
+
+        jDialogTelefone.setTitle("Adicionar Telefone");
+        jDialogTelefone.setMinimumSize(new java.awt.Dimension(290, 122));
+        jDialogTelefone.setResizable(false);
+
+        jLabelTelefone.setText("Telefone:");
+
+        jButtonSalvarTelefone.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonSalvarTelefone.setForeground(new java.awt.Color(0, 153, 0));
+        jButtonSalvarTelefone.setText("Salvar");
+        jButtonSalvarTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSalvarTelefoneMouseClicked(evt);
+            }
+        });
+        jButtonSalvarTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalvarTelefoneActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelarTelefone.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jButtonCancelarTelefone.setForeground(new java.awt.Color(255, 0, 0));
+        jButtonCancelarTelefone.setText("Cancelar");
+        jButtonCancelarTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCancelarTelefoneMouseClicked(evt);
+            }
+        });
+
+        jLabelOperadora.setText("Operadora:");
+
+        javax.swing.GroupLayout jDialogTelefoneLayout = new javax.swing.GroupLayout(jDialogTelefone.getContentPane());
+        jDialogTelefone.getContentPane().setLayout(jDialogTelefoneLayout);
+        jDialogTelefoneLayout.setHorizontalGroup(
+            jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogTelefoneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDialogTelefoneLayout.createSequentialGroup()
+                        .addComponent(jButtonCancelarTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSalvarTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jDialogTelefoneLayout.createSequentialGroup()
+                        .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelOperadora)
+                            .addComponent(jLabelTelefone))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jDialogTelefoneLayout.createSequentialGroup()
+                                .addComponent(jTextFieldTelefoneDDD, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextFieldTelefoneNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextFieldTelefoneOperadora))))
+                .addContainerGap(14, Short.MAX_VALUE))
+        );
+        jDialogTelefoneLayout.setVerticalGroup(
+            jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jDialogTelefoneLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelTelefone)
+                    .addComponent(jTextFieldTelefoneDDD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldTelefoneNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldTelefoneOperadora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelOperadora))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(jDialogTelefoneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonSalvarTelefone)
+                    .addComponent(jButtonCancelarTelefone)))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CadastrarFornecedor");
         setName("Cadastrar Fornecedor"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(947, 476));
+        setResizable(false);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Fornecedor"));
+        jPanelCadastrarFonercedor.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Fornecedor"));
 
         jLabelNome.setText("Nome:");
 
@@ -78,11 +738,11 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelCadastrarFonercedorLayout = new javax.swing.GroupLayout(jPanelCadastrarFonercedor);
+        jPanelCadastrarFonercedor.setLayout(jPanelCadastrarFonercedorLayout);
+        jPanelCadastrarFonercedorLayout.setHorizontalGroup(
+            jPanelCadastrarFonercedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCadastrarFonercedorLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabelNome)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -90,19 +750,17 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabelCnpj)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        jPanelCadastrarFonercedorLayout.setVerticalGroup(
+            jPanelCadastrarFonercedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCadastrarFonercedorLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastrarFonercedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextFieldNome)
                     .addComponent(jLabelCnpj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37))
+                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jButtonCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -123,22 +781,22 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelCadastrarCancelarLayout = new javax.swing.GroupLayout(jPanelCadastrarCancelar);
+        jPanelCadastrarCancelar.setLayout(jPanelCadastrarCancelarLayout);
+        jPanelCadastrarCancelarLayout.setHorizontalGroup(
+            jPanelCadastrarCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelCadastrarCancelarLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        jPanelCadastrarCancelarLayout.setVerticalGroup(
+            jPanelCadastrarCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCadastrarCancelarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanelCadastrarCancelarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCadastrar)
                     .addComponent(jButtonCancelar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -149,37 +807,41 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
 
         jTableTelefones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Telefone", "Deletar"
+                "DDD", "Número", "Operadora", "Deletar"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTableTelefones.setToolTipText("");
-        jTableTelefones.setRowSelectionAllowed(false);
         jTableTelefones.getTableHeader().setReorderingAllowed(false);
+        jTableTelefones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableTelefonesMouseClicked(evt);
+            }
+        });
         jScrollPaneTelefones.setViewportView(jTableTelefones);
 
         jButtonTelefone.setText("Adicionar Telefone");
+        jButtonTelefone.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonTelefoneMouseClicked(evt);
+            }
+        });
         jButtonTelefone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonTelefoneActionPerformed(evt);
@@ -191,153 +853,159 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         jPanelTelefonesLayout.setHorizontalGroup(
             jPanelTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTelefonesLayout.createSequentialGroup()
-                .addGroup(jPanelTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPaneTelefones, javax.swing.GroupLayout.PREFERRED_SIZE, 461, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonTelefone))
-                .addGap(20, 20, 20))
+                .addComponent(jButtonTelefone)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPaneTelefones, javax.swing.GroupLayout.DEFAULT_SIZE, 461, Short.MAX_VALUE)
         );
         jPanelTelefonesLayout.setVerticalGroup(
             jPanelTelefonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelTelefonesLayout.createSequentialGroup()
                 .addComponent(jScrollPaneTelefones, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(jButtonTelefone))
         );
 
-        jPanelEmails.setBorder(javax.swing.BorderFactory.createTitledBorder("Emails"));
-        jPanelEmails.setPreferredSize(new java.awt.Dimension(473, 122));
+        jPanelEmails1.setBorder(javax.swing.BorderFactory.createTitledBorder("Emails"));
+        jPanelEmails1.setPreferredSize(new java.awt.Dimension(473, 122));
 
-        jTableEmails.setModel(new javax.swing.table.DefaultTableModel(
+        jButtonEmail1.setLabel("Adicionar Email");
+        jButtonEmail1.setPreferredSize(new java.awt.Dimension(121, 23));
+        jButtonEmail1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEmail1MouseClicked(evt);
+            }
+        });
+
+        jTableEmails1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null},
-                {null, null}
+
             },
             new String [] {
-                "Email", "Deletar"
+                "Endereço", "Deletar"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTableEmails.setPreferredSize(new java.awt.Dimension(162, 192));
-        jTableEmails.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTableEmails);
+        jTableEmails1.getTableHeader().setReorderingAllowed(false);
+        jTableEmails1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableEmails1MouseClicked(evt);
+            }
+        });
+        jScrollPaneEmails1.setViewportView(jTableEmails1);
 
-        jButtonEmail.setLabel("Adicionar Email");
-        jButtonEmail.setPreferredSize(new java.awt.Dimension(121, 23));
-
-        javax.swing.GroupLayout jPanelEmailsLayout = new javax.swing.GroupLayout(jPanelEmails);
-        jPanelEmails.setLayout(jPanelEmailsLayout);
-        jPanelEmailsLayout.setHorizontalGroup(
-            jPanelEmailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
-            .addGroup(jPanelEmailsLayout.createSequentialGroup()
-                .addComponent(jButtonEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanelEmails1Layout = new javax.swing.GroupLayout(jPanelEmails1);
+        jPanelEmails1.setLayout(jPanelEmails1Layout);
+        jPanelEmails1Layout.setHorizontalGroup(
+            jPanelEmails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEmails1Layout.createSequentialGroup()
+                .addComponent(jButtonEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPaneEmails1)
         );
-        jPanelEmailsLayout.setVerticalGroup(
-            jPanelEmailsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEmailsLayout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jButtonEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanelEmails1Layout.setVerticalGroup(
+            jPanelEmails1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEmails1Layout.createSequentialGroup()
+                .addComponent(jScrollPaneEmails1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jButtonEmail1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jPanelEnderecos.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereços"));
+        jPanelEnderecos4.setBorder(javax.swing.BorderFactory.createTitledBorder("Endereços"));
 
-        jTableEnderecos.setModel(new javax.swing.table.DefaultTableModel(
+        jButtonEndereco4.setText("Adicionar Endereço");
+        jButtonEndereco4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonEndereco4MouseClicked(evt);
+            }
+        });
+
+        jTableEnderecos4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "País", "UF", "Cidade", "Bairro", "CEP", "Rua", "Complemento", "Número", "Deletar"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTableEnderecos.setMaximumSize(new java.awt.Dimension(200, 64));
-        jTableEnderecos.setPreferredSize(new java.awt.Dimension(162, 192));
-        jTableEnderecos.getTableHeader().setReorderingAllowed(false);
-        jScrollPanelEnderecos.setViewportView(jTableEnderecos);
+        jTableEnderecos4.getTableHeader().setReorderingAllowed(false);
+        jTableEnderecos4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableEnderecos4MouseClicked(evt);
+            }
+        });
+        jScrollPaneEnderecos4.setViewportView(jTableEnderecos4);
 
-        jButtonEndereco.setText("Adicionar Endereço");
-
-        javax.swing.GroupLayout jPanelEnderecosLayout = new javax.swing.GroupLayout(jPanelEnderecos);
-        jPanelEnderecos.setLayout(jPanelEnderecosLayout);
-        jPanelEnderecosLayout.setHorizontalGroup(
-            jPanelEnderecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEnderecosLayout.createSequentialGroup()
-                .addComponent(jButtonEndereco)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(jScrollPanelEnderecos)
+        javax.swing.GroupLayout jPanelEnderecos4Layout = new javax.swing.GroupLayout(jPanelEnderecos4);
+        jPanelEnderecos4.setLayout(jPanelEnderecos4Layout);
+        jPanelEnderecos4Layout.setHorizontalGroup(
+            jPanelEnderecos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEnderecos4Layout.createSequentialGroup()
+                .addComponent(jButtonEndereco4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jScrollPaneEnderecos4)
         );
-        jPanelEnderecosLayout.setVerticalGroup(
-            jPanelEnderecosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEnderecosLayout.createSequentialGroup()
-                .addComponent(jScrollPanelEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jButtonEndereco))
+        jPanelEnderecos4Layout.setVerticalGroup(
+            jPanelEnderecos4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEnderecos4Layout.createSequentialGroup()
+                .addComponent(jScrollPaneEnderecos4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(jButtonEndereco4))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelCadastrarFonercedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelCadastrarCancelar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelTelefones, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
+                .addComponent(jPanelTelefones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanelEmails, javax.swing.GroupLayout.DEFAULT_SIZE, 483, Short.MAX_VALUE))
-            .addComponent(jPanelEnderecos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelEmails1, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanelEnderecos4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelCadastrarFonercedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelTelefones, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
-                    .addComponent(jPanelEmails, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
-                .addGap(1, 1, 1)
-                .addComponent(jPanelEnderecos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelTelefones, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelEmails1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelEnderecos4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jPanelCadastrarCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -361,9 +1029,200 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
+    private void jTableTelefonesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTelefonesMouseClicked
+        //pega a coluna e a linha de onde a tabela foi clicada.
+        int row = this.jTableTelefones.rowAtPoint(evt.getPoint());
+        int column = this.jTableTelefones.columnAtPoint(evt.getPoint());
+
+        if (row >= 0 && column == 3) {
+            this.jTextFieldExcluirDDD.setText(this.jTableTelefones.getModel().getValueAt(row, 0).toString());
+            this.jTextFieldExcluirNumeroTelefone.setText(this.jTableTelefones.getModel().getValueAt(row, 1).toString());
+            this.jTextFieldExcluirOperadora.setText(this.jTableTelefones.getModel().getValueAt(row, 2).toString());
+            this.jDialogExcluirTelefone.setVisible(true);
+
+        }
+    }//GEN-LAST:event_jTableTelefonesMouseClicked
+
+    private void jButtonTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTelefoneMouseClicked
+        this.jDialogTelefone.setVisible(true);
+    }//GEN-LAST:event_jButtonTelefoneMouseClicked
+
     private void jButtonTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTelefoneActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonTelefoneActionPerformed
+
+    private void jButtonEmail1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEmail1MouseClicked
+        this.jDialogEmail.setVisible(true);
+    }//GEN-LAST:event_jButtonEmail1MouseClicked
+
+    private void jTableEmails1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEmails1MouseClicked
+        //pega a coluna e a linha de onde a tabela foi clicada.
+        int row = this.jTableEmails1.rowAtPoint(evt.getPoint());
+        int column = this.jTableEmails1.columnAtPoint(evt.getPoint());
+
+        if (row >= 0 && column == 1) {
+            this.jTextFieldExcluirEnderecoEmail.setText(this.jTableEmails1.getModel().getValueAt(row, 0).toString());
+            this.jDialogExcluirEmail.setVisible(true);
+        }
+    }//GEN-LAST:event_jTableEmails1MouseClicked
+
+    private void jButtonEndereco4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEndereco4MouseClicked
+        this.jDialogEndereco.setVisible(true);
+    }//GEN-LAST:event_jButtonEndereco4MouseClicked
+
+    private void jTableEnderecos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEnderecos4MouseClicked
+        //pega a coluna e a linha de onde a tabela foi clicada.
+        int row = this.jTableEnderecos4.rowAtPoint(evt.getPoint());
+        int column = this.jTableEnderecos4.columnAtPoint(evt.getPoint());
+
+        if (row >= 0 && column == 8) {
+            this.jTextFieldExcluirPais.setText(this.jTableEnderecos4.getModel().getValueAt(row, 0).toString());
+            this.jTextFieldExcluirUF.setText(this.jTableEnderecos4.getModel().getValueAt(row, 1).toString());
+            this.jTextFieldExcluirCidade.setText(this.jTableEnderecos4.getModel().getValueAt(row, 2).toString());
+            this.jTextFieldExcluirBairro.setText(this.jTableEnderecos4.getModel().getValueAt(row, 3).toString());
+            this.jFormattedTextFieldExcluirCEP.setText(this.jTableEnderecos4.getModel().getValueAt(row, 4).toString());
+            this.jTextFieldExcluirRua.setText(this.jTableEnderecos4.getModel().getValueAt(row, 5).toString());
+            this.jTextFieldExcluirComplemento.setText(this.jTableEnderecos4.getModel().getValueAt(row, 6).toString());
+            this.jTextFieldExcluirNumeroEndereco.setText(this.jTableEnderecos4.getModel().getValueAt(row, 7).toString());
+
+            this.jDialogExcluirEndereco.setVisible(true);
+        }
+    }//GEN-LAST:event_jTableEnderecos4MouseClicked
+
+    private void jButtonExcluirEnderecoExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonExcluirEnderecoExcluirMouseClicked
+        this.controller.excluirEndereco(
+                this.jTextFieldExcluirPais.getText(),
+                this.jTextFieldExcluirUF.getText(),
+                this.jTextFieldExcluirCidade.getText(),
+                this.jTextFieldExcluirBairro.getText(),
+                this.jFormattedTextFieldExcluirCEP.getText(),
+                this.jTextFieldExcluirRua.getText(),
+                this.jTextFieldExcluirComplemento.getText(),
+                this.jTextFieldExcluirNumeroEndereco.getText()
+        );
+        this.atualizaEnderecos();
+        this.jDialogExcluirEndereco.dispose();
+    }//GEN-LAST:event_jButtonExcluirEnderecoExcluirMouseClicked
+
+    private void jButtonExcluirEnderecoExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirEnderecoExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonExcluirEnderecoExcluirActionPerformed
+
+    private void jButtonExcluirEnderecoCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonExcluirEnderecoCancelarMouseClicked
+        this.jDialogExcluirEndereco.dispose();
+    }//GEN-LAST:event_jButtonExcluirEnderecoCancelarMouseClicked
+
+    private void jButtonExcluirEnderecoCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonExcluirEnderecoCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonExcluirEnderecoCancelarActionPerformed
+
+    private void jTextFieldExcluirUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldExcluirUFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldExcluirUFActionPerformed
+
+    private void jButtonEcluirEmailCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEcluirEmailCancelarMouseClicked
+        this.jDialogExcluirEmail.dispose();
+    }//GEN-LAST:event_jButtonEcluirEmailCancelarMouseClicked
+
+    private void jButtonEcluirEmailCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcluirEmailCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEcluirEmailCancelarActionPerformed
+
+    private void jButtonEcluirEmailExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEcluirEmailExcluirMouseClicked
+        this.controller.excluirEmail(this.jTextFieldExcluirEnderecoEmail.getText());
+        this.atualizaEmails();
+        this.jDialogExcluirEmail.dispose();
+    }//GEN-LAST:event_jButtonEcluirEmailExcluirMouseClicked
+
+    private void jButtonEcluirEmailExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcluirEmailExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEcluirEmailExcluirActionPerformed
+
+    private void jButtonEcluirTelefoneExcluirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneExcluirMouseClicked
+        this.controller.excluirTelefone(
+                this.jTextFieldExcluirNumeroTelefone.getText(),
+                this.jTextFieldExcluirDDD.getText(),
+                this.jTextFieldExcluirOperadora.getText()
+        );
+
+        this.atualizaTelefones();
+        this.jDialogExcluirTelefone.dispose();
+    }//GEN-LAST:event_jButtonEcluirTelefoneExcluirMouseClicked
+
+    private void jButtonEcluirTelefoneExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEcluirTelefoneExcluirActionPerformed
+
+    private void jButtonEcluirTelefoneCancelarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneCancelarMouseClicked
+        this.jDialogExcluirTelefone.dispose();
+    }//GEN-LAST:event_jButtonEcluirTelefoneCancelarMouseClicked
+
+    private void jButtonEcluirTelefoneCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEcluirTelefoneCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonEcluirTelefoneCancelarActionPerformed
+
+    private void jButtonSalvarEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalvarEnderecoMouseClicked
+        this.controller.addEndereco(
+                this.jTextFieldPais.getText(),
+                this.jTextFieldUF.getText(),
+                this.jTextFieldCidade.getText(),
+                this.jTextFieldBairro.getText(),
+                this.jFormattedTextFieldCEP.getText(),
+                this.jTextFieldRua.getText(),
+                this.jTextFieldComplemento.getText(),
+                this.jTextFieldNumero.getText()
+        );
+        this.atualizaEnderecos();
+        this.jDialogEndereco.dispose();
+    }//GEN-LAST:event_jButtonSalvarEnderecoMouseClicked
+
+    private void jButtonSalvarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalvarEnderecoActionPerformed
+
+    private void jButtonCancelarEnderecoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarEnderecoMouseClicked
+        this.jDialogEndereco.dispose();
+    }//GEN-LAST:event_jButtonCancelarEnderecoMouseClicked
+
+    private void jButtonCancelarEnderecoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarEnderecoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarEnderecoActionPerformed
+
+    private void jTextFieldUFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldUFActionPerformed
+
+    private void jButtonSalvarEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalvarEmailMouseClicked
+        this.controller.addEmail(this.jTextFieldEmail.getText());
+        this.atualizaEmails();
+        this.jDialogEmail.dispose();
+    }//GEN-LAST:event_jButtonSalvarEmailMouseClicked
+
+    private void jButtonSalvarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonSalvarEmailActionPerformed
+
+    private void jButtonCancelarEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarEmailMouseClicked
+        this.jDialogEmail.dispose();
+    }//GEN-LAST:event_jButtonCancelarEmailMouseClicked
+
+    private void jButtonSalvarTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSalvarTelefoneMouseClicked
+        this.controller.addTelefone(
+                this.jTextFieldTelefoneNumero.getText(),
+                this.jTextFieldTelefoneDDD.getText(),
+                this.jTextFieldTelefoneOperadora.getText()
+        );
+        this.atualizaTelefones();
+        this.jDialogTelefone.dispose();
+    }//GEN-LAST:event_jButtonSalvarTelefoneMouseClicked
+
+    private void jButtonSalvarTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarTelefoneActionPerformed
+
+    }//GEN-LAST:event_jButtonSalvarTelefoneActionPerformed
+
+    private void jButtonCancelarTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelarTelefoneMouseClicked
+        this.jDialogTelefone.dispose();
+    }//GEN-LAST:event_jButtonCancelarTelefoneMouseClicked
 
     /**
      * @param args the command line arguments
@@ -376,7 +1235,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows classic".equals(info.getName())) {
+                if ("Windows Classic".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -404,23 +1263,91 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
     private javax.swing.JButton jButtonCancelar;
-    private javax.swing.JButton jButtonEmail;
-    private javax.swing.JButton jButtonEndereco;
+    private javax.swing.JButton jButtonCancelarEmail;
+    private javax.swing.JButton jButtonCancelarEndereco;
+    private javax.swing.JButton jButtonCancelarTelefone;
+    private javax.swing.JButton jButtonEcluirEmailCancelar;
+    private javax.swing.JButton jButtonEcluirEmailExcluir;
+    private javax.swing.JButton jButtonEcluirTelefoneCancelar;
+    private javax.swing.JButton jButtonEcluirTelefoneExcluir;
+    private javax.swing.JButton jButtonEmail1;
+    private javax.swing.JButton jButtonEndereco4;
+    private javax.swing.JButton jButtonExcluirEnderecoCancelar;
+    private javax.swing.JButton jButtonExcluirEnderecoExcluir;
+    private javax.swing.JButton jButtonSalvarEmail;
+    private javax.swing.JButton jButtonSalvarEndereco;
+    private javax.swing.JButton jButtonSalvarTelefone;
     private javax.swing.JButton jButtonTelefone;
+    private javax.swing.JDialog jDialogEmail;
+    private javax.swing.JDialog jDialogEndereco;
+    private javax.swing.JDialog jDialogExcluirEmail;
+    private javax.swing.JDialog jDialogExcluirEndereco;
+    private javax.swing.JDialog jDialogExcluirTelefone;
+    private javax.swing.JDialog jDialogTelefone;
     private javax.swing.JFormattedTextField jFormattedTextField1;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCEP;
+    private javax.swing.JFormattedTextField jFormattedTextFieldExcluirCEP;
+    private javax.swing.JLabel jLabelBairro;
+    private javax.swing.JLabel jLabelCEP;
+    private javax.swing.JLabel jLabelCidade;
     private javax.swing.JLabel jLabelCnpj;
+    private javax.swing.JLabel jLabelComplemento;
+    private javax.swing.JLabel jLabelEmail;
+    private javax.swing.JLabel jLabelExcluirBairro;
+    private javax.swing.JLabel jLabelExcluirCEP;
+    private javax.swing.JLabel jLabelExcluirCidade;
+    private javax.swing.JLabel jLabelExcluirComplemento;
+    private javax.swing.JLabel jLabelExcluirDDD;
+    private javax.swing.JLabel jLabelExcluirEmail;
+    private javax.swing.JLabel jLabelExcluirEndereco;
+    private javax.swing.JLabel jLabelExcluirEnderecoEmail;
+    private javax.swing.JLabel jLabelExcluirNumeroEndereco;
+    private javax.swing.JLabel jLabelExcluirNumeroTelefone;
+    private javax.swing.JLabel jLabelExcluirOperadora;
+    private javax.swing.JLabel jLabelExcluirPais;
+    private javax.swing.JLabel jLabelExcluirRua;
+    private javax.swing.JLabel jLabelExcluirTelefone;
+    private javax.swing.JLabel jLabelExcluirUF;
     private javax.swing.JLabel jLabelNome;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanelEmails;
-    private javax.swing.JPanel jPanelEnderecos;
+    private javax.swing.JLabel jLabelNumero;
+    private javax.swing.JLabel jLabelOperadora;
+    private javax.swing.JLabel jLabelPais;
+    private javax.swing.JLabel jLabelRua;
+    private javax.swing.JLabel jLabelTelefone;
+    private javax.swing.JLabel jLabelUF;
+    private javax.swing.JPanel jPanelCadastrarCancelar;
+    private javax.swing.JPanel jPanelCadastrarFonercedor;
+    private javax.swing.JPanel jPanelEmails1;
+    private javax.swing.JPanel jPanelEnderecos4;
     private javax.swing.JPanel jPanelTelefones;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPaneEmails1;
+    private javax.swing.JScrollPane jScrollPaneEnderecos4;
     private javax.swing.JScrollPane jScrollPaneTelefones;
-    private javax.swing.JScrollPane jScrollPanelEnderecos;
-    private javax.swing.JTable jTableEmails;
-    private javax.swing.JTable jTableEnderecos;
+    private javax.swing.JTable jTableEmails1;
+    private javax.swing.JTable jTableEnderecos4;
     private javax.swing.JTable jTableTelefones;
+    private javax.swing.JTextField jTextFieldBairro;
+    private javax.swing.JTextField jTextFieldCidade;
+    private javax.swing.JTextField jTextFieldComplemento;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldExcluirBairro;
+    private javax.swing.JTextField jTextFieldExcluirCidade;
+    private javax.swing.JTextField jTextFieldExcluirComplemento;
+    private javax.swing.JTextField jTextFieldExcluirDDD;
+    private javax.swing.JTextField jTextFieldExcluirEnderecoEmail;
+    private javax.swing.JTextField jTextFieldExcluirNumeroEndereco;
+    private javax.swing.JTextField jTextFieldExcluirNumeroTelefone;
+    private javax.swing.JTextField jTextFieldExcluirOperadora;
+    private javax.swing.JTextField jTextFieldExcluirPais;
+    private javax.swing.JTextField jTextFieldExcluirRua;
+    private javax.swing.JTextField jTextFieldExcluirUF;
     private javax.swing.JTextField jTextFieldNome;
+    private javax.swing.JTextField jTextFieldNumero;
+    private javax.swing.JTextField jTextFieldPais;
+    private javax.swing.JTextField jTextFieldRua;
+    private javax.swing.JTextField jTextFieldTelefoneDDD;
+    private javax.swing.JTextField jTextFieldTelefoneNumero;
+    private javax.swing.JTextField jTextFieldTelefoneOperadora;
+    private javax.swing.JTextField jTextFieldUF;
     // End of variables declaration//GEN-END:variables
 }
