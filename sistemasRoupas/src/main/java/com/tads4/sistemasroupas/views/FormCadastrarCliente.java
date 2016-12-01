@@ -12,7 +12,6 @@ import com.tads4.sistemasroupas.model.Telefone;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
