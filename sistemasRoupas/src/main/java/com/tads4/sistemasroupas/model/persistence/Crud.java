@@ -1,13 +1,16 @@
 package com.tads4.sistemasroupas.model.persistence;
 
 import com.tads4.sistemasroupas.model.Cliente;
+import com.tads4.sistemasroupas.model.Funcionario;
 import java.util.List;
+import java.util.Set;
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 
 /**
@@ -94,9 +97,48 @@ public class Crud {
 
     /*EXEMPLO DE COMO ENVIAR UM QUERY DIRETA
     public Object searchClienteNome(String nome) {
-        List id = list("SELECT ID FROM Cliente WHERE NOME='".concat(nome).concat("' "));
+        List id = list("SELECT * FROM Cliente WHERE 1);
         return searchId((Integer) id.get(0), Cliente.class);
     }*/
+    public List listCliente() {
+        List objects = null;
+        try {
+            Session session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Criteria cr = session.createCriteria(Cliente.class);
+            cr.addOrder(Order.asc("id"));
+            objects = cr.list();
+            tx.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
+        }
+        if (!objects.isEmpty()) {
+            return objects;
+        } else {
+            return null;
+        }
+    }
+
+     public List listFuncionario() {
+        List objects = null;
+        try {
+            Session session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Criteria cr = session.createCriteria(Funcionario.class);
+            cr.addOrder(Order.asc("id"));
+            objects = cr.list();
+            tx.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
+        }
+        if (!objects.isEmpty()) {
+            return objects;
+        } else {
+            return null;
+        }
+    }
     
     public Object searchClienteNome(String nome) {
         List objects = null;
@@ -113,8 +155,27 @@ public class Crud {
         }
         if (!objects.isEmpty()) {
             return objects.get(0);
+        } else {
+            return null;
         }
-        else {
+    }
+
+    public Object searchFuncionarioNome(String nome) {
+        List objects = null;
+        try {
+            Session session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Criteria cr = session.createCriteria(Funcionario.class);
+            cr.add(Restrictions.like("nome", nome));
+            objects = cr.list();
+            tx.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
+        }
+        if (!objects.isEmpty()) {
+            return objects.get(0);
+        } else {
             return null;
         }
     }

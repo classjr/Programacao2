@@ -1,19 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tads4.sistemasroupas.views;
 
 import com.tads4.sistemasroupas.control.ClienteController;
 import com.tads4.sistemasroupas.model.Email;
 import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Telefone;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
- * @author robson
+ * @author GiovanePerlin
  */
 public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
@@ -382,7 +383,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogEndereco.setTitle("Adicionar Endereço");
         jDialogEndereco.setMinimumSize(new java.awt.Dimension(660, 122));
-        jDialogEndereco.setPreferredSize(new java.awt.Dimension(660, 122));
         jDialogEndereco.setResizable(false);
 
         jButtonSalvarEndereco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -522,7 +522,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogClienteExcluido.setTitle("Cliente Excluído");
         jDialogClienteExcluido.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogClienteExcluido.setPreferredSize(new java.awt.Dimension(290, 122));
         jDialogClienteExcluido.setResizable(false);
 
         jButtonClienteExcluido.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -563,7 +562,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogSalvo.setTitle("Cliente Salvo");
         jDialogSalvo.setMinimumSize(new java.awt.Dimension(290, 122));
-        jDialogSalvo.setPreferredSize(new java.awt.Dimension(290, 122));
         jDialogSalvo.setResizable(false);
 
         jButtonSalvo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -604,7 +602,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogExcluirTelefone.setTitle("Excluir Telefone");
         jDialogExcluirTelefone.setMinimumSize(new java.awt.Dimension(300, 180));
-        jDialogExcluirTelefone.setPreferredSize(new java.awt.Dimension(300, 180));
         jDialogExcluirTelefone.setResizable(false);
 
         jButtonEcluirTelefoneExcluir.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -701,7 +698,6 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
         jDialogExcluirEmail.setTitle("Excluir Email");
         jDialogExcluirEmail.setMinimumSize(new java.awt.Dimension(306, 160));
-        jDialogExcluirEmail.setPreferredSize(new java.awt.Dimension(306, 160));
         jDialogExcluirEmail.setResizable(false);
 
         jTextFieldExcluirEnderecoEmail.setEditable(false);
@@ -938,6 +934,7 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         setTitle("Pesquisar Clientes");
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(982, 567));
+        setResizable(false);
         setSize(new java.awt.Dimension(982, 567));
 
         jPanelPesquisar.setBorder(javax.swing.BorderFactory.createTitledBorder("Pesquisar Clientes"));
@@ -1506,6 +1503,14 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         }
         this.jTableEmails.setModel(model);
 
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableEmails.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+
+        sorter.setSortKeys(sortKeys);
+
         if (jTableEmails.getColumnModel().getColumnCount() > 0) {
             jTableEmails.getColumnModel().getColumn(0).setResizable(false);
             jTableEmails.getColumnModel().getColumn(0).setPreferredWidth(411);
@@ -1551,8 +1556,22 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
 
             model.addRow(row);
         }
-
         this.jTableEnderecos.setModel(model);
+
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableEnderecos.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(5, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(7, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(4, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(3, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(6, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+
+        sorter.setSortKeys(sortKeys);
 
         if (jTableEnderecos.getColumnModel().getColumnCount() > 0) {
             jTableEnderecos.getColumnModel().getColumn(0).setResizable(false);
@@ -1610,6 +1629,16 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
         }
         this.jTableTelefones.setModel(model);
 
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableTelefones.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
+
+        sorter.setSortKeys(sortKeys);
+        
         if (jTableTelefones.getColumnModel().getColumnCount() > 0) {
             jTableTelefones.getColumnModel().getColumn(0).setResizable(false);
             jTableTelefones.getColumnModel().getColumn(0).setPreferredWidth(60);
@@ -1623,6 +1652,7 @@ public class FormPesquisarEditarExcluirClientes extends javax.swing.JFrame {
     }
 
     private void jButtonPesquisarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonPesquisarMouseClicked
+        this.controller.setCliente(null);
         if (!this.jTextFieldId.getText().equals("")) {
             this.controller.buscaClienteId(this.jTextFieldId.getText());
         } else if (!this.jTextFieldNome.getText().equals("")) {

@@ -5,7 +5,9 @@ import com.tads4.sistemasroupas.model.Email;
 import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Telefone;
 import com.tads4.sistemasroupas.model.persistence.Crud;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -91,6 +93,17 @@ public class ClienteController {
         }
     }
 
+    /**
+     * Cria um cliente com os Sets de enderecos, emails e enderecos vazios.
+     */
+    public void criaCliente() {
+        Cliente cliente = new Cliente();
+        cliente.setTelefones(new HashSet<Telefone>());
+        cliente.setEmails(new HashSet<Email>());
+        cliente.setEnderecos(new HashSet<Endereco>());
+        this.setCliente(cliente);
+    }
+    
     public void excluirCliente() {
         Crud crud = new Crud();
         crud.remove(this.cliente);
@@ -111,6 +124,21 @@ public class ClienteController {
         cliente.getTelefones().remove(telefone);
     }
 
+    public void insereCliente() {
+        Crud crud = new Crud();
+        crud.insert(this.cliente);
+    }
+    
+    public Set<Cliente> listCliente() {
+        Crud crud = new Crud();
+        Set<Cliente> clientes = new HashSet<Cliente>();
+        //recebe um ArrayList e transforma em um Set
+        for (Object cliente : crud.listCliente().toArray()) {
+            clientes.add((Cliente)cliente);
+        }
+        return clientes;
+    }
+    
     public void salvarCliente() {
         Crud crud = new Crud();
         crud.update(this.cliente);

@@ -1,18 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.tads4.sistemasroupas.views;
 
-import com.tads4.sistemasroupas.control.ClienteController;
+import com.tads4.sistemasroupas.control.FuncionarioController;
 import com.tads4.sistemasroupas.model.Email;
 import com.tads4.sistemasroupas.model.Endereco;
 import com.tads4.sistemasroupas.model.Telefone;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
@@ -23,16 +16,16 @@ import javax.swing.table.TableRowSorter;
  *
  * @author GiovanePerlin
  */
-public class FormCadastrarCliente extends javax.swing.JFrame {
+public class FormCadastrarFuncionario extends javax.swing.JFrame {
 
-    private ClienteController controller = new ClienteController();
+    private FuncionarioController controller = new FuncionarioController();
 
     /**
-     * Creates new form FormCadastrarCliente
+     * Creates new form FormCadastrarFuncionario
      */
-    public FormCadastrarCliente() {
+    public FormCadastrarFuncionario() {
         initComponents();
-        this.controller.criaCliente();
+        this.controller.criaFuncionario();
     }
 
     /**
@@ -125,8 +118,12 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
         jRadioButtonFeminino = new javax.swing.JRadioButton();
         jLabelDataNascimento = new javax.swing.JLabel();
         jFormattedTextFieldDataNascimento = new javax.swing.JFormattedTextField();
-        jLabelRenda = new javax.swing.JLabel();
-        jFormattedTextFieldRenda = new javax.swing.JFormattedTextField();
+        jLabelSalario = new javax.swing.JLabel();
+        jFormattedTextFieldSalario = new javax.swing.JFormattedTextField();
+        jLabelFuncao = new javax.swing.JLabel();
+        jTextFieldFuncao = new javax.swing.JTextField();
+        jLabelUsuario = new javax.swing.JLabel();
+        jTextFieldUsuario = new javax.swing.JTextField();
         jButtonCadastrar = new javax.swing.JButton();
         jPanelTelefones = new javax.swing.JPanel();
         jScrollPaneTelefones = new javax.swing.JScrollPane();
@@ -742,11 +739,12 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cadastrar Cliente");
-        setPreferredSize(new java.awt.Dimension(978, 490));
+        setTitle("Cadastrar Funcionário");
+        setMinimumSize(new java.awt.Dimension(982, 460));
+        setPreferredSize(new java.awt.Dimension(982, 460));
         setResizable(false);
 
-        jPanelCadastrar.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Cliente"));
+        jPanelCadastrar.setBorder(javax.swing.BorderFactory.createTitledBorder("Cadastrar Funcionário"));
         jPanelCadastrar.setMinimumSize(new java.awt.Dimension(0, 0));
         jPanelCadastrar.setPreferredSize(new java.awt.Dimension(960, 104));
 
@@ -800,48 +798,62 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
             }
         });
 
-        jLabelRenda.setText("Renda:");
+        jLabelSalario.setText("Salário:");
 
-        jFormattedTextFieldRenda.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+        jFormattedTextFieldSalario.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("#0.00"))));
+
+        jLabelFuncao.setText("Função:");
+
+        jLabelUsuario.setText("Usuário:");
 
         javax.swing.GroupLayout jPanelCadastrarLayout = new javax.swing.GroupLayout(jPanelCadastrar);
         jPanelCadastrar.setLayout(jPanelCadastrarLayout);
         jPanelCadastrarLayout.setHorizontalGroup(
             jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCadastrarLayout.createSequentialGroup()
-                .addComponent(jLabelNome)
+                .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelFuncao)
+                    .addComponent(jLabelNome))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                    .addComponent(jTextFieldFuncao))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelRg)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelCpf)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanelCadastrarLayout.createSequentialGroup()
+                        .addComponent(jLabelRg)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldRg, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelCpf)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jFormattedTextFieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelCadastrarLayout.createSequentialGroup()
+                        .addComponent(jLabelUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldUsuario)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelSexo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jRadioButtonMasculino)
                 .addGap(18, 18, 18)
                 .addComponent(jRadioButtonFeminino)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                 .addComponent(jLabelDataNascimento)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jFormattedTextFieldDataNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelRenda)
+                .addComponent(jLabelSalario)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextFieldRenda, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jFormattedTextFieldSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCadastrarLayout.setVerticalGroup(
             jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelCadastrarLayout.createSequentialGroup()
                 .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabelRenda)
-                        .addComponent(jFormattedTextFieldRenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelSalario)
+                        .addComponent(jFormattedTextFieldSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabelNome)
                         .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -854,6 +866,12 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
                         .addComponent(jRadioButtonFeminino)
                         .addComponent(jFormattedTextFieldDataNascimento, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabelDataNascimento)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelCadastrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelFuncao)
+                    .addComponent(jTextFieldFuncao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelUsuario)
+                    .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1078,7 +1096,7 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanelCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelCadastrar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanelEmails, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1305,29 +1323,20 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarMouseClicked
 
     private void jButtonCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCadastrarMouseClicked
-        if (this.controller.clienteExiste()) {
-            this.controller.getCliente().setNome(this.jTextFieldNome.getText());
-            this.controller.getCliente().setRg(this.jFormattedTextFieldRg.getText());
-            this.controller.getCliente().setCpf(this.jFormattedTextFieldCpf.getText());
+        if (this.controller.funcionarioExiste()) {
+            this.controller.getFuncionario().setNome(this.jTextFieldNome.getText());
+            this.controller.getFuncionario().setRg(this.jFormattedTextFieldRg.getText());
+            this.controller.getFuncionario().setCpf(this.jFormattedTextFieldCpf.getText());
             if (this.jRadioButtonMasculino.isSelected()) {
-                this.controller.getCliente().setSexo('M');
+                this.controller.getFuncionario().setSexo('M');
             } else {
-                this.controller.getCliente().setSexo('F');
+                this.controller.getFuncionario().setSexo('F');
             }
-            this.controller.getCliente().setDataDeNascimento(this.jFormattedTextFieldDataNascimento.getText());
-            this.controller.getCliente().setRenda(Double.valueOf(this.jFormattedTextFieldRenda.getText()));
-            Calendar dataAtual = Calendar.getInstance();
-            String dia = Integer.toString(dataAtual.get(Calendar.DAY_OF_MONTH));
-            if (dia.length() == 1) {
-                dia = "0".concat(dia);
-            }
-            String mes = Integer.toString(dataAtual.get(Calendar.MONTH) + 1);
-            if (mes.length() == 1) {
-                mes = "0".concat(mes);
-            }
-            String ano = Integer.toString(dataAtual.get(Calendar.YEAR));
-            this.controller.getCliente().setDataDeCadastro(dia+"/"+mes+"/"+ano);
-            this.controller.insereCliente();
+            this.controller.getFuncionario().setDataDeNascimento(this.jFormattedTextFieldDataNascimento.getText());
+            this.controller.getFuncionario().setSalario(Double.valueOf(this.jFormattedTextFieldSalario.getText()));
+            this.controller.getFuncionario().setFuncao(this.jTextFieldFuncao.getText());
+            this.controller.getFuncionario().setUsuario(this.jTextFieldUsuario.getText());
+            this.controller.insereFuncionario();
             this.dispose();
         }
 
@@ -1358,7 +1367,7 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
         };
 
         Object[] row = {"", ""};
-        for (Email email : this.controller.getCliente().getEmails()) {
+        for (Email email : this.controller.getFuncionario().getEmails()) {
             row[0] = email.getEmail();
             row[1] = "Excluir";
 
@@ -1406,7 +1415,7 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
         };
 
         Object[] row = {"", "", "", "", "", "", "", "", ""};
-        for (Endereco endereco : this.controller.getCliente().getEnderecos()) {
+        for (Endereco endereco : this.controller.getFuncionario().getEnderecos()) {
             row[0] = endereco.getPais();
             row[1] = endereco.getEstado();
             row[2] = endereco.getCidade();
@@ -1482,7 +1491,7 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
         };
 
         Object[] row = {"", "", "", ""};
-        for (Telefone telefone : this.controller.getCliente().getTelefones()) {
+        for (Telefone telefone : this.controller.getFuncionario().getTelefones()) {
             row[0] = telefone.getDdd();
             row[1] = telefone.getNumero();
             row[2] = telefone.getOperadora();
@@ -1531,20 +1540,21 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormCadastrarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormCadastrarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormCadastrarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormCadastrarCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormCadastrarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FormCadastrarCliente().setVisible(true);
+                new FormCadastrarFuncionario().setVisible(true);
             }
         });
     }
@@ -1578,8 +1588,8 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jFormattedTextFieldCpf;
     private javax.swing.JFormattedTextField jFormattedTextFieldDataNascimento;
     private javax.swing.JFormattedTextField jFormattedTextFieldExcluirCEP;
-    private javax.swing.JFormattedTextField jFormattedTextFieldRenda;
     private javax.swing.JFormattedTextField jFormattedTextFieldRg;
+    private javax.swing.JFormattedTextField jFormattedTextFieldSalario;
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCEP;
     private javax.swing.JLabel jLabelCidade;
@@ -1602,16 +1612,18 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelExcluirRua;
     private javax.swing.JLabel jLabelExcluirTelefone;
     private javax.swing.JLabel jLabelExcluirUF;
+    private javax.swing.JLabel jLabelFuncao;
     private javax.swing.JLabel jLabelNome;
     private javax.swing.JLabel jLabelNumero;
     private javax.swing.JLabel jLabelOperadora;
     private javax.swing.JLabel jLabelPais;
-    private javax.swing.JLabel jLabelRenda;
     private javax.swing.JLabel jLabelRg;
     private javax.swing.JLabel jLabelRua;
+    private javax.swing.JLabel jLabelSalario;
     private javax.swing.JLabel jLabelSexo;
     private javax.swing.JLabel jLabelTelefone;
     private javax.swing.JLabel jLabelUF;
+    private javax.swing.JLabel jLabelUsuario;
     private javax.swing.JPanel jPanelCadastrar;
     private javax.swing.JPanel jPanelEmails;
     private javax.swing.JPanel jPanelEnderecos;
@@ -1639,6 +1651,7 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldExcluirPais;
     private javax.swing.JTextField jTextFieldExcluirRua;
     private javax.swing.JTextField jTextFieldExcluirUF;
+    private javax.swing.JTextField jTextFieldFuncao;
     private javax.swing.JTextField jTextFieldNome;
     private javax.swing.JTextField jTextFieldNumero;
     private javax.swing.JTextField jTextFieldPais;
@@ -1647,5 +1660,6 @@ public class FormCadastrarCliente extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldTelefoneNumero;
     private javax.swing.JTextField jTextFieldTelefoneOperadora;
     private javax.swing.JTextField jTextFieldUF;
+    private javax.swing.JTextField jTextFieldUsuario;
     // End of variables declaration//GEN-END:variables
 }
