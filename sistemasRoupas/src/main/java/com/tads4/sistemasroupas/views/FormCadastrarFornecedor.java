@@ -1,5 +1,17 @@
 package com.tads4.sistemasroupas.views;
 
+import com.tads4.sistemasroupas.control.FornecedorController;
+import com.tads4.sistemasroupas.model.Email;
+import com.tads4.sistemasroupas.model.Endereco;
+import com.tads4.sistemasroupas.model.Telefone;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author Lucas
@@ -9,8 +21,11 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
     /**
      * Creates new form FormCadastraFornecedor
      */
+    private FornecedorController controller = new FornecedorController();
+
     public FormCadastrarFornecedor() {
         initComponents();
+        this.controller.criaFornecedor();
     }
 
     /**
@@ -94,7 +109,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         jLabelNome = new javax.swing.JLabel();
         jTextFieldNome = new javax.swing.JTextField();
         jLabelCnpj = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jFormattedTextFieldCNPJ = new javax.swing.JFormattedTextField();
         jPanelCadastrarCancelar = new javax.swing.JPanel();
         jButtonCancelar = new javax.swing.JButton();
         jButtonCadastrar = new javax.swing.JButton();
@@ -112,6 +127,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         jTableEnderecos4 = new javax.swing.JTable();
 
         jDialogExcluirEndereco.setTitle("Excluir Endereço");
+        jDialogExcluirEndereco.setLocation(new java.awt.Point(0, 0));
         jDialogExcluirEndereco.setMinimumSize(new java.awt.Dimension(680, 180));
         jDialogExcluirEndereco.setResizable(false);
 
@@ -439,6 +455,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         );
 
         jDialogEndereco.setTitle("Adicionar Endereço");
+        jDialogEndereco.setLocation(new java.awt.Point(0, 0));
         jDialogEndereco.setMinimumSize(new java.awt.Dimension(660, 122));
         jDialogEndereco.setResizable(false);
 
@@ -611,18 +628,17 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         jDialogEmailLayout.setHorizontalGroup(
             jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDialogEmailLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jDialogEmailLayout.createSequentialGroup()
-                        .addComponent(jButtonCancelarEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonSalvarEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jDialogEmailLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(jLabelEmail)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldEmail)))
+                .addGap(38, 38, 38)
+                .addComponent(jLabelEmail)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(14, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialogEmailLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonCancelarEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonSalvarEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jDialogEmailLayout.setVerticalGroup(
             jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -631,10 +647,11 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
                 .addGroup(jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelEmail)
                     .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                 .addGroup(jDialogEmailLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButtonSalvarEmail)
-                    .addComponent(jButtonCancelarEmail)))
+                    .addComponent(jButtonCancelarEmail))
+                .addContainerGap())
         );
 
         jDialogTelefone.setTitle("Adicionar Telefone");
@@ -728,13 +745,13 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         jLabelCnpj.setText("CNPJ:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
+            jFormattedTextFieldCNPJ.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##.###.###/####-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jFormattedTextFieldCNPJ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
+                jFormattedTextFieldCNPJActionPerformed(evt);
             }
         });
 
@@ -750,7 +767,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabelCnpj)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jFormattedTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanelCadastrarFonercedorLayout.setVerticalGroup(
             jPanelCadastrarFonercedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -760,7 +777,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
                     .addComponent(jLabelNome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jTextFieldNome)
                     .addComponent(jLabelCnpj, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jFormattedTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jButtonCancelar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -775,6 +792,11 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         jButtonCadastrar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jButtonCadastrar.setForeground(new java.awt.Color(0, 153, 0));
         jButtonCadastrar.setText("Cadastrar");
+        jButtonCadastrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonCadastrarMouseClicked(evt);
+            }
+        });
         jButtonCadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCadastrarActionPerformed(evt);
@@ -1017,9 +1039,9 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldNomeActionPerformed
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+    private void jFormattedTextFieldCNPJActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextFieldCNPJActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_jFormattedTextFieldCNPJActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         // TODO add your handling code here:
@@ -1030,7 +1052,6 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jTableTelefonesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableTelefonesMouseClicked
-        //pega a coluna e a linha de onde a tabela foi clicada.
         int row = this.jTableTelefones.rowAtPoint(evt.getPoint());
         int column = this.jTableTelefones.columnAtPoint(evt.getPoint());
 
@@ -1045,6 +1066,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
 
     private void jButtonTelefoneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonTelefoneMouseClicked
         this.jDialogTelefone.setVisible(true);
+        this.jDialogTelefone.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButtonTelefoneMouseClicked
 
     private void jButtonTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTelefoneActionPerformed
@@ -1053,10 +1075,10 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
 
     private void jButtonEmail1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEmail1MouseClicked
         this.jDialogEmail.setVisible(true);
+        this.jDialogEmail.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButtonEmail1MouseClicked
 
     private void jTableEmails1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEmails1MouseClicked
-        //pega a coluna e a linha de onde a tabela foi clicada.
         int row = this.jTableEmails1.rowAtPoint(evt.getPoint());
         int column = this.jTableEmails1.columnAtPoint(evt.getPoint());
 
@@ -1068,10 +1090,11 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
 
     private void jButtonEndereco4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonEndereco4MouseClicked
         this.jDialogEndereco.setVisible(true);
+        this.jDialogEndereco.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButtonEndereco4MouseClicked
 
     private void jTableEnderecos4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableEnderecos4MouseClicked
-        //pega a coluna e a linha de onde a tabela foi clicada.
+
         int row = this.jTableEnderecos4.rowAtPoint(evt.getPoint());
         int column = this.jTableEnderecos4.columnAtPoint(evt.getPoint());
 
@@ -1224,15 +1247,197 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         this.jDialogTelefone.dispose();
     }//GEN-LAST:event_jButtonCancelarTelefoneMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
+    private void jButtonCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCadastrarMouseClicked
+        if (this.controller != null) {
+            this.controller.getFornecedor().setNome(this.jTextFieldNome.getText());
+            this.controller.getFornecedor().setCnpj(this.jFormattedTextFieldCNPJ.getText());
+
+            this.controller.insereFornecedor();
+            this.dispose();
+        }
+    }//GEN-LAST:event_jButtonCadastrarMouseClicked
+
+    private void atualizaEmails() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Email", ""
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+
+        Object[] row = {"", ""};
+        for (Email email : this.controller.getFornecedor().getEmails()) {
+            row[0] = email.getEmail();
+            row[1] = "Excluir";
+
+            model.addRow(row);
+        }
+        this.jTableEmails1.setModel(model);
+
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableEmails1.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+
+        sorter.setSortKeys(sortKeys);
+
+        if (jTableEmails1.getColumnModel().getColumnCount() > 0) {
+            jTableEmails1.getColumnModel().getColumn(0).setResizable(false);
+            jTableEmails1.getColumnModel().getColumn(0).setPreferredWidth(411);
+            jTableEmails1.getColumnModel().getColumn(1).setResizable(false);
+            jTableEmails1.getColumnModel().getColumn(1).setPreferredWidth(60);
+        }
+    }
+
+    private void atualizaEnderecos() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "País", "UF", "Cidade", "Bairro", "CEP", "Rua", "Complemento", "Número", ""
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+
+        Object[] row = {"", "", "", "", "", "", "", "", ""};
+        for (Endereco endereco : this.controller.getFornecedor().getEnderecos()) {
+            row[0] = endereco.getPais();
+            row[1] = endereco.getEstado();
+            row[2] = endereco.getCidade();
+            row[3] = endereco.getBairro();
+            row[4] = endereco.getCep();
+            row[5] = endereco.getRua();
+            row[6] = endereco.getComplemento();
+            row[7] = endereco.getNumero();
+            row[8] = "Excluir";
+
+            model.addRow(row);
+        }
+        this.jTableEnderecos4.setModel(model);
+
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableEnderecos4.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(5, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(7, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(4, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(3, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(6, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+
+        sorter.setSortKeys(sortKeys);
+
+        if (jTableEnderecos4.getColumnModel().getColumnCount() > 0) {
+            jTableEnderecos4.getColumnModel().getColumn(0).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(0).setPreferredWidth(40);
+            jTableEnderecos4.getColumnModel().getColumn(1).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(1).setPreferredWidth(40);
+            jTableEnderecos4.getColumnModel().getColumn(2).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(2).setPreferredWidth(119);
+            jTableEnderecos4.getColumnModel().getColumn(3).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(3).setPreferredWidth(198);
+            jTableEnderecos4.getColumnModel().getColumn(4).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(4).setPreferredWidth(79);
+            jTableEnderecos4.getColumnModel().getColumn(5).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(5).setPreferredWidth(237);
+            jTableEnderecos4.getColumnModel().getColumn(6).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(6).setPreferredWidth(129);
+            jTableEnderecos4.getColumnModel().getColumn(7).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(7).setPreferredWidth(50);
+            jTableEnderecos4.getColumnModel().getColumn(8).setResizable(false);
+            jTableEnderecos4.getColumnModel().getColumn(8).setPreferredWidth(45);
+        }
+    }
+
+    private void atualizaTelefones() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "DDD", "Número", "Operadora", ""
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+
+        Object[] row = {"", "", "", ""};
+        for (Telefone telefone : this.controller.getFornecedor().getTelefones()) {
+            row[0] = telefone.getDdd();
+            row[1] = telefone.getNumero();
+            row[2] = telefone.getOperadora();
+            row[3] = "Excluir";
+
+            model.addRow(row);
+        }
+        this.jTableTelefones.setModel(model);
+
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableTelefones.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
+
+        sorter.setSortKeys(sortKeys);
+
+        if (jTableTelefones.getColumnModel().getColumnCount() > 0) {
+            jTableTelefones.getColumnModel().getColumn(0).setResizable(false);
+            jTableTelefones.getColumnModel().getColumn(0).setPreferredWidth(60);
+            jTableTelefones.getColumnModel().getColumn(1).setResizable(false);
+            jTableTelefones.getColumnModel().getColumn(1).setPreferredWidth(241);
+            jTableTelefones.getColumnModel().getColumn(2).setResizable(false);
+            jTableTelefones.getColumnModel().getColumn(2).setPreferredWidth(100);
+            jTableTelefones.getColumnModel().getColumn(3).setResizable(false);
+            jTableTelefones.getColumnModel().getColumn(3).setPreferredWidth(80);
+        }
+    }
+
+    public static void main(String[] args) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Windows Classic".equals(info.getName())) {
@@ -1249,8 +1454,6 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(FormCadastrarFornecedor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1259,6 +1462,7 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
             }
         });
     }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCadastrar;
@@ -1284,8 +1488,8 @@ public class FormCadastrarFornecedor extends javax.swing.JFrame {
     private javax.swing.JDialog jDialogExcluirEndereco;
     private javax.swing.JDialog jDialogExcluirTelefone;
     private javax.swing.JDialog jDialogTelefone;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextFieldCEP;
+    private javax.swing.JFormattedTextField jFormattedTextFieldCNPJ;
     private javax.swing.JFormattedTextField jFormattedTextFieldExcluirCEP;
     private javax.swing.JLabel jLabelBairro;
     private javax.swing.JLabel jLabelCEP;
