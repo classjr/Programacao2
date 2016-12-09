@@ -120,7 +120,7 @@ public class Crud {
         }
     }
 
-     public List listFuncionario() {
+    public List listFuncionario() {
         List objects = null;
         try {
             Session session = factory.openSession();
@@ -139,7 +139,7 @@ public class Crud {
             return null;
         }
     }
-    
+
     public Object searchClienteNome(String nome) {
         List objects = null;
         try {
@@ -167,6 +167,26 @@ public class Crud {
             Transaction tx = session.beginTransaction();
             Criteria cr = session.createCriteria(Funcionario.class);
             cr.add(Restrictions.like("nome", nome));
+            objects = cr.list();
+            tx.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
+        }
+        if (!objects.isEmpty()) {
+            return objects.get(0);
+        } else {
+            return null;
+        }
+    }
+
+    public Object searchFuncionarioUsuario(String usuario) {
+        List objects = null;
+        try {
+            Session session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Criteria cr = session.createCriteria(Funcionario.class);
+            cr.add(Restrictions.like("usuario", usuario));
             objects = cr.list();
             tx.commit();
             session.close();
