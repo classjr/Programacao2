@@ -5,22 +5,14 @@
  */
 package com.tads4.sistemasroupas.model;
 
-import ExemplosAula.hibernate.Loan;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import org.hibernate.annotations.Cascade;
-import org.hibernate.annotations.CascadeType;
-import org.hibernate.annotations.Fetch;
 
 /**
  *
@@ -28,43 +20,44 @@ import org.hibernate.annotations.Fetch;
  */
 //Atributos
 @Entity
-@Table(name = "produto")
+@Table(name = "PRODUTOS")
 public class Produto implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column(name = "tipo", nullable = false, length = 50)
+    @Column(name = "TIPO", nullable = false, length = 50)
     private String tipo;
-    @Column(name = "valor", nullable = false)
+    @Column(name = "VALOR", nullable = false)
     private Double valor;
-    @Column(name = "tamanho", nullable = false, length = 5)
+    @Column(name = "TAMANHO", nullable = false, length = 5)
     private String tamanho;
-    @Column(name = "cor", nullable = false, length = 30)
+    @Column(name = "COR", nullable = false, length = 30)
     private String cor;
-    @Column(name = "codigoBarra", nullable = false, length = 50)
+    @Column(name = "CODIGO_BARRA", nullable = false, length = 50)
     private String codigoBarra;
-    @Column(name = "marca", nullable = false, length = 50)
+    @Column(name = "MARCA", nullable = false, length = 50)
     private String marca;
-
+    
+/*
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_itemVenda", insertable = true, updatable = true)
     @Fetch(org.hibernate.annotations.FetchMode.JOIN)
     @Cascade(CascadeType.SAVE_UPDATE)
-    private ItemVenda itemVenda;
+    private ItemVenda itemVenda;*/
 
-    //Contrutor
+    //Construtor
     public Produto() {
 
     }
 
-    public ItemVenda getItemVenda() {
+ /*   public ItemVenda getItemVenda() {
         return itemVenda;
     }
 
     public void setItemVenda(ItemVenda itemVenda) {
         this.itemVenda = itemVenda;
-    }
+    }  */
 
     public Integer getId() {
         return id;
