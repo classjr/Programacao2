@@ -5,6 +5,19 @@
  */
 package com.tads4.sistemasroupas.views;
 
+import javax.swing.table.DefaultTableModel;
+
+
+import com.tads4.sistemasroupas.control.ProdutoController;
+import com.tads4.sistemasroupas.model.Produto;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /**
  *
  * @author alison
@@ -28,12 +41,12 @@ public class FormListarProduto extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPanelClientes = new javax.swing.JScrollPane();
-        jTableClientes = new javax.swing.JTable();
-        jLabelClientes = new javax.swing.JLabel();
+        jTableProdutos = new javax.swing.JTable();
+        jLabelProdutos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTableClientes.setModel(new javax.swing.table.DefaultTableModel(
+        jTableProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -56,28 +69,29 @@ public class FormListarProduto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTableClientes.setEnabled(false);
-        jTableClientes.getTableHeader().setReorderingAllowed(false);
-        jScrollPanelClientes.setViewportView(jTableClientes);
+        jTableProdutos.setEnabled(false);
+        jTableProdutos.getTableHeader().setReorderingAllowed(false);
+        jScrollPanelClientes.setViewportView(jTableProdutos);
+        jTableProdutos.getAccessibleContext().setAccessibleParent(null);
 
-        jLabelClientes.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelClientes.setText("Produtos");
+        jLabelProdutos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabelProdutos.setText("Produtos");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPanelClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(459, 459, 459)
-                .addComponent(jLabelClientes)
-                .addContainerGap(252, Short.MAX_VALUE))
-            .addComponent(jScrollPanelClientes)
+                .addGap(328, 328, 328)
+                .addComponent(jLabelProdutos)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabelClientes)
+                .addComponent(jLabelProdutos)
                 .addGap(29, 29, 29)
                 .addComponent(jScrollPanelClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -86,6 +100,76 @@ public class FormListarProduto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void listarProduto() {
+        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "ID", "TIPO", "VALOR", "TAMANHO", "COR", "CODIGO_BARRA", "MARCA"
+                }
+        ) {
+            Class[] types = new Class[]{
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean[]{
+                false, false, false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types[columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit[columnIndex];
+            }
+        };
+        Object[] row = {"", "", "", "", "", "", ""};
+
+        for (Produto produto : this.controller.listProduto()) {
+            row[0] = produto.getId();
+            row[1] = produto.getTipo();
+            row[2] = produto.getValor();
+            row[3] = produto.getTamanho();
+            row[4] = produto.getCor();
+            row[5] = produto.getCodigoBarra();
+            row[6] = produto.getMarca();
+
+            model.addRow(row);
+        }
+        this.jTableProdutos.setModel(model);
+        
+        TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
+        this.jTableProdutos.setRowSorter(sorter);
+
+        List<RowSorter.SortKey> sortKeys = new ArrayList<RowSorter.SortKey>(25);
+        sortKeys.add(new RowSorter.SortKey(6, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(5, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(4, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(3, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(2, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(1, SortOrder.ASCENDING));
+        sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING));
+        
+        sorter.setSortKeys(sortKeys);
+
+        if (jTableProdutos.getColumnModel().getColumnCount() > 0) {
+            jTableProdutos.getColumnModel().getColumn(0).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(0).setPreferredWidth(100);
+            jTableProdutos.getColumnModel().getColumn(1).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(1).setPreferredWidth(332);
+            jTableProdutos.getColumnModel().getColumn(2).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(2).setPreferredWidth(120);
+            jTableProdutos.getColumnModel().getColumn(3).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(3).setPreferredWidth(120);
+            jTableProdutos.getColumnModel().getColumn(4).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(4).setPreferredWidth(80);
+            jTableProdutos.getColumnModel().getColumn(5).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(5).setPreferredWidth(100);
+            jTableProdutos.getColumnModel().getColumn(6).setResizable(false);
+            jTableProdutos.getColumnModel().getColumn(6).setPreferredWidth(120);
+        }
+    }
+
+    
     /**
      * @param args the command line arguments
      */
@@ -123,8 +207,18 @@ public class FormListarProduto extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelClientes;
+    private javax.swing.JLabel jLabelProdutos;
     private javax.swing.JScrollPane jScrollPanelClientes;
-    private javax.swing.JTable jTableClientes;
+    private javax.swing.JTable jTableProdutos;
     // End of variables declaration//GEN-END:variables
+
+    private class controller {
+
+        private static Iterable<Produto> listProduto() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+
+        public controller() {
+        }
+    }
 }

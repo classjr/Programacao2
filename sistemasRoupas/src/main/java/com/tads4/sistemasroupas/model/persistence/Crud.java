@@ -140,6 +140,26 @@ public class Crud {
             return null;
         }
     }
+    
+       public List listProduto() {
+        List objects = null;
+        try {
+            Session session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Criteria cr = session.createCriteria(Produto.class);
+            cr.addOrder(Order.asc("id"));
+            objects = cr.list();
+            tx.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
+        }
+        if (!objects.isEmpty()) {
+            return objects;
+        } else {
+            return null;
+        }
+    }
 
     public Object searchClienteNome(String nome) {
         List objects = null;
