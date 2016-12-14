@@ -2,6 +2,7 @@ package com.tads4.sistemasroupas.model.persistence;
 
 import com.tads4.sistemasroupas.model.Cliente;
 import com.tads4.sistemasroupas.model.Funcionario;
+import com.tads4.sistemasroupas.model.Produto;
 import java.util.List;
 import java.util.Set;
 import org.hibernate.Criteria;
@@ -199,6 +200,26 @@ public class Crud {
             return null;
         }
     }
+    
+       public Object searchProdutoNome(String nome) {
+        List objects = null;
+        try {
+            Session session = factory.openSession();
+            Transaction tx = session.beginTransaction();
+            Criteria cr = session.createCriteria(Produto.class);
+            cr.add(Restrictions.like("nome", nome));
+            objects = cr.list();
+            tx.commit();
+            session.close();
+        } catch (Exception ex) {
+            System.out.println("Problemas ao conectar no Banco de dados. Erro: " + ex.getMessage());
+        }
+        if (!objects.isEmpty()) {
+            return objects.get(0);
+        } else {
+            return null;
+        }
+    }
 
     public List list(String sql) {
         List object = null;
@@ -228,4 +249,7 @@ public class Crud {
         }
         return object;
     }
+    
+  
+    
 }
