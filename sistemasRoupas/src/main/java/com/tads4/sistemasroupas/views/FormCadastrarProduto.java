@@ -197,23 +197,7 @@ public class FormCadastrarProduto extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarMouseClicked
 
     private void jButtonCadastrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCadastrarMouseClicked
-        if (this.controller.funcionarioExiste()) {
-            this.controller.getFuncionario().setNome(this.jTextFieldNome.getText());
-            this.controller.getFuncionario().setRg(this.jFormattedTextFieldRg.getText());
-            this.controller.getFuncionario().setCpf(this.jFormattedTextFieldCpf.getText());
-            if (this.jRadioButtonMasculino.isSelected()) {
-                this.controller.getFuncionario().setSexo('M');
-            } else {
-                this.controller.getFuncionario().setSexo('F');
-            }
-            this.controller.getFuncionario().setDataDeNascimento(this.jFormattedTextFieldDataNascimento.getText());
-            this.controller.getFuncionario().setSalario(Double.valueOf(this.jFormattedTextFieldSalario.getText()));
-            this.controller.getFuncionario().setFuncao(this.jTextFieldFuncao.getText());
-            this.controller.getFuncionario().setUsuario(this.jTextFieldUsuario.getText());
-            this.controller.insereFuncionario();
-            this.dispose();
-        }
-
+        
     }//GEN-LAST:event_jButtonCadastrarMouseClicked
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
