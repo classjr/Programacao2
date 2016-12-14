@@ -5,12 +5,14 @@
  */
 package com.tads4.sistemasroupas.views;
 
+import com.tads4.sistemasroupas.control.FuncionarioController;
 import javax.swing.table.DefaultTableModel;
 
 
 import com.tads4.sistemasroupas.control.ProdutoController;
 import com.tads4.sistemasroupas.model.Produto;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
@@ -22,13 +24,16 @@ import javax.swing.table.TableRowSorter;
  *
  * @author alison
  */
-public class FormListarProduto extends javax.swing.JFrame {
+public class FormListarProdutos extends javax.swing.JFrame {
+
+    private ProdutoController controller = new ProdutoController();
 
     /**
-     * Creates new form FormListaProduto
+     * Creates new form FormCadastrarFuncionario
      */
-    public FormListarProduto() {
+    public FormListarProdutos() {
         initComponents();
+        this.listarProduto();
     }
 
     /**
@@ -43,8 +48,6 @@ public class FormListarProduto extends javax.swing.JFrame {
         jScrollPanelClientes = new javax.swing.JScrollPane();
         jTableProdutos = new javax.swing.JTable();
         jLabelProdutos = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTableProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,6 +77,8 @@ public class FormListarProduto extends javax.swing.JFrame {
         jScrollPanelClientes.setViewportView(jTableProdutos);
         jTableProdutos.getAccessibleContext().setAccessibleParent(null);
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jLabelProdutos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelProdutos.setText("Produtos");
 
@@ -81,7 +86,6 @@ public class FormListarProduto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPanelClientes, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 775, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(328, 328, 328)
                 .addComponent(jLabelProdutos)
@@ -92,16 +96,15 @@ public class FormListarProduto extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelProdutos)
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPanelClientes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(467, 467, 467))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void listarProduto() {
-        DefaultTableModel model = new javax.swing.table.DefaultTableModel(
+        DefaultTableModel model;
+        model = new javax.swing.table.DefaultTableModel(
                 new Object[][]{},
                 new String[]{
                     "ID", "TIPO", "VALOR", "TAMANHO", "COR", "CODIGO_BARRA", "MARCA"
@@ -114,10 +117,12 @@ public class FormListarProduto extends javax.swing.JFrame {
                 false, false, false, false, false, false, false
             };
 
+            @Override
             public Class getColumnClass(int columnIndex) {
                 return types[columnIndex];
             }
 
+            @Override
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit[columnIndex];
             }
@@ -132,7 +137,6 @@ public class FormListarProduto extends javax.swing.JFrame {
             row[4] = produto.getCor();
             row[5] = produto.getCodigoBarra();
             row[6] = produto.getMarca();
-
             model.addRow(row);
         }
         this.jTableProdutos.setModel(model);
@@ -170,41 +174,8 @@ public class FormListarProduto extends javax.swing.JFrame {
     }
 
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormListarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormListarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormListarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormListarProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormListarProduto().setVisible(true);
-            }
-        });
-    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelProdutos;
@@ -214,10 +185,8 @@ public class FormListarProduto extends javax.swing.JFrame {
 
     private class controller {
 
-        private static Iterable<Produto> listProduto() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
+        
+        
         public controller() {
         }
     }
